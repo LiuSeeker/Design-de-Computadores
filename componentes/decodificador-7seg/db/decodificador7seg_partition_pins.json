@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "saida7seg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saida7seg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "saida7seg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "saida7seg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "saida7seg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "saida7seg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "saida7seg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoHex[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoHex[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoHex[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoHex[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hab",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

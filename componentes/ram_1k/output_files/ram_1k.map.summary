@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Aug 23 10:09:00 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : ram_1k
+Top-level Entity Name : ram_1k
+Family : Cyclone IV E
+Total logic elements : 14,708
+    Total combinational functions : 6,516
+    Dedicated logic registers : 8,192
+Total registers : 8192
+Total pins : 29
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
