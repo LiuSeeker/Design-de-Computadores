@@ -1,0 +1,25 @@
+REGA
+REGB
+
+RAM0    #SEG_UNI
+RAM1    #SEG_DEC
+RAM2    #MIN_UNI
+RAM3    #MIN_DEC
+RAM4    #HOR_UNI
+RAM5    #HOR_DEC
+RAM6    #VEL
+RAM7    #BASE_TEMPO
+
+DSP0    #
+DSP1    #
+DSP2    #
+DSP3    #
+DSP4    #
+DSP5    #
+DSP6    #
+DSP7    #
+
+FLFP    #flipflop
+ZFLP
+
+BUTT    #BOTAO

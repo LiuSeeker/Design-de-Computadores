@@ -1,0 +1,84 @@
+mov $0, RAM0
+mov $0, RAM2
+mov $0, RAM3
+mov $0, RAM4
+mov $0, RAM5
+mov $1, RAM6
+mov $10000, RAM7
+
+LOOP:
+    # le tempo
+    red FLFP, REGA
+    cmp REGA, $1
+    jnz JBUT
+    red RAM0, REGA
+    inc REGA
+    wrt REGA, RAM0
+    zer ZFLP
+
+        cmp REGA, $10
+        jnz JBUT
+        ldi $0, REGA
+        wrt REGA, RAM0
+        red RAM1, REGA
+        inc REGA
+        wrt REGA, RAM1
+            cmp REGA, $6
+            jnz JBUT
+            ldi $0, REGA
+            wrt REGA, RAM1
+            red RAM2, REGA
+            inc REGA
+            wrt REGA, RAM2
+
+                cmp REGA, $10
+                jnz JBUT
+                ldi $0, REGA
+                wrt REGA, RAM2
+                red RAM3, REGA
+                inc REGA
+                wrt REGA, RAM3
+                    cmp REGA, $6
+                    jnz JBUT
+                    ldi $0, REGA
+                    wrt REGA, RAM3
+                    red RAM4, REGA
+                    inc REGA
+                    wrt REGA, RAM4
+
+                        cmp REGA, $10
+                        jnz JBUT
+                        ldi $0, REGA
+                        wrt REGA, RAM4
+                        red RAM5, REGA
+                        inc REGA
+                        wrt REGA, RAM5
+                            cmp REGA, $2
+                            jnz JBUT
+                            red RAM4, REGB
+                            cmp REGB, $4
+                            jnz JBUT
+                            ldi $0, REGA
+                            wrt REGA, RAM5
+                            wrt REGA, RAM4
+
+    JBUT:
+        red BUTT, REGA
+        cmp REGA, $1
+        jnz LOOP
+        red RAM6, REGA
+        inc REGA
+        cmp REGA, $4
+        jle ELSE
+            ldi REGA, $1
+            wrt REGA, RAM6
+            red RAM7, REGA
+            ldi REGA, $10000
+            wrt REGA, RAM7
+
+        ELSE:
+            red RAM7, REGA
+            div REGA, $2
+            wrt REGA, RAM7  
+
+    jmp LOOP
