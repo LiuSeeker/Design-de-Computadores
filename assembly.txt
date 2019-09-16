@@ -55,8 +55,8 @@ LOOP:
                         wrt REGA, RAM5
                             cmp REGA, $2
                             jnz JBUT
-                            red RAM4, REGB
-                            cmp REGB, $4
+                            red RAM4, REGA
+                            cmp REGA, $4
                             jnz JBUT
                             ldi $0, REGA
                             wrt REGA, RAM5

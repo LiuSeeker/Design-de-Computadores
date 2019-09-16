@@ -1,5 +1,4 @@
 REGA
-REGB
 
 RAM0    #SEG_UNI
 RAM1    #SEG_DEC
