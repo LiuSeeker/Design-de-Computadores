@@ -1,7 +1,35 @@
 |mux
-a1 => b.DATAB
-a2 => b.DATAA
+a1[0] => b.DATAB
+a1[1] => b.DATAB
+a1[2] => b.DATAB
+a1[3] => b.DATAB
+a1[4] => b.DATAB
+a1[5] => b.DATAB
+a1[6] => b.DATAB
+a1[7] => b.DATAB
+a2[0] => b.DATAA
+a2[1] => b.DATAA
+a2[2] => b.DATAA
+a2[3] => b.DATAA
+a2[4] => b.DATAA
+a2[5] => b.DATAA
+a2[6] => b.DATAA
+a2[7] => b.DATAA
 sel => b.OUTPUTSELECT
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
+sel => b.OUTPUTSELECT
+sel => b.OUTPUTSELECT
+sel => b.OUTPUTSELECT
+sel => b.OUTPUTSELECT
+sel => b.OUTPUTSELECT
+sel => b.OUTPUTSELECT
+sel => b.OUTPUTSELECT
+b[0] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[1] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[2] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[3] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[4] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[5] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[6] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[7] <= b.DB_MAX_OUTPUT_PORT_TYPE
 
 

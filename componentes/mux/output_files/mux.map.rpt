@@ -1,5 +1,5 @@
 Analysis & Elaboration report for mux
-Wed Sep 25 08:53:34 2019
+Wed Sep 25 09:15:53 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -9,8 +9,9 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |mux
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
 
 
 
@@ -36,7 +37,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Wed Sep 25 08:53:34 2019       ;
+; Analysis & Elaboration Status      ; Successful - Wed Sep 25 09:15:53 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; mux                                         ;
 ; Top-level Entity Name              ; mux                                         ;
@@ -67,6 +68,16 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |mux ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; dataW          ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -161,19 +172,19 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Sep 25 08:53:22 2019
+    Info: Processing started: Wed Sep 25 09:15:42 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mux -c mux --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/jorge/Desktop/Insper/Design de Computadores/mux/mux.vhd Line: 5
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/mux/mux.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
-    Info (12022): Found design unit 1: mux-arch_MUX File: C:/Users/jorge/Desktop/Insper/Design de Computadores/mux/mux.vhd Line: 24
-    Info (12023): Found entity 1: mux File: C:/Users/jorge/Desktop/Insper/Design de Computadores/mux/mux.vhd Line: 5
+    Info (12022): Found design unit 1: mux-arch_MUX File: C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/mux/mux.vhd Line: 29
+    Info (12023): Found entity 1: mux File: C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/mux/mux.vhd Line: 5
 Info (12127): Elaborating entity "mux" for the top level hierarchy
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Wed Sep 25 08:53:34 2019
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Wed Sep 25 09:15:53 2019
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:28
 
 
