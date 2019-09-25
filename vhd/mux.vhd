@@ -4,15 +4,20 @@ use ieee.numeric_std.all;
 
 entity mux is
 
+	generic
+	(
+		dataW	: INTEGER  :=	8
+	);
+
 	port
 	(
 		-- Input ports
-		a1	: in  std_logic;
-		a2	: in  std_logic;
+		a1	: in  std_logic_vector(dataW-1 DOWNTO 0);
+		a2	: in  std_logic_vector(dataW-1 DOWNTO 0);
 		sel : in std_logic;
 		
 		-- Output ports
-		b	: out std_logic
+		b	: out std_logic_vector(dataW-1 DOWNTO 0)
 	);
 	
 end mux;
