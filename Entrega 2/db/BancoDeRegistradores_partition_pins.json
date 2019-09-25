@@ -1,0 +1,149 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "saidaA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoLeituraA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoLeituraA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoLeituraA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoLeituraB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoLeituraB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoLeituraB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoEscrita[0]",
+					"strict" : false
+				},
+				{
+					"name" : "we",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoEscrita[2]",
+					"strict" : false
+				},
+				{
+					"name" : "enderecoEscrita[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoEscrita[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

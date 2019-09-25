@@ -1,0 +1,15 @@
+Quartus Prime Archive log --	C:/Users/jorge/Desktop/Insper/Design de Computadores/Entrega 1/Entrega_RAM.qarlog
+
+Archive:	C:/Users/jorge/Desktop/Insper/Design de Computadores/Entrega 1/Entrega_RAM.qar
+Date:		Fri Aug 23 10:40:36 2019
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/jorge/Desktop/Insper/Design de Computadores/Entrega 1/Entrega_RAM.qpf
+C:/Users/jorge/Desktop/Insper/Design de Computadores/Entrega 1/Entrega_RAM.qsf
+C:/Users/jorge/Desktop/Insper/Design de Computadores/Entrega 1/ram.vhd
+d:/quartus/quartus/bin64/assignment_defaults.qdf
+	======= Total: 4 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -1,0 +1,9 @@
+Instruções assembly:
+    LDI: carregamento imediato no registrador
+    INC: incremento do valor do relogio
+    CMP: compara valores (subtrai um valor do outro e compara com 0)
+    JNZ: pula endereço se não for 0
+    JLE: pula endereço se menor ou igual a 0
+    JMP: pula incondicionalmente
+    DIV: divide valor por 2
+    [NOME]: label do jump
