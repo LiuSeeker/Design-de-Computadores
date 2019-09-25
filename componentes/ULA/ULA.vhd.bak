@@ -1,0 +1,70 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+ 
+entity ula is
+	
+	generic
+	(
+		DATA_WIDTH : natural := 8
+	);
+
+	port ( 
+				inA  : in std_logic_vector(DATA_WIDTH downto 0);
+				inB  : in std_logic_vector(DATA_WIDTH downto 0);
+				sel  : in std_logic_vector(3 downto 0);
+				
+				outData : out std_logic_vector(DATA_WIDTH downto 0);
+				outFlagZero : out std_logic
+	);
+end entity;
+
+
+architecture uxa of ula is
+
+signal c : std_logic_vector (3 downto 0);
+
+	component somador 
+		port(
+				A:	   in std_logic; 
+				B: 	in std_logic;
+				Cin:  in std_logic;
+				
+				S:    out std_logic;
+				Cout: out std_logic
+		);
+	end component;
+
+	component mux
+		port(
+			a1	: in  std_logic;
+			a2	: in  std_logic;
+			sel : in std_logic;
+			
+			b	: out std_logic
+		);
+	end component;
+		
+begin
+
+	processo: process(inA, inB, sel)
+	
+	  begin
+		 
+		 if(sel = "0000") then
+			outFlagZero <= '1';
+		 
+		 else
+			outFlagZero <= '0';
+		 
+		 end if;
+		 
+	  end process processo;
+
+--primeiro:   somador port map (A=>inA(0), B=>inB(0), S=>outY(0), Cin=>c(0), Cout=>c(1));
+--segundo :   somador port map (A=>inA(1), B=>inB(1), S=>outY(1), Cin=>c(1), Cout=>c(2));
+--terceiro:   somador port map (A=>inA(2), B=>inB(2), S=>outY(2), Cin=>c(2), Cout=>c(3));
+--quarto  :   somador port map (A=>inA(3), B=>inB(3), S=>outY(3), Cin=>c(3), Cout=>c(0));
+--outZ <= c(0);
+	
+end architecture;
