@@ -10,9 +10,9 @@ entity flip_flop IS
 		);
 		
 	port (	
-		data_in:	in std_logic;
+		data_in:	in std_logic_vector(dataW-1 DOWNTO 0);
 		clk:		in std_logic;
-		data_out:	out std_logic
+		data_out:	out std_logic_vector(dataW-1 DOWNTO 0)
 	);
 end flip_flop;
 
