@@ -14,62 +14,47 @@ entity ula is
 	port ( 
 				inA  : in std_logic_vector(DATA_WIDTH downto 0);
 				inB  : in std_logic_vector(DATA_WIDTH downto 0);
-				sel  : in std_logic_vector(3 downto 0);
+				sel  : in std_logic_vector(2 downto 0);
 				
 				outData : out std_logic_vector(DATA_WIDTH downto 0);
-				outFlagZero : out std_logic
+				flag : out std_logic
 	);
 end entity;
 
 
 architecture ulaula of ula is
-		
 begin
 
 	processo: process(inA, inB, sel)
 	begin
 
-		if(sel = "0000") then --inc (soma 1 no valor do reg)
+		if(sel = "000") then --inc (soma 1 no valor do reg)
 			outData <= inA + "00000001";
-			outFlagZero <= '0';
+			flag <= '0';
 
-		elsif(sel = "0001") then --din (subtrai 1 no valor do reg)
-			if(inA = "00000000" or inA = "00000001")then
-				outFlagZero <= '1';
-				outData <= "00000000";
-			else				
-				outData <= inA - "00000001";
-				outFlagZero <= '0';
-			end if;
-				
-		elsif(sel = "0010") then --cmp (compara se os dois valores são iguais)
+		elsif(sel = "001") then --inc2
+			
+			
+		elsif(sel = "010") then --cmp (compara imediato com registrador) ##################OLHAR
 			outData <= "00000000";
 			if(inA = inB) then
-				outFlagZero <= '1';
+				flag <= '1';
 			else
-				outFlagZero <= '0';
+				flag <= '0';  
 			end if;
 
-		elsif(sel = "0011") then --div (divide o valor do registrador por 2)
-			if(inA = "00000000" or inA = "00000001")then --se os valores sendo divididos forem 0 ou 1, aciona a FlagZero
-				outFlagZero <= '1';
-				outData <= "00000000";
-				
-			else
-				outFlagZero <= '0';				
-				outData(0) <= inA(1);
-				outData(1) <= inA(2);
-				outData(2) <= inA(3);
-				outData(3) <= inA(4);
-				outData(4) <= inA(5);
-				outData(5) <= inA(6);
-				outData(6) <= inA(7);
-				outData(7) <= '0';		
-			end if;
+		elsif(sel = "011") then --passA
+		
+		elsif(sel = "100") then --passB
+		
+		elsif(sel = "101") then --pass (ignora entrada)
+		
+		elsif(sel = "110") then --JMP (flag = 1)
+			flag <= '1';
 			
-		else
+		else -- (111) JMP NOT ZERO, mantem flag do compare
 			outData <= inB;
-			outFlagZero <= '0';
+			flag <= '0';
 
 		end if;
 	end process processo;
