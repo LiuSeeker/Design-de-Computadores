@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 LOOP:
     rxd FLFP, REGA
     zer ZFLP
@@ -53,12 +45,14 @@ LOOP:
 
     LOOPMUDA:
         rxd BMUD, REGA
+        zer ZBMU
         cmp REGA, $1, REGA
         jnz LOOP
         ldi $0, REG0
         ldi $0, REG1
 
         rxd BIMI, REGA
+        zer ZBIM
         cmp REGA, $1, REGA
         jnz BHORA
             inc REG2    #UNIDADE MINUTO
@@ -74,6 +68,7 @@ LOOP:
 
         BHORA:
             rxd BIHR, REGA
+            zer ZBIH
             cmp REGA, $1, REGA
             jnz LOOPMUDA
 
