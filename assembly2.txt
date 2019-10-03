@@ -43,6 +43,11 @@ LOOP:
     wrt REG4, DSP4
     wrt REG5, DSP5
 
+    rxd BMUD, REGA
+    zer ZBMU
+    cmp REGA, $1, REGA
+    jnz LOOP
+
     LOOPMUDA:
         rxd BMUD, REGA
         zer ZBMU
