@@ -1,0 +1,94 @@
+
+
+
+
+
+
+
+
+LOOP:
+    rxd FLFP, REGA
+    zer ZFLP
+    cmp REGA, $1, REGA
+    jnz JBUT
+    inc REG0    #UNIDADE SEGUNDO
+
+    cmp REG0, $10, REGA
+    jnz WRITES
+        ldi $0, REG0
+        inc REG1    #DECIMAL SEGUNDO
+        cmp REG1, $6, REGA
+        jnz WRITES
+            ldi $0, REG1
+            inc REG2    #UNIDADE MINUTO
+            
+            cmp REG2, $10, REGA
+            jnz WRITES
+                ldi $0, REG2
+                inc REG3    #DECIMAL MINUTO
+                cmp REG3, $6, REGA
+                jnz WRITES
+                    ldi $0, REG3
+                    inc REG4    #UNIDADE HORA
+                    cmp REG4, $4, REGA
+                    jnz HORA2
+                        cmp REG5, $2, REGB
+                        jnz WRITES
+                            ldi $0, REG4
+                            ldi $0, REG5
+                            jmp WRITES
+                    HORA2:
+                    cmp REG4, $10, REGA
+                    jnz WRITES
+                        ldi $0, REGA
+                        inc REG5
+
+    WRITES:
+    wrt REG0, DSP0
+    wrt REG1, DSP1
+    wrt REG2, DSP2
+    wrt REG3, DSP3
+    wrt REG4, DSP4
+    wrt REG5, DSP5
+
+    LOOPMUDA:
+        rxd BMUD, REGA
+        cmp REGA, $1, REGA
+        jnz LOOP
+        ldi $0, REG0
+        ldi $0, REG1
+
+        rxd BIMI, REGA
+        cmp REGA, $1, REGA
+        jnz BHORA
+            inc REG2    #UNIDADE MINUTO
+            
+            cmp REG2, $10, REGA
+            jnz LOOPMUDA
+                ldi $0, REG2
+
+                inc REG3    #DECIMAL MINUTO
+                cmp REG3, $6, REGA
+                jnz WRITES
+                    ldi $0, REG3
+
+        BHORA:
+            rxd BIHR, REGA
+            cmp REGA, $1, REGA
+            jnz LOOPMUDA
+
+                inc REG4    #UNIDADE HORA
+                    cmp REG4, $4, REGA
+                    jnz HORA22
+                        cmp REG5, $2, REGB
+                        jnz LOOPMUDA
+                            ldi $0, REG4
+                            ldi $0, REG5
+                            jmp LOOPMUDA
+                    HORA22:
+                    cmp REG4, $10, REGA
+                    jnz WRITES
+                        ldi $0, REGA
+                        inc REG5
+        jmp LOOPMUDA
+    jmp LOOP

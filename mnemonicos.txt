@@ -1,24 +1,35 @@
+''' Dentro do processador (Bando de regs)
+
+REG0    #SEG_UNI
+REG1    #SEG_DEC
+REG2    #MIN_UNI
+REG3    #MIN_DEC
+REG4    #HOR_UNI
+REG5    #HOR_DEC
+REG6    #VEL
+REG7    #BASE_TEMPO
+
 REGA
+REGB
+'''
 
-RAM0    #SEG_UNI
-RAM1    #SEG_DEC
-RAM2    #MIN_UNI
-RAM3    #MIN_DEC
-RAM4    #HOR_UNI
-RAM5    #HOR_DEC
-RAM6    #VEL
-RAM7    #BASE_TEMPO
-
-DSP0    #
-DSP1    #
-DSP2    #
-DSP3    #
-DSP4    #
-DSP5    #
-DSP6    #
-DSP7    #
+''' Fora do processador (perifericos)
 
 FLFP    #flipflop
 ZFLP
 
-BUTT    #BOTAO
+BMUD    #Botao muda horario
+ZBMU    
+BIHR    #Incrementa hora
+BIMI    #Incrementa minuto
+
+'''
+
+instruções assembly
+
+rxd
+zer
+cmp
+jnz
+inc
+ldi
