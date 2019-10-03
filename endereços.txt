@@ -1,0 +1,35 @@
+Endereço - Significado
+
+Endereço banco regs
+0x00 - unidade de segundo
+0x01 - decimal de segundo
+0x02 - unidade de minuto
+0x03 - decimal de minuto
+0x04 - unidade de hora
+0x05 - decimal de hora
+0x06 - REGA
+0x07 - REGB
+
+
+Endereço periféricos
+0x00 - Base de tempo
+0x01 - Display 0
+0x02 - Display 1
+0x03 - Display 2
+0x04 - Display 3
+0x05 - Display 4
+0x06 - Display 5
+0x07 - Botao muda horario
+0x08 - Botao incrementa minuto
+0x09 - Botao incrementa hora
+
+rxd - 0000
+zer - 0001
+cmp - 0010
+jnz - 0011
+inc1 - 0100
+inc2 - 0101
+wrt - 0110
+ldi - 0111
+jmp - 1000
+

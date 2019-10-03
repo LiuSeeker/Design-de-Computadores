@@ -6,8 +6,6 @@ REG2    #MIN_UNI
 REG3    #MIN_DEC
 REG4    #HOR_UNI
 REG5    #HOR_DEC
-REG6    #VEL
-REG7    #BASE_TEMPO
 
 REGA
 REGB
@@ -16,10 +14,15 @@ REGB
 ''' Fora do processador (perifericos)
 
 FLFP    #flipflop
-ZFLP
+
+DSP0
+DSP1
+DSP2
+DSP3
+DSP4
+DSP5
 
 BMUD    #Botao muda horario
-ZBMU    
 BIHR    #Incrementa hora
 BIMI    #Incrementa minuto
 
@@ -28,8 +31,11 @@ BIMI    #Incrementa minuto
 instruções assembly
 
 rxd
+wrt
 zer
 cmp
 jnz
 inc
 ldi
+<nome>:
+jmp
