@@ -1,0 +1,38 @@
+While True:
+
+    # checagem do tempo
+    se (passou_segundo):
+        unidade_segundo ++
+        se (unidade_segundo > 9):
+            unidade_segundo = 0
+            dezena_segundo ++
+    se (dezena_segundo > 5):
+        dezena_segundo = 0
+        unidade_minuto ++
+        se (unidade_minuto > 9):
+            unidade_minuto = 0
+            dezena_minuto ++
+    se (dezena_minuto > 5):
+        dezena_minuto = 0
+        unidade_hora ++
+        se (unidade_hora > 9):
+            unidade_hora = 0
+            dezena_hora ++
+    se (dezena_hora == 2 && unidade_hora > 3):
+        unidade_segundo = 0
+        dezena_segundo = 0
+        unidade_minuto = 0
+        dezena_segundo = 0
+        unidade_hora = 0
+        dezena_hora = 0
+    
+    # interrupcoes de botao
+    se (interrupcao_botao_minuto):
+        unidade_minuto ++
+
+    se (interrupcao_botao_hora):
+        unidade_hora ++
+
+    se (botao_2412):
+        se (unidade_hora > 2) & (dezena_hora > 0) & :
+            troca_1224()
