@@ -1,38 +1,38 @@
 LOOP:
     rxd FLFP, REGA
     zer ZFLP
-    cmp REGA, $1, REGA
+    cmp REGA, $1
     jnz JBUT
     inc REG0    #UNIDADE SEGUNDO
 
-    cmp REG0, $10, REGA
+    cmp REG0, $10
     jnz WRITES
         ldi $0, REG0
         inc REG1    #DECIMAL SEGUNDO
-        cmp REG1, $6, REGA
+        cmp REG1, $6
         jnz WRITES
             ldi $0, REG1
             inc REG2    #UNIDADE MINUTO
             
-            cmp REG2, $10, REGA
+            cmp REG2, $10
             jnz WRITES
                 ldi $0, REG2
                 inc REG3    #DECIMAL MINUTO
-                cmp REG3, $6, REGA
+                cmp REG3, $6
                 jnz WRITES
                     ldi $0, REG3
                     inc REG4    #UNIDADE HORA
-                    cmp REG4, $4, REGA
+                    cmp REG4, $4
                     jnz HORA2
-                        cmp REG5, $2, REGB
+                        cmp REG5, $2
                         jnz WRITES
                             ldi $0, REG4
                             ldi $0, REG5
                             jmp WRITES
                     HORA2:
-                    cmp REG4, $10, REGA
+                    cmp REG4, $10
                     jnz WRITES
-                        ldi $0, REGA
+                        ldi $0
                         inc REG5
 
     WRITES:
@@ -45,48 +45,48 @@ LOOP:
 
     rxd BMUD, REGA
     zer ZBMU
-    cmp REGA, $1, REGA
+    cmp REGA, $1
     jnz LOOP
 
     LOOPMUDA:
         rxd BMUD, REGA
         zer ZBMU
-        cmp REGA, $1, REGA
+        cmp REGA, $1
         jnz LOOP
         ldi $0, REG0
         ldi $0, REG1
 
         rxd BIMI, REGA
         zer ZBIM
-        cmp REGA, $1, REGA
+        cmp REGA, $1
         jnz BHORA
             inc REG2    #UNIDADE MINUTO
             
-            cmp REG2, $10, REGA
+            cmp REG2, $10
             jnz LOOPMUDA
                 ldi $0, REG2
 
                 inc REG3    #DECIMAL MINUTO
-                cmp REG3, $6, REGA
+                cmp REG3, $6
                 jnz WRITES
                     ldi $0, REG3
 
         BHORA:
             rxd BIHR, REGA
             zer ZBIH
-            cmp REGA, $1, REGA
+            cmp REGA, $1
             jnz LOOPMUDA
 
                 inc REG4    #UNIDADE HORA
-                    cmp REG4, $4, REGA
+                    cmp REG4, $4
                     jnz HORA22
-                        cmp REG5, $2, REGB
+                        cmp REG5, $2
                         jnz LOOPMUDA
                             ldi $0, REG4
                             ldi $0, REG5
                             jmp LOOPMUDA
                     HORA22:
-                    cmp REG4, $10, REGA
+                    cmp REG4, $10
                     jnz WRITES
                         ldi $0, REGA
                         inc REG5
