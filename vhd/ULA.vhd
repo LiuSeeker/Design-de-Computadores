@@ -8,15 +8,15 @@ entity ula is
 	
 	generic
 	(
-		DATA_WIDTH : natural := 7
+		DATA_WIDTH : natural := 8
 	);
 
 	port ( 
-				inA  : in std_logic_vector(DATA_WIDTH downto 0);
-				inB  : in std_logic_vector(DATA_WIDTH downto 0);
+				inA  : in std_logic_vector(DATA_WIDTH-1 downto 0);
+				inB  : in std_logic_vector(DATA_WIDTH-1 downto 0);
 				sel  : in std_logic_vector(2 downto 0);
 				
-				outData : out std_logic_vector(DATA_WIDTH downto 0);
+				outData : out std_logic_vector(DATA_WIDTH-1 downto 0);
 				flag : out std_logic
 	);
 end entity;
