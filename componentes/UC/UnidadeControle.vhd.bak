@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_arith.all;
+ 
+entity UnidadeControle is	
+	generic
+	(
+		DATA_WIDTH : natural := 7
+	);
+
+	port ( 
+				opcode  : in std_logic_vector(3 downto 0);
+				
+				outMuxULA : out std_logic;
+				outULA: out std_logic_vector(2 downto 0);
+				outMuxPosULA : out std_logic;
+				outMuxULA : out std_logic;
+				outBancoRegistradores : out std_logic; -- 0 Read / 1 Write
+				outAndPC : out std_logic;
+				outDemux : out std_logic
+	);
+end entity;
+
+
+architecture UC of UnidadeControle is
+begin
+
+	processo: process(inA, inB, sel)
+	begin
+
+		if(sel = "000") then --inc (soma 1 no valor do reg) # definir onde entrar 
+			
+		end if;
+	end process processo;
+end architecture;
