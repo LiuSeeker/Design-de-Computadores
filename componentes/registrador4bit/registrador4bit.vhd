@@ -19,7 +19,7 @@ entity registrador is
 	);
 end registrador;
 
-
+x
 architecture arch_registrador of registrador is
 
 begin

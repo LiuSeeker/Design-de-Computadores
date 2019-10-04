@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Aug 23 11:33:31 2019
+Analysis & Elaboration Status : Successful - Fri Oct 04 10:40:38 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : bancoRegistradores
 Top-level Entity Name : bancoRegistradores
 Family : Cyclone IV E
-Total logic elements : 152
-    Total combinational functions : 88
-    Dedicated logic registers : 64
-Total registers : 64
-Total pins : 35
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

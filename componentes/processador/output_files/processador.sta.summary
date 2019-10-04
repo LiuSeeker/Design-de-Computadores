@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'UnidadeControle:UC|outULA[0]'
+Slack : -6.377
+TNS   : -22.145
+
+Type  : Slow 1200mV 85C Model Setup 'UnidadeControle:UC|outDemux'
+Slack : -3.421
+TNS   : -13.063
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -1.176
+TNS   : -36.916
+
+Type  : Slow 1200mV 85C Model Hold 'UnidadeControle:UC|outULA[0]'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.656
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'UnidadeControle:UC|outDemux'
+Slack : 2.259
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -54.400
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UnidadeControle:UC|outDemux'
+Slack : 0.448
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UnidadeControle:UC|outULA[0]'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'UnidadeControle:UC|outULA[0]'
+Slack : -5.769
+TNS   : -20.198
+
+Type  : Slow 1200mV 0C Model Setup 'UnidadeControle:UC|outDemux'
+Slack : -3.158
+TNS   : -12.057
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -0.987
+TNS   : -29.606
+
+Type  : Slow 1200mV 0C Model Hold 'UnidadeControle:UC|outULA[0]'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.600
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'UnidadeControle:UC|outDemux'
+Slack : 2.145
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -54.400
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UnidadeControle:UC|outDemux'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UnidadeControle:UC|outULA[0]'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'UnidadeControle:UC|outULA[0]'
+Slack : -2.755
+TNS   : -8.913
+
+Type  : Fast 1200mV 0C Model Setup 'UnidadeControle:UC|outDemux'
+Slack : -1.409
+TNS   : -5.363
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -0.027
+TNS   : -0.077
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.155
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'UnidadeControle:UC|outULA[0]'
+Slack : 0.164
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'UnidadeControle:UC|outDemux'
+Slack : 1.277
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -45.822
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UnidadeControle:UC|outULA[0]'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UnidadeControle:UC|outDemux'
+Slack : 0.447
+TNS   : 0.000
+
+------------------------------------------------------------

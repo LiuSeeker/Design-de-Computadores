@@ -8,7 +8,6 @@ entity UnidadeControle is
 	port ( 
 				opcode  : in std_logic_vector(3 downto 0);
 				
-				outMuxULA : out std_logic;
 				outULA: out std_logic_vector(2 downto 0);
 				outMuxPosULA : out std_logic;
 				outBancoRegistradores : out std_logic; -- 0 Read / 1 Write
@@ -25,7 +24,6 @@ begin
 	begin
 
 		if(opcode = "0000") then -- RXD (Periférico -> Registrador)
-			outMuxULA <= '0';
 			outULA <= "101";
 			outMuxPosULA <= '1';
 			outBancoRegistradores <= '1';
@@ -33,7 +31,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "0001") then -- ZER (Registrador = 0)
-			outMuxULA <= '1';
 			outULA <= "011";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '1';
@@ -41,7 +38,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "0010") then -- CMP (Compara Registrador com Imediato)
-			outMuxULA <= '1';
 			outULA <= "010";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '0';
@@ -49,7 +45,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "0011") then -- JNZ (Jump not zero)
-			outMuxULA <= '0';
 			outULA <= "111";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '0';
@@ -57,7 +52,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "0100") then -- INC1 (Incrementa 1 no valor	recebido)
-			outMuxULA <= '0';
 			outULA <= "000";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '0';
@@ -65,7 +59,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "0101") then -- INC2 (Continuação do INC1, para atualizar o clock e poder escrever no banco)
-			outMuxULA <= '0';
 			outULA <= "001";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '1';
@@ -73,7 +66,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "0110") then -- WRT (Escreve do Registrador para o Periférico)
-			outMuxULA <= '0';
 			outULA <= "101";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '0';
@@ -81,7 +73,6 @@ begin
 			outDemux <= '1';
 		
 		elsif (opcode = "0111") then -- LDI (Carrega o Imediato no Registrador)
-			outMuxULA <= '1';
 			outULA <= "011";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '1';
@@ -89,7 +80,6 @@ begin
 			outDemux <= '0';
 		
 		elsif (opcode = "1000") then -- JMP (Jump)
-			outMuxULA <= '0';
 			outULA <= "110";
 			outMuxPosULA <= '0';
 			outBancoRegistradores <= '0';

@@ -6,7 +6,7 @@ entity mux is
 
 	generic
 	(
-		dataW	: INTEGER  :=	8
+		dataW	: INTEGER  :=	4
 	);
 
 	port
