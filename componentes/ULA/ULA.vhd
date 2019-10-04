@@ -1,8 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_arith.all;
  
 entity ula is
 	
@@ -29,11 +27,11 @@ begin
 	begin
 
 		if(sel = "000") then --inc (soma 1 no valor do reg) # definir onde entrar 
-			outData <= inA + "00000001";
+			outData <= std_logic_vector(unsigned(inA) + "00000001");
 			flag <= '0';
 
 		elsif(sel = "001") then --inc2
-			flag <= 0;
+			flag <= '0';
 			
 		elsif(sel = "010") then --cmp (compara imediato com registrador) ##################OLHAR
 			outData <= "00000000";

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for ULA
-Wed Sep 18 09:07:01 2019
+Fri Oct 04 09:10:00 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Wed Sep 18 09:07:01 2019       ;
+; Analysis & Elaboration Status      ; Successful - Fri Oct 04 09:10:00 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ULA                                         ;
 ; Top-level Entity Name              ; ula                                         ;
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; DATA_WIDTH     ; 7     ; Signed Integer                             ;
+; DATA_WIDTH     ; 8     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -172,18 +172,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 18 09:06:31 2019
+    Info: Processing started: Fri Oct 04 09:09:23 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA -c ULA --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
-    Info (12022): Found design unit 1: ula-ulaula File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/ULA/ULA.vhd Line: 25
-    Info (12023): Found entity 1: ula File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/ULA/ULA.vhd Line: 7
+    Info (12022): Found design unit 1: ula-ulaula File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 23
+    Info (12023): Found entity 1: ula File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 5
 Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Wed Sep 18 09:07:01 2019
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:01:10
+Warning (10631): VHDL Process Statement warning at ULA.vhd(26): inferring latch(es) for signal or variable "outData", which holds its previous value in one or more paths through the process File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Warning (10631): VHDL Process Statement warning at ULA.vhd(26): inferring latch(es) for signal or variable "flag", which holds its previous value in one or more paths through the process File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "flag" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[0]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[1]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[2]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[3]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[4]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[5]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[6]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info (10041): Inferred latch for "outData[7]" at ULA.vhd(26) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/ULA/ULA.vhd Line: 26
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Fri Oct 04 09:10:00 2019
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:01:25
 
 
