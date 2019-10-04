@@ -1,6 +1,6 @@
 
 LOOP: rxd FLFP, REGA
-zer FLFP
+zer ZFLF
 cmp REGA, $8
 jnz MUDA
 inc REG0
@@ -44,8 +44,8 @@ wrt REG3, DSP3
 wrt REG4, DSP4
 wrt REG5, DSP5
 MUDA: rxd BMUD, REGA
-zer BMUD
-cmp REGA, $1
+zer ZBMU
+cmp REGA, $4
 jnz LOOP
 LOOPMUDA: ldi $0, REG0
 ldi $0, REG1
@@ -56,12 +56,12 @@ wrt REG3, DSP3
 wrt REG4, DSP4
 wrt REG5, DSP5
 rxd BMUD, REGA
-zer BMUD
-cmp REGA, $1
+zer ZBMU
+cmp REGA, $4
 jnz LOOP
 rxd BIMI, REGA
-zer BIMI
-cmp REGA, $1
+zer ZBIM
+cmp REGA, $2
 jnz BHORA
 inc REG2
 ind REG2
@@ -74,7 +74,7 @@ cmp REG3, $6
 jnz LOOPMUDA
 ldi $0, REG3
 BHORA: rxd BIHR, REGA
-zer BIHR
+zer ZBIH
 cmp REGA, $1
 jnz LOOPMUDA
 inc REG4
