@@ -1,0 +1,94 @@
+LOOP: rxd FLFP, REGA
+zer FLFP
+cmp REGA, $1
+jnz MUDA
+inc REG0
+ind REG0
+cmp REG0, $10
+jnz WRITES
+ldi $0, REG0
+inc REG1
+ind REG1
+cmp REG1, $6
+jnz WRITES
+ldi $0, REG1
+inc REG2
+ind REG2
+cmp REG2, $10
+jnz WRITES
+ldi $0, REG2
+inc REG3
+ind REG3
+cmp REG3, $6
+jnz WRITES
+ldi $0, REG3
+inc REG4
+ind REG4
+cmp REG4, $4
+jnz HORA2
+cmp REG5, $2
+jnz WRITES
+ldi $0, REG4
+ldi $0, REG5
+jmp WRITES
+HORA2: cmp REG4, $10
+jnz WRITES
+ldi $0, REG4
+inc REG5
+ind REG5
+WRITES: wrt REG0, DSP0
+wrt REG1, DSP1
+wrt REG2, DSP2
+wrt REG3, DSP3
+wrt REG4, DSP4
+wrt REG5, DSP5
+MUDA: rxd BMUD, REGA
+zer BMUD
+cmp REGA, $1
+jnz LOOP
+LOOPMUDA: ldi $0, REG0
+ldi $0, REG1
+wrt REG0, DSP0
+wrt REG1, DSP1
+wrt REG2, DSP2
+wrt REG3, DSP3
+wrt REG4, DSP4
+wrt REG5, DSP5
+rxd BMUD, REGA
+zer BMUD
+cmp REGA, $1
+jnz LOOP
+rxd BIMI, REGA
+zer BIMI
+cmp REGA, $1
+jnz BHORA
+inc REG2
+ind REG2
+cmp REG2, $10
+jnz LOOPMUDA
+ldi $0, REG2
+inc REG3
+ind REG3
+cmp REG3, $6
+jnz LOOPMUDA
+ldi $0, REG3
+BHORA: rxd BIHR, REGA
+zer BIHR
+cmp REGA, $1
+jnz LOOPMUDA
+inc REG4
+ind REG4
+cmp REG4, $4
+jnz HORA22
+cmp REG5, $2
+jnz LOOPMUDA
+ldi $0, REG4
+ldi $0, REG5
+jmp LOOPMUDA
+HORA22: cmp REG4, $10
+jnz LOOPMUDA
+ldi $0, REG4
+inc REG5
+ind REG5
+jmp LOOPMUDA
+jmp LOOP
