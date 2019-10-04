@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_arith.all;
+
+entity processador is
+	
+	generic
+	(
+		INSTRUCTION_WIDTH : natural := 16;
+		ROM_WIDTH: natural := 8;
+		DATAREAD_WIDTH: natural := 4;
+		DATAWRITE_WIDTH: natural := 4
+	);
+
+	port ( 
+				instrucao  : in std_logic_vector(INSTRUCTION_WIDTH-1 downto 0);
+				dataRead  : in std_logic_vector(7 downto 0); ------- NÃO SEI O TAMANHO, PERGUNTAR PRO LIU
+				clk  : in std_logic;
+				
+				outAdress : out std_logic_vector(ROM_WIDTH-1 downto 0);
+				dataWrite: out std_logic_vector(3 downto 0);
+				ioAdress: out std_logic_vector(3 downto 0)
+	);
+end entity;
+
+architecture proc of processador is
+
+	signal barramento: 

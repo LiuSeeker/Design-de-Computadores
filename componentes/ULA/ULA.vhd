@@ -6,7 +6,7 @@ entity ula is
 	
 	generic
 	(
-		DATA_WIDTH : natural := 8
+		DATA_WIDTH : natural := 4
 	);
 
 	port ( 
@@ -27,14 +27,14 @@ begin
 	begin
 
 		if(sel = "000") then --inc (soma 1 no valor do reg) # definir onde entrar 
-			outData <= std_logic_vector(unsigned(inA) + "00000001");
+			outData <= std_logic_vector(unsigned(inA) + "0001");
 			flag <= '0';
 
 		elsif(sel = "001") then --inc2
 			flag <= '0';
 			
 		elsif(sel = "010") then --cmp (compara imediato com registrador) ##################OLHAR
-			outData <= "00000000";
+			outData <= "0000";
 			
 			if(inA = inB) then
 				flag <= '1';
@@ -51,15 +51,15 @@ begin
 			flag <= '0';
 		
 		elsif(sel = "101") then --pass (ignora entrada)
-			outData <= "00000000";
+			outData <= "0000";
 			flag <= '0';
 		
 		elsif(sel = "110") then --JMP (flag = 1)
-			outData <= "00000000";
+			outData <= "0000";
 			flag <= '1';
 			
 		else -- (111) JMP NOT ZERO, mantem flag do compare
-			outData <= "00000000";
+			outData <= "0000";
 
 		end if;
 	end process processo;

@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity buffer3state is
 	generic
 	(
-		DATA_WIDTH : natural := 8
+		DATA_WIDTH : natural := 4
 	);
 	port
 	(

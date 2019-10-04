@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "outAdress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[4]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[5]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "outAdress[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dataWrite[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataWrite[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dataWrite[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dataWrite[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ioAdress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ioAdress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ioAdress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ioAdress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[1]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[2]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[4]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[5]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[6]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[7]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[8]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[9]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[10]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[11]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[14]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[12]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[13]",
+					"strict" : false
+				},
+				{
+					"name" : "instrucao[15]",
+					"strict" : false
+				},
+				{
+					"name" : "dataRead[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataRead[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dataRead[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dataRead[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
