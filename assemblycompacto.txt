@@ -1,6 +1,7 @@
+
 LOOP: rxd FLFP, REGA
 zer FLFP
-cmp REGA, $1
+cmp REGA, $8
 jnz MUDA
 inc REG0
 ind REG0
