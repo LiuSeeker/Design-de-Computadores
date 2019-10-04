@@ -1,0 +1,81 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "outBaseTempo",
+					"strict" : false
+				},
+				{
+					"name" : "outDisplay0",
+					"strict" : false
+				},
+				{
+					"name" : "outDisplay1",
+					"strict" : false
+				},
+				{
+					"name" : "outDisplay2",
+					"strict" : false
+				},
+				{
+					"name" : "outDisplay3",
+					"strict" : false
+				},
+				{
+					"name" : "outDisplay4",
+					"strict" : false
+				},
+				{
+					"name" : "outDisplay5",
+					"strict" : false
+				},
+				{
+					"name" : "outMudaHor",
+					"strict" : false
+				},
+				{
+					"name" : "outIncMin",
+					"strict" : false
+				},
+				{
+					"name" : "outIncHor",
+					"strict" : false
+				},
+				{
+					"name" : "outZeraBase",
+					"strict" : false
+				},
+				{
+					"name" : "outZeraMudaHor",
+					"strict" : false
+				},
+				{
+					"name" : "outZeraIncMin",
+					"strict" : false
+				},
+				{
+					"name" : "outZeraIncHor",
+					"strict" : false
+				},
+				{
+					"name" : "endereco[3]",
+					"strict" : false
+				},
+				{
+					"name" : "endereco[2]",
+					"strict" : false
+				},
+				{
+					"name" : "endereco[1]",
+					"strict" : false
+				},
+				{
+					"name" : "endereco[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
