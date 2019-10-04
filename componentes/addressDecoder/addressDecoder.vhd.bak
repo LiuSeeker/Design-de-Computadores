@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity addressDecoder is
+	
+	generic
+	(
+		DATA_WIDTH : natural := 4
+	);
+
+	port ( 
+				endereco  : in std_logic_vector(DATA_WIDTH-1 downto 0);
+					
+				outBaseTempo  : out std_logic;
+				outDisplay0   : out std_logic;
+				outDisplay1   : out std_logic;
+				outDisplay2   : out std_logic;
+				outDisplay3   : out std_logic;
+				outDisplay4   : out std_logic;
+				outDisplay5   : out std_logic;
+				outMudaHorario: out std_logic;
+				outIncMin     : out std_logic;
+				outIncHor     : out std_logic;
+				outZeraBase   : out std_logic;
+				outZeraIncMin : out std_logic;
+				outZeraIncHor : out std_logic
+	);
+end entity;
