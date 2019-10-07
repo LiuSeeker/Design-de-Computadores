@@ -14,7 +14,7 @@ entity processador is
 
 	port ( 
 				instrucao  : in std_logic_vector(INSTRUCTION_WIDTH-1 downto 0);
-				dataRead  :  in std_logic_vector(3 downto 0); ------- NÃO SEI O TAMANHO, PERGUNTAR PRO LIU
+				dataRead  :  in std_logic_vector(3 downto 0); 
 				CLK  :       in std_logic;
 				
 				outAdress :  out std_logic_vector(ROM_WIDTH-1 downto 0);
@@ -34,15 +34,16 @@ architecture proc of processador is
 		-- Bit 1: AND PC
 		-- Bit 0: Demux
 		
-	signal saidaBanco:       std_logic_vector(3 downto 0);
-	signal saidaULA:         std_logic_vector(3 downto 0);
-	signal saidaMuxPosULA:   std_logic_vector(3 downto 0);
-	signal saida3state:   std_logic_vector(3 downto 0);
-	signal flagULA:          std_logic;
+	signal saidaBanco       : std_logic_vector(3 downto 0);
+	signal saidaULA         : std_logic_vector(3 downto 0);
+	signal saidaMuxPosULA   : std_logic_vector(3 downto 0);
+	signal saida3state      : std_logic_vector(3 downto 0);
+	signal flagULA          : std_logic;
+	signal flagFlipFlop     : std_logic;
 	
-	signal saidaMuxPC: std_logic_vector(7 downto 0);
-	signal saidaPC: std_logic_vector(7 downto 0);
-	signal saidaProcessador: std_logic_vector(7 downto 0);
+	signal saidaMuxPC       : std_logic_vector(7 downto 0);
+	signal saidaPC          : std_logic_vector(7 downto 0) := "00000000";
+	signal saidaProcessador : std_logic_vector(7 downto 0);
 	
 begin 
 	
@@ -87,7 +88,7 @@ begin
 	MuxPC: entity work.mux generic map (dataW => 8) port map(
 			a1  => barramento(11 downto 4),
 			a2  => std_logic_vector(unsigned(saidaPC) + "00000001"),
-			sel => flagULA and uc_vector(1),
+			sel => flagFlipFlop and uc_vector(1),
 			
 			b   => saidaMuxPC
 		);
@@ -103,6 +104,12 @@ begin
 			hab     => uc_vector(0),
 			
 			output  => saida3state
+		);
+		
+	FlipFlop: entity work.flipFlop1bit port map(
+			data_in  => flagULA,
+			clk      => CLK,
+			data_out => flagFlipFlop
 		);
 			
 	outAdress <= saidaPC;
