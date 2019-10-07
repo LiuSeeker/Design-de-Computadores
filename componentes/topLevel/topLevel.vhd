@@ -60,7 +60,7 @@ begin
 process(CLOCK_50)
         begin
             if(rising_edge(CLOCK_50)) then
-                if contador = 50000000 then
+                if contador = 25000000 then
                     contador <= 0;
                     tick <= not tick;
 						  --LEDG(7) <= tick;
@@ -69,6 +69,8 @@ process(CLOCK_50)
                 end if;
             end if;
         end process;
+		  
+		  LEDG(7) <= tick;
 	
 	chave <= SW(0);
 	
@@ -97,64 +99,22 @@ process(CLOCK_50)
 	--------------------------------------------------------------------------
 	--Botoes
 
-	perifericos(0) <= not KEY(0);
-	perifericos(1) <= not KEY(1);
-	perifericos(2) <= not KEY(2);	
-	
-	--BotaoMudaHor: entity work.registrador1bit port map(
-	--		d      => '1',
-	--		clk    => KEY(0),
-	--		enable => '1', 
-	--		reset  => ad_vector(11),
-	--		q => saiMudaHor
-	--	);
-	
-	--TristateMudaHor: entity work.buffer3state port map(
-	--		entrada => not KEY(2),
-	--		hab     => ad_vector(7),
-	--		output  => perifericos(2)
-	--	);
-
-	--BotaoIncMin: entity work.registrador1bit port map( 
-	--		d      => KEY(1),
-	--		clk    => KEY(1),
-	--		enable => '1',
-	--		reset  => ad_vector(12),
-	--		q => saiIncMin
-	--	);
-		
-	--TristateIncMin: entity work.buffer3state port map(
-	--	   entrada => not KEY(1),
-	--		hab     => ad_vector(8),
-	--		output  => perifericos(1)
-	--	);
-	
-	--BotaoIncHor: entity work.registrador1bit port map( 
-	--		d      => '1',
-	--		clk    => KEY(2),
-	--		enable => '1', 
-	--		reset  => ad_vector(13),
-	--		q => saiIncHor
-	--	);
-		
-	--TristateIncHor: entity work.buffer3state port map(
-	--		entrada => not KEY(0),
-	--		hab     => ad_vector(9),
-	--		output  => perifericos(0)
-	--	);
+	perifericos(0) <= KEY(0) when ad_vector(11) = '1' else '0';
+	perifericos(1) <= KEY(1) when ad_vector(12) = '1' else '0';
+	perifericos(2) <= KEY(2) when ad_vector(13) = '1' else '0';
 
 	--------------------------------------------------------------------------
 	--Base de tempo
 
---	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
---			clk       => CLOCK_50,
---			saida_clk => saiBaseTempo1
---	);
---	
---	BaseTempo2: entity work.contador generic map( divisor => 6250000 ) port map(
---			clk       => CLOCK_50,
---			saida_clk => saiBaseTempo2
---	);
+	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
+			clk       => CLOCK_50,
+			saida_clk => saiBaseTempo1
+	);
+	
+	BaseTempo2: entity work.contador generic map( divisor => 6250000 ) port map(
+			clk       => CLOCK_50,
+			saida_clk => saiBaseTempo2
+	);
 	
 	MuxBaseTempo: entity work.mux1bit port map(
 			a1  => saiBaseTempo1,
@@ -254,7 +214,7 @@ process(CLOCK_50)
 			q	  => saiROM
 	);
 	
-	LEDG <= proximoROM;
+	LEDG(6 downto 0) <= proximoROM(6 downto 0);
 
 	--LEDR(6) <= perifericos(0);
 	--LEDR(7) <= perifericos(1);

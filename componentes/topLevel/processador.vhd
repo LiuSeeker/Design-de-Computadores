@@ -49,7 +49,8 @@ architecture proc of processador is
 	signal saidaMuxPC       : std_logic_vector(7 downto 0);
 	signal saidaPC          : std_logic_vector(7 downto 0) := "00000000";
 	signal saidaProcessador : std_logic_vector(7 downto 0);
-	
+	signal saidaAdder			: std_logic_vector(7 downto 0);
+
 begin 
 
 	
@@ -98,12 +99,18 @@ begin
 		);
 		
 	MuxPC: entity work.mux generic map (dataW => 8) port map(
-			a1  => barramento(11 downto 4),
-			a2  => std_logic_vector(unsigned(saidaPC) + "00000001"),
+			a1  => saidaAdder,
+			a2  => barramento(11 downto 4),
 			sel => flagFlipFlop and uc_vector(1),
 			
 			b   => saidaMuxPC
 		);
+		
+	AdderPC: entity work.adder
+	port map(
+			cin => saidaPC,
+			cout => saidaAdder
+	);
 	
 	PC: entity work.flip_flop port map(
 			data_in => saidaMuxPC,

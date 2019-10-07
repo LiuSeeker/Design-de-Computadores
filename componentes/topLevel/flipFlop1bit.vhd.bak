@@ -15,11 +15,13 @@ end flipFlop1bit;
 architecture ARCH of flipFlop1bit IS
 	begin
 
-   process(clk)
-        begin
-            if rising_edge(clk) then
-                data_out <= data_in;
-            end if;
-        end process;
+   process(data_in, clk)
+		begin
+
+			if (clk='1' and clk'event) then
+				data_out <= data_in;
+			end if;
+
+   end process;	
 
 end ARCH;
