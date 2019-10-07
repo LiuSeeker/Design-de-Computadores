@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : -9.518
+TNS   : -35.877
+
+Type  : Slow 1200mV 85C Model Setup 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : -4.007
+TNS   : -15.732
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -3.168
+TNS   : -190.048
+
+Type  : Slow 1200mV 85C Model Setup 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -1.737
+TNS   : -54.256
+
+Type  : Slow 1200mV 85C Model Hold 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.062
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.099
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : 1.316
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -125.321
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : -8.555
+TNS   : -32.653
+
+Type  : Slow 1200mV 0C Model Setup 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : -3.660
+TNS   : -14.337
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.747
+TNS   : -165.064
+
+Type  : Slow 1200mV 0C Model Setup 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -1.671
+TNS   : -52.632
+
+Type  : Slow 1200mV 0C Model Hold 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.031
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.089
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : 1.234
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -125.244
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : -4.139
+TNS   : -14.989
+
+Type  : Fast 1200mV 0C Model Setup 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : -1.678
+TNS   : -6.495
+
+Type  : Fast 1200mV 0C Model Setup 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -1.061
+TNS   : -32.113
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.043
+TNS   : -49.751
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.149
+TNS   : -0.544
+
+Type  : Fast 1200mV 0C Model Hold 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.154
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : 0.191
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -123.372
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'processador:Processinho|UnidadeControle:UC|outULA[0]'
+Slack : 0.262
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.272
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'processador:Processinho|UnidadeControle:UC|outDemux'
+Slack : 0.449
+TNS   : 0.000
+
+------------------------------------------------------------
