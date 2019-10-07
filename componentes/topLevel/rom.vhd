@@ -31,7 +31,7 @@ architecture arch_rom of rom is
 	signal content: memory_t;
 	attribute ram_init_file : string;
 	attribute ram_init_file of content:
-		signal is "rominit.mif";
+		signal is "romteste.mif";
 
 begin
 
