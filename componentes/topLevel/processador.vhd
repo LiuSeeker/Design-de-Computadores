@@ -13,10 +13,12 @@ entity processador is
 	);
 
 	port ( 
+				
 				instrucao  : in std_logic_vector(INSTRUCTION_WIDTH-1 downto 0);
 				dataRead  :  in std_logic_vector(3 downto 0); 
 				CLK  :       in std_logic;
 				
+				LEDR : out std_logic_vector(17 downto 0);
 				outAdress :  out std_logic_vector(ROM_WIDTH-1 downto 0);
 				dataWrite:   out std_logic_vector(3 downto 0);
 				ioAdress:    out std_logic_vector(3 downto 0)
@@ -24,6 +26,9 @@ entity processador is
 end entity;
 
 architecture proc of processador is
+
+		
+
 
 	signal barramento:       std_logic_vector(INSTRUCTION_WIDTH-1 downto 0);
 	signal uc_vector:        std_logic_vector(6 downto 0);
@@ -46,8 +51,15 @@ architecture proc of processador is
 	signal saidaProcessador : std_logic_vector(7 downto 0);
 	
 begin 
+
+	
+	
 	
 	barramento <= instrucao;
+	
+	
+	
+	
 	
 	UC: entity work.UnidadeControle port map(
 			opcode => barramento(15 downto 12),
@@ -111,6 +123,13 @@ begin
 			clk      => CLK,
 			data_out => flagFlipFlop
 		);
+		
+	LEDR(0) <= uc_vector(0);
+	LEDR(2) <= uc_vector(1);
+	LEDR(4) <= uc_vector(2);
+	LEDR(6) <= uc_vector(3);
+	LEDR(10 downto 8) <= uc_vector(6 downto 4);
+	LEDR(17 downto 14) <= barramento(15 downto 12);
 			
 	outAdress <= saidaPC;
 	ioAdress <= barramento(3 downto 0);

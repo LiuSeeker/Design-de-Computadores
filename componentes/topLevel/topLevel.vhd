@@ -4,9 +4,10 @@ use ieee.std_logic_1164.all;
 entity topLevel is
     port(
       -- Input ports
+		CLOCK_50 : in std_logic;
       SW       : in  std_logic_vector(17 downto 0);
 		KEY      : in std_logic_vector(3 downto 0);
-		CLOCK_50 : in std_logic;
+		
         
         -- Output ports
 		LEDR     : out std_logic_vector(17 downto 0);
@@ -44,8 +45,31 @@ architecture comportamento of topLevel is
 	
 	signal chave         : std_logic;
 	
+	
+	
+signal tick : std_logic;
+signal contador : integer range 0 to 50000001 := 0;
+		  
+
+	
+	
+	
+	
 begin
 
+process(CLOCK_50)
+        begin
+            if(rising_edge(CLOCK_50)) then
+                if contador = 50000000 then
+                    contador <= 0;
+                    tick <= not tick;
+						  --LEDG(7) <= tick;
+                else
+                    contador <= contador + 1;
+                end if;
+            end if;
+        end process;
+	
 	chave <= SW(0);
 	
 	--------------------------------------------------------------------------
@@ -122,15 +146,15 @@ begin
 	--------------------------------------------------------------------------
 	--Base de tempo
 
-	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
-			clk       => CLOCK_50,
-			saida_clk => saiBaseTempo1
-	);
-	
-	BaseTempo2: entity work.contador generic map( divisor => 6250000 ) port map(
-			clk       => CLOCK_50,
-			saida_clk => saiBaseTempo2
-	);
+--	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
+--			clk       => CLOCK_50,
+--			saida_clk => saiBaseTempo1
+--	);
+--	
+--	BaseTempo2: entity work.contador generic map( divisor => 6250000 ) port map(
+--			clk       => CLOCK_50,
+--			saida_clk => saiBaseTempo2
+--	);
 	
 	MuxBaseTempo: entity work.mux1bit port map(
 			a1  => saiBaseTempo1,
@@ -138,7 +162,7 @@ begin
 			sel => chave,
 			b   => saiMux
 		);
-	LEDR(17) <= saiMux;
+	-- LEDR(17) <= saiMux;
 	
 	TristateBaseTempo: entity work.buffer3state port map(
 			entrada => saiMux,
@@ -149,29 +173,73 @@ begin
 	--------------------------------------------------------------------------
 	--Display
 	
-	Decode: entity work.conversorHex7Seg port map(
+	DISPLAYhex2: entity work.conversorHex7Seg port map(
+			enable => ad_vector(1),
 		  	dadoHex => dataDisplay,
-			saida7seg => saiDecode
+			HEX => HEX2,
+			clk => CLOCK_50
+			
+	);
+	
+	DISPLAYhex3: entity work.conversorHex7Seg port map(
+			enable => ad_vector(2),
+		  	dadoHex => dataDisplay,
+			HEX => HEX3,
+			clk => CLOCK_50
+			
+	);
+	
+	DISPLAYhex4: entity work.conversorHex7Seg port map(
+			enable => ad_vector(3),
+		  	dadoHex => dataDisplay,
+			HEX => HEX4,
+			clk => CLOCK_50
+			
+	);
+	
+	DISPLAYhex5: entity work.conversorHex7Seg port map(
+			enable => ad_vector(4),
+		  	dadoHex => dataDisplay,
+			HEX => HEX5,
+			clk => CLOCK_50
+			
+	);
+	
+	DISPLAYhex6: entity work.conversorHex7Seg port map(
+			enable => ad_vector(5),
+		  	dadoHex => dataDisplay,
+			HEX => HEX6,
+			clk => CLOCK_50
+			
+	);
+	
+	DISPLAYhex7: entity work.conversorHex7Seg port map(
+			enable => ad_vector(6),
+		  	dadoHex => dataDisplay,
+			HEX => HEX7,
+			clk => CLOCK_50
+			
 	);
 
 	-- Só permite a escrita decodificada quando for para o display específico
 
-	HEX2 <= saiDecode when ad_vector(1) = '1';
-	HEX3 <= saiDecode when ad_vector(2) = '1';
-	HEX4 <= saiDecode when ad_vector(3) = '1';
-	HEX5 <= saiDecode when ad_vector(4) = '1';
-	HEX6 <= saiDecode when ad_vector(5) = '1';
-	HEX7 <= saiDecode when ad_vector(6) = '1';
+	--HEX2 <= saiDecode when ad_vector(1) = '1';
+	--HEX3 <= saiDecode when ad_vector(2) = '1';
+	--HEX4 <= saiDecode when ad_vector(3) = '1';
+	--HEX5 <= saiDecode when ad_vector(4) = '1';
+	--HEX6 <= saiDecode when ad_vector(5) = '1';
+	--HEX7 <= saiDecode when ad_vector(6) = '1';
 	
-	LEDR(0) <= SW(0); -- Indicativo visual
+	-- LEDR(0) <= SW(0); -- Indicativo visual
 
 	--------------------------------------------------------------------------
 	--Processador
 
 	Processinho: entity work.processador port map(
+			LEDR => LEDR,
 			instrucao  => saiROM,
 			dataRead   => perifericos,
-			CLK        => CLOCK_50,
+			CLK        => tick,
 			
 			outAdress  => proximoROM,
 			dataWrite  => dataDisplay,
@@ -182,13 +250,14 @@ begin
 	--ROM
 
 	ROM0: entity work.rom port map(
-			clk   => CLOCK_50,
 			addr  => proximoROM,
 			q	  => saiROM
 	);
+	
+	LEDG <= proximoROM;
 
-	LEDR(6) <= perifericos(0);
-	LEDR(7) <= perifericos(1);
-	LEDR(8) <= perifericos(2);
+	--LEDR(6) <= perifericos(0);
+	--LEDR(7) <= perifericos(1);
+	--LEDR(8) <= perifericos(2);
 	
 end architecture;
