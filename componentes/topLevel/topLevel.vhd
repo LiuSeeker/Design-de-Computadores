@@ -86,7 +86,7 @@ begin
 	--	);
 	
 	--TristateMudaHor: entity work.buffer3state port map(
-	--		entrada => saiMudaHor,
+	--		entrada => not KEY(2),
 	--		hab     => ad_vector(7),
 	--		output  => perifericos(2)
 	--	);
@@ -100,10 +100,10 @@ begin
 	--	);
 		
 	--TristateIncMin: entity work.buffer3state port map(
-	--	   entrada => saiIncMin,
+	--	   entrada => not KEY(1),
 	--		hab     => ad_vector(8),
 	--		output  => perifericos(1)
-	--);
+	--	);
 	
 	--BotaoIncHor: entity work.registrador1bit port map( 
 	--		d      => '1',
@@ -114,7 +114,7 @@ begin
 	--	);
 		
 	--TristateIncHor: entity work.buffer3state port map(
-	--		entrada => saiIncHor,
+	--		entrada => not KEY(0),
 	--		hab     => ad_vector(9),
 	--		output  => perifericos(0)
 	--	);
@@ -162,6 +162,7 @@ begin
 	HEX5 <= saiDecode when ad_vector(4) = '1';
 	HEX6 <= saiDecode when ad_vector(5) = '1';
 	HEX7 <= saiDecode when ad_vector(6) = '1';
+	
 	LEDR(0) <= SW(0); -- Indicativo visual
 
 	--------------------------------------------------------------------------

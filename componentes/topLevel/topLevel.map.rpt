@@ -1,5 +1,5 @@
 Analysis & Synthesis report for topLevel
-Mon Oct 07 10:16:38 2019
+Mon Oct 07 11:51:59 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,7 +18,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. General Register Statistics
  11. Registers Packed Into Inferred Megafunctions
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated
+ 13. Source assignments for rom:ROM0|altsyncram:content_rtl_0|altsyncram_hl41:auto_generated
  14. Parameter Settings for User Entity Instance: addressDecoder:Decodificador
  15. Parameter Settings for User Entity Instance: contador:BaseTempo1
  16. Parameter Settings for User Entity Instance: contador:BaseTempo2
@@ -61,13 +61,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 07 10:16:38 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 07 11:51:59 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; topLevel                                    ;
 ; Top-level Entity Name              ; topLevel                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 266                                         ;
-;     Total combinational functions  ; 238                                         ;
+; Total logic elements               ; 218                                         ;
+;     Total combinational functions  ; 190                                         ;
 ;     Dedicated logic registers      ; 91                                          ;
 ; Total registers                    ; 91                                          ;
 ; Total pins                         ; 91                                          ;
@@ -215,8 +215,8 @@ refer to the applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                              ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                              ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                            ;         ;
-; db/altsyncram_0i41.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/db/altsyncram_0i41.tdf ;         ;
-; rominit.mif                      ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/rominit.mif            ;         ;
+; db/altsyncram_hl41.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/db/altsyncram_hl41.tdf ;         ;
+; romteste.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/romteste.mif           ;         ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -225,16 +225,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 266            ;
+; Estimated Total logic elements              ; 218            ;
 ;                                             ;                ;
-; Total combinational functions               ; 238            ;
+; Total combinational functions               ; 190            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 88             ;
-;     -- 3 input functions                    ; 78             ;
+;     -- 4 input functions                    ; 83             ;
+;     -- 3 input functions                    ; 35             ;
 ;     -- <=2 input functions                  ; 72             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 185            ;
+;     -- normal mode                          ; 137            ;
 ;     -- arithmetic mode                      ; 53             ;
 ;                                             ;                ;
 ; Total registers                             ; 91             ;
@@ -248,8 +248,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 107            ;
-; Total fan-out                               ; 1239           ;
-; Average fan-out                             ; 2.35           ;
+; Total fan-out                               ; 1055           ;
+; Average fan-out                             ; 2.20           ;
 +---------------------------------------------+----------------+
 
 
@@ -258,8 +258,8 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Entity Name        ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------------+--------------+
-; |topLevel                                     ; 238 (42)            ; 91 (0)                    ; 4096        ; 0            ; 0       ; 0         ; 91   ; 0            ; |topLevel                                                                  ; topLevel           ; work         ;
-;    |addressDecoder:Decodificador|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|addressDecoder:Decodificador                                     ; addressDecoder     ; work         ;
+; |topLevel                                     ; 190 (0)             ; 91 (0)                    ; 4096        ; 0            ; 0       ; 0         ; 91   ; 0            ; |topLevel                                                                  ; topLevel           ; work         ;
+;    |addressDecoder:Decodificador|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|addressDecoder:Decodificador                                     ; addressDecoder     ; work         ;
 ;    |buffer3state:TristateBaseTempo|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|buffer3state:TristateBaseTempo                                   ; buffer3state       ; work         ;
 ;    |contador:BaseTempo1|                      ; 47 (47)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo1                                              ; contador           ; work         ;
 ;    |contador:BaseTempo2|                      ; 44 (44)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo2                                              ; contador           ; work         ;
@@ -275,18 +275,18 @@ refer to the applicable agreement for further details.
 ;       |ula:ULA|                               ; 23 (23)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|ula:ULA                                  ; ula                ; work         ;
 ;    |rom:ROM0|                                 ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0                                                         ; rom                ; work         ;
 ;       |altsyncram:content_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0|altsyncram:content_rtl_0                                ; altsyncram         ; work         ;
-;          |altsyncram_0i41:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated ; altsyncram_0i41    ; work         ;
+;          |altsyncram_hl41:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0|altsyncram:content_rtl_0|altsyncram_hl41:auto_generated ; altsyncram_hl41    ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                           ;
-+-----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
-; Name                                                                        ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF         ;
-+-----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
-; rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 16           ; --           ; --           ; 4096 ; rominit.mif ;
-+-----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                            ;
++-----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
+; Name                                                                        ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
++-----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
+; rom:ROM0|altsyncram:content_rtl_0|altsyncram_hl41:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 16           ; --           ; --           ; 4096 ; romteste.mif ;
++-----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -294,48 +294,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+-----------------------------------------------------+------------------------+
 ; Latch Name                                                       ; Latch Enable Signal                                 ; Free of Timing Hazards ;
 +------------------------------------------------------------------+-----------------------------------------------------+------------------------+
-; HEX2[0]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX2[1]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX2[2]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX2[3]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX2[4]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX2[5]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX2[6]$latch                                                    ; addressDecoder:Decodificador|outDisplay0            ; yes                    ;
-; HEX3[0]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX3[1]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX3[2]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX3[3]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX3[4]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX3[5]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX3[6]$latch                                                    ; addressDecoder:Decodificador|outDisplay1            ; yes                    ;
-; HEX4[0]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX4[1]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX4[2]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX4[3]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX4[4]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX4[5]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX4[6]$latch                                                    ; addressDecoder:Decodificador|outDisplay2            ; yes                    ;
-; HEX5[0]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX5[1]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX5[2]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX5[3]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX5[4]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX5[5]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX5[6]$latch                                                    ; addressDecoder:Decodificador|outDisplay3            ; yes                    ;
-; HEX6[0]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX6[1]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX6[2]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX6[3]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX6[4]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX6[5]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX6[6]$latch                                                    ; addressDecoder:Decodificador|outDisplay4            ; yes                    ;
-; HEX7[0]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
-; HEX7[1]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
-; HEX7[2]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
-; HEX7[3]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
-; HEX7[4]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
-; HEX7[5]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
-; HEX7[6]$latch                                                    ; addressDecoder:Decodificador|outDisplay5            ; yes                    ;
 ; processador:Processinho|buffer3state4bit:Tristate|output[2]      ; processador:Processinho|UnidadeControle:UC|outDemux ; yes                    ;
 ; processador:Processinho|buffer3state4bit:Tristate|output[0]      ; processador:Processinho|UnidadeControle:UC|outDemux ; yes                    ;
 ; processador:Processinho|buffer3state4bit:Tristate|output[1]      ; processador:Processinho|UnidadeControle:UC|outDemux ; yes                    ;
@@ -348,12 +306,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; processador:Processinho|ula:ULA|outData[1]                       ; processador:Processinho|ula:ULA|Equal0              ; yes                    ;
 ; processador:Processinho|ula:ULA|outData[3]                       ; processador:Processinho|ula:ULA|Equal0              ; yes                    ;
 ; buffer3state:TristateBaseTempo|output                            ; addressDecoder:Decodificador|Equal0                 ; yes                    ;
-; processador:Processinho|UnidadeControle:UC|outAndPC              ; GND                                                 ; yes                    ;
 ; processador:Processinho|UnidadeControle:UC|outULA[0]             ; GND                                                 ; yes                    ;
 ; processador:Processinho|UnidadeControle:UC|outULA[1]             ; GND                                                 ; yes                    ;
 ; processador:Processinho|UnidadeControle:UC|outULA[2]             ; GND                                                 ; yes                    ;
+; processador:Processinho|UnidadeControle:UC|outAndPC              ; GND                                                 ; yes                    ;
 ; processador:Processinho|ula:ULA|flag                             ; processador:Processinho|ula:ULA|flag                ; yes                    ;
-; Number of user-specified and inferred latches = 59               ;                                                     ;                        ;
+; Number of user-specified and inferred latches = 17               ;                                                     ;                        ;
 +------------------------------------------------------------------+-----------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -392,7 +350,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-----------------------------------------------------------------------------------------+
-; Source assignments for rom:ROM0|altsyncram:content_rtl_0|altsyncram_0i41:auto_generated ;
+; Source assignments for rom:ROM0|altsyncram:content_rtl_0|altsyncram_hl41:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------+
 ; Assignment                      ; Value              ; From ; To                        ;
 +---------------------------------+--------------------+------+---------------------------+
@@ -548,7 +506,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                ;
-; INIT_FILE                          ; rominit.mif          ; Untyped                ;
+; INIT_FILE                          ; romteste.mif         ; Untyped                ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                ;
 ; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                ;
@@ -561,7 +519,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                ;
-; CBXI_PARAMETER                     ; altsyncram_0i41      ; Untyped                ;
+; CBXI_PARAMETER                     ; altsyncram_hl41      ; Untyped                ;
 +------------------------------------+----------------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -602,6 +560,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port           ; Type   ; Severity ; Details                                                                             ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
+; outdisplay0    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outdisplay1    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outdisplay2    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outdisplay3    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outdisplay4    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outdisplay5    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; outmudahor     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; outincmin      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; outinchor      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
@@ -622,19 +586,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 32                          ;
 ;     SLD               ; 8                           ;
 ;     plain             ; 51                          ;
-; cycloneiii_lcell_comb ; 242                         ;
+; cycloneiii_lcell_comb ; 195                         ;
 ;     arith             ; 53                          ;
 ;         2 data inputs ; 53                          ;
-;     normal            ; 189                         ;
-;         0 data inputs ; 1                           ;
+;     normal            ; 142                         ;
+;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 6                           ;
 ;         2 data inputs ; 16                          ;
-;         3 data inputs ; 78                          ;
-;         4 data inputs ; 88                          ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 83                          ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.09                        ;
+; Average LUT depth     ; 3.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -653,7 +617,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Oct 07 10:15:55 2019
+    Info: Processing started: Mon Oct 07 11:51:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off topLevel -c topLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -720,50 +684,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file adder.v
     Info (12023): Found entity 1: adder File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/adder.vhd Line: 5
 Info (12127): Elaborating entity "topLevel" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at topLevel.vhd(13): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+Warning (10540): VHDL Signal Declaration warning at topLevel.vhd(15): used explicit default value for signal "HEX2" because signal was never assigned a value File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+Warning (10540): VHDL Signal Declaration warning at topLevel.vhd(16): used explicit default value for signal "HEX3" because signal was never assigned a value File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+Warning (10540): VHDL Signal Declaration warning at topLevel.vhd(17): used explicit default value for signal "HEX4" because signal was never assigned a value File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+Warning (10540): VHDL Signal Declaration warning at topLevel.vhd(18): used explicit default value for signal "HEX5" because signal was never assigned a value File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+Warning (10540): VHDL Signal Declaration warning at topLevel.vhd(19): used explicit default value for signal "HEX6" because signal was never assigned a value File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
 Warning (10873): Using initial value X (don't care) for net "LEDR[16..9]" at topLevel.vhd(12) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 12
 Warning (10873): Using initial value X (don't care) for net "LEDR[5..1]" at topLevel.vhd(12) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 12
-Info (10041): Inferred latch for "HEX7[0]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX7[1]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX7[2]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX7[3]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX7[4]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX7[5]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX7[6]" at topLevel.vhd(164) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 164
-Info (10041): Inferred latch for "HEX6[0]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX6[1]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX6[2]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX6[3]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX6[4]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX6[5]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX6[6]" at topLevel.vhd(163) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 163
-Info (10041): Inferred latch for "HEX5[0]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX5[1]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX5[2]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX5[3]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX5[4]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX5[5]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX5[6]" at topLevel.vhd(162) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 162
-Info (10041): Inferred latch for "HEX4[0]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX4[1]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX4[2]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX4[3]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX4[4]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX4[5]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX4[6]" at topLevel.vhd(161) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 161
-Info (10041): Inferred latch for "HEX3[0]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX3[1]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX3[2]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX3[3]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX3[4]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX3[5]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX3[6]" at topLevel.vhd(160) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 160
-Info (10041): Inferred latch for "HEX2[0]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
-Info (10041): Inferred latch for "HEX2[1]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
-Info (10041): Inferred latch for "HEX2[2]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
-Info (10041): Inferred latch for "HEX2[3]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
-Info (10041): Inferred latch for "HEX2[4]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
-Info (10041): Inferred latch for "HEX2[5]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
-Info (10041): Inferred latch for "HEX2[6]" at topLevel.vhd(159) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 159
 Info (12128): Elaborating entity "addressDecoder" for hierarchy "addressDecoder:Decodificador" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 54
 Info (12128): Elaborating entity "contador" for hierarchy "contador:BaseTempo1" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 125
 Info (12128): Elaborating entity "contador" for hierarchy "contador:BaseTempo2" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 130
@@ -771,7 +698,7 @@ Info (12128): Elaborating entity "mux1bit" for hierarchy "mux1bit:MuxBaseTempo" 
 Info (12128): Elaborating entity "buffer3state" for hierarchy "buffer3state:TristateBaseTempo" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 143
 Info (10041): Inferred latch for "output" at buffer3state.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state.vhd Line: 18
 Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:Decode" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 152
-Info (12128): Elaborating entity "processador" for hierarchy "processador:Processinho" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 170
+Info (12128): Elaborating entity "processador" for hierarchy "processador:Processinho" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 172
 Info (12128): Elaborating entity "UnidadeControle" for hierarchy "processador:Processinho|UnidadeControle:UC" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 52
 Warning (10631): VHDL Process Statement warning at UnidadeControle.vhd(23): inferring latch(es) for signal or variable "outULA", which holds its previous value in one or more paths through the process File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 23
 Warning (10631): VHDL Process Statement warning at UnidadeControle.vhd(23): inferring latch(es) for signal or variable "outMuxPosULA", which holds its previous value in one or more paths through the process File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 23
@@ -803,7 +730,7 @@ Info (10041): Inferred latch for "output[1]" at buffer3state4bit.vhd(18) File: C
 Info (10041): Inferred latch for "output[2]" at buffer3state4bit.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
 Info (10041): Inferred latch for "output[3]" at buffer3state4bit.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
 Info (12128): Elaborating entity "flipFlop1bit" for hierarchy "processador:Processinho|flipFlop1bit:FlipFlop" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 109
-Info (12128): Elaborating entity "rom" for hierarchy "rom:ROM0" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 183
+Info (12128): Elaborating entity "rom" for hierarchy "rom:ROM0" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 185
 Warning (10541): VHDL Signal Declaration warning at rom.vhd(31): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/rom.vhd Line: 31
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "processador:Processinho|bancoRegistradores:BancoRegistradores|banco" is uninferred due to inappropriate RAM size File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 31
@@ -818,7 +745,7 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter OUTDATA_ACLR_A set to NONE
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to rominit.mif
+        Info (286033): Parameter INIT_FILE set to romteste.mif
 Info (12130): Elaborated megafunction instantiation "rom:ROM0|altsyncram:content_rtl_0"
 Info (12133): Instantiated megafunction "rom:ROM0|altsyncram:content_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "ROM"
@@ -830,9 +757,11 @@ Info (12133): Instantiated megafunction "rom:ROM0|altsyncram:content_rtl_0" with
     Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "rominit.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0i41.tdf
-    Info (12023): Found entity 1: altsyncram_0i41 File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/db/altsyncram_0i41.tdf Line: 27
+    Info (12134): Parameter "INIT_FILE" = "romteste.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hl41.tdf
+    Info (12023): Found entity 1: altsyncram_hl41 File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/db/altsyncram_hl41.tdf Line: 27
+Warning (113028): 252 out of 256 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/romteste.mif Line: 1
+    Warning (113027): Addresses ranging from 4 to 255 are not initialized File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/romteste.mif Line: 1
 Warning (13012): Latch processador:Processinho|ula:ULA|outData[2] has unsafe behavior File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/ULA.vhd Line: 26
     Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|UnidadeControle:UC|outULA[2] File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 23
 Warning (13012): Latch processador:Processinho|ula:ULA|outData[0] has unsafe behavior File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/ULA.vhd Line: 26
@@ -866,6 +795,41 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
     Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
     Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 15
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
+    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
+    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
+    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -888,15 +852,15 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 7
     Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 7
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-Info (21057): Implemented 378 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 330 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 271 logic cells
+    Info (21061): Implemented 223 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
-    Info: Peak virtual memory: 4824 megabytes
-    Info: Processing ended: Mon Oct 07 10:16:38 2019
-    Info: Elapsed time: 00:00:43
-    Info: Total CPU time (on all processors): 00:01:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Mon Oct 07 11:51:59 2019
+    Info: Elapsed time: 00:00:47
+    Info: Total CPU time (on all processors): 00:01:31
 
 
