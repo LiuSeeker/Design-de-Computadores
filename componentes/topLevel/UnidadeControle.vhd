@@ -9,36 +9,45 @@ entity UnidadeControle is
 				outULA: out std_logic_vector(2 downto 0);
 				outMuxPosULA : out std_logic;
 				outBancoRegistradores : out std_logic; -- 0 Read / 1 Write
-				outAndPC : out std_logic;
-				outDemux : out std_logic
+				outJzn : out std_logic;
+				outDemux : out std_logic;
+				outJmp : out std_logic
 	);
 end entity;
 
 
+
 architecture UC of UnidadeControle is
+
+
+constant INC : std_logic_vector(3 downto 0) := "0100";
+constant CMP : std_logic_vector(3 downto 0) := "0010";
+constant JNZ : std_logic_vector(3 downto 0) := "0011";
+
+
 begin
 
 
 
 	outULA <= "101" when opcode = "0000" OR opcode = "0110" else
 				 "011" when opcode = "0001" OR opcode = "0111" else
-				 "010" when opcode = "0010" else
-				 "111" when opcode = "0011" else
-				 "000" when opcode = "0100" else
-				 "001" when opcode = "0101" else
-				 "110" when opcode = "1000";
+				 "010" when opcode = CMP else
+				 "000" when opcode = INC else
+				 "001" when opcode = "0101" else "100";
 					
 	outMuxPosULA <= '1' when opcode = "0000" else
 						 '0';
 						 
-	outBancoRegistradores <= '1' when opcode = "0000" OR opcode = "0001" OR opcode = "0101" OR opcode = "0111" else
+	outBancoRegistradores <= '1' when opcode = "0000" OR opcode = "0001" OR opcode = INC OR opcode = "0111" else
 									 '0';
 									 
-	outAndPC <= '1' when opcode = "0011" OR opcode = "1000" else
+	outJzn <= '1' when opcode = "0011" else
 					'0';
 					
 	outDemux <= '1' when opcode = "0110" else
 					'0';
+	
+	outJmp <= '1' when opcode = "1000" else '0';
 					
 	--processo: process(opcode)
 	--begin

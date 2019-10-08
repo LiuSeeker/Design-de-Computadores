@@ -63,14 +63,13 @@ process(CLOCK_50)
                 if contador = 25000000 then
                     contador <= 0;
                     tick <= not tick;
-						  --LEDG(7) <= tick;
                 else
                     contador <= contador + 1;
                 end if;
             end if;
         end process;
 		  
-		  LEDG(7) <= tick;
+		  -- LEDG(7) <= tick;
 	
 	chave <= SW(0);
 	
@@ -214,7 +213,7 @@ process(CLOCK_50)
 			q	  => saiROM
 	);
 	
-	LEDG(6 downto 0) <= proximoROM(6 downto 0);
+	LEDG <= proximoROM;
 
 	--LEDR(6) <= perifericos(0);
 	--LEDR(7) <= perifericos(1);

@@ -1,4 +1,5 @@
 set_global_assignment -name TOP_LEVEL_ENTITY topLevel
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 6
 #============================================================
 # Build by Altera University Program
 #============================================================

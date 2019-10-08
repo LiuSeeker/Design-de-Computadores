@@ -31,7 +31,7 @@ architecture proc of processador is
 
 
 	signal barramento:       std_logic_vector(INSTRUCTION_WIDTH-1 downto 0);
-	signal uc_vector:        std_logic_vector(6 downto 0);
+	signal uc_vector:        std_logic_vector(7 downto 0);
 		-- uc_vector 
 		-- Bit 6/4: ULA
 		-- Bit 3: Mux Pos ULA
@@ -45,6 +45,7 @@ architecture proc of processador is
 	signal saida3state      : std_logic_vector(3 downto 0);
 	signal flagULA          : std_logic;
 	signal flagFlipFlop     : std_logic;
+	signal saidaRegFlag		: std_logic;
 	
 	signal saidaMuxPC       : std_logic_vector(7 downto 0);
 	signal saidaPC          : std_logic_vector(7 downto 0) := "00000000";
@@ -65,10 +66,11 @@ begin
 	UC: entity work.UnidadeControle port map(
 			opcode => barramento(15 downto 12),
 			
+			outJmp   => uc_vector(7),
 			outULA       => uc_vector(6 downto 4), 
 			outMuxPosULA => uc_vector(3),
 			outBancoRegistradores => uc_vector(2),
-			outAndPC     => uc_vector(1),
+			outJzn     => uc_vector(1),
 			outDemux     => uc_vector(0)
 		);
 		
@@ -101,7 +103,7 @@ begin
 	MuxPC: entity work.mux generic map (dataW => 8) port map(
 			a1  => saidaAdder,
 			a2  => barramento(11 downto 4),
-			sel => flagFlipFlop and uc_vector(1),
+			sel => uc_vector(7) or (saidaRegFlag and uc_vector(1)),
 			
 			b   => saidaMuxPC
 		);
@@ -125,18 +127,26 @@ begin
 			output  => saida3state
 		);
 		
-	FlipFlop: entity work.flipFlop1bit port map(
-			data_in  => flagULA,
-			clk      => CLK,
-			data_out => flagFlipFlop
-		);
+	RegTroll: entity work.registrador1bit
+	port map(
+		d => flagULA,
+		clk => CLK,
+		q => 	saidaRegFlag
+	);
 		
-	LEDR(0) <= uc_vector(0);
-	LEDR(2) <= uc_vector(1);
-	LEDR(4) <= uc_vector(2);
-	LEDR(6) <= uc_vector(3);
-	LEDR(10 downto 8) <= uc_vector(6 downto 4);
-	LEDR(17 downto 14) <= barramento(15 downto 12);
+		
+	LEDR(0) <= saidaRegFlag;
+	LEDR(1) <= uc_vector(1);
+	LEDR(2) <= uc_vector(7);
+		
+	--LEDR(0) <= uc_vector(0);
+	--LEDR(2) <= uc_vector(1);
+	--LEDR(4) <= uc_vector(2);
+	--LEDR(6) <= uc_vector(3);
+	--LEDR(10 downto 8) <= uc_vector(6 downto 4);
+	--LEDR(17 downto 14) <= barramento(15 downto 12);
+	
+	--LEDR(3 downto 0) <= saidaBanco;
 			
 	outAdress <= saidaPC;
 	ioAdress <= barramento(3 downto 0);
