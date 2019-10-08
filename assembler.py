@@ -100,7 +100,7 @@ for i in linhas:
             saidastr = "   {} : {}\n".format(count, string)
         
         elif opcode == "zer":
-            string = "00010000"+ regs[i[1]] +"0000" + ";"
+            string = "000100000000"+ regs[i[1]] + ";"
             saidastr = "   {} : {}\n".format(count, string)
 
         elif opcode == "cmp":
