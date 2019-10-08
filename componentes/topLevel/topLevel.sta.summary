@@ -2,112 +2,112 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'tick'
-Slack : -7.617
-TNS   : -160.375
-
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -5.645
-TNS   : -184.326
+Slack : -5.273
+TNS   : -210.204
+
+Type  : Slow 1200mV 85C Model Setup 'tick'
+Slack : -5.252
+TNS   : -98.265
 
 Type  : Slow 1200mV 85C Model Setup 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : -2.197
-TNS   : -8.102
-
-Type  : Slow 1200mV 85C Model Hold 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : 0.256
-TNS   : 0.000
+Slack : -3.840
+TNS   : -8.667
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.402
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
+Slack : 0.481
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'tick'
-Slack : 0.694
+Slack : 0.697
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -110.940
+TNS   : -116.080
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'tick'
 Slack : -1.285
-TNS   : -33.410
+TNS   : -25.700
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : -0.162
-TNS   : -1.505
-
-Type  : Slow 1200mV 0C Model Setup 'tick'
-Slack : -7.001
-TNS   : -147.455
+Slack : -0.187
+TNS   : -2.077
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -4.986
-TNS   : -158.572
+Slack : -4.878
+TNS   : -182.956
+
+Type  : Slow 1200mV 0C Model Setup 'tick'
+Slack : -4.863
+TNS   : -88.685
 
 Type  : Slow 1200mV 0C Model Setup 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : -2.068
-TNS   : -7.481
-
-Type  : Slow 1200mV 0C Model Hold 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : 0.237
-TNS   : 0.000
+Slack : -3.570
+TNS   : -8.092
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.354
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'tick'
-Slack : 0.632
+Slack : 0.637
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -110.940
+TNS   : -116.080
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'tick'
 Slack : -1.285
-TNS   : -33.410
+TNS   : -25.700
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : -0.148
-TNS   : -1.244
+Slack : -0.130
+TNS   : -1.281
 
 Type  : Fast 1200mV 0C Model Setup 'tick'
-Slack : -3.401
-TNS   : -68.651
+Slack : -2.682
+TNS   : -44.145
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -2.417
-TNS   : -50.474
+Slack : -2.265
+TNS   : -60.830
 
 Type  : Fast 1200mV 0C Model Setup 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : -0.505
-TNS   : -1.402
+Slack : -1.374
+TNS   : -2.874
 
 Type  : Fast 1200mV 0C Model Hold 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : 0.062
+Slack : 0.071
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.181
+Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'tick'
-Slack : 0.202
+Slack : 0.320
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -111.388
+TNS   : -116.425
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'tick'
 Slack : -1.000
-TNS   : -26.002
+TNS   : -20.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'processador:Processinho|flip_flop:PC|data_out[0]~_Duplicate_1'
-Slack : 0.206
+Slack : 0.105
 TNS   : 0.000
 
 ------------------------------------------------------------

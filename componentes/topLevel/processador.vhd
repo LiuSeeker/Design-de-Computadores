@@ -54,14 +54,7 @@ architecture proc of processador is
 
 begin 
 
-	
-	
-	
-	barramento <= instrucao;
-	
-	
-	
-	
+	barramento <= instrucao;	
 	
 	UC: entity work.UnidadeControle port map(
 			opcode => barramento(15 downto 12),
@@ -108,11 +101,10 @@ begin
 			b   => saidaMuxPC
 		);
 		
-	AdderPC: entity work.adder
-	port map(
+	AdderPC: entity work.adder	port map(
 			cin => saidaPC,
 			cout => saidaAdder
-	);
+		);
 	
 	PC: entity work.flip_flop port map(
 			data_in => saidaMuxPC,
@@ -127,13 +119,11 @@ begin
 			output  => saida3state
 		);
 		
-	RegTroll: entity work.registrador1bit
-	port map(
+	RegTroll: entity work.registrador1bit port map(
 		d => flagULA,
 		clk => CLK,
 		q => 	saidaRegFlag
-	);
-		
+		);
 		
 	LEDR(0) <= saidaRegFlag;
 	LEDR(1) <= uc_vector(1);

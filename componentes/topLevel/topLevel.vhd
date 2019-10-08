@@ -50,11 +50,6 @@ architecture comportamento of topLevel is
 signal tick : std_logic;
 signal contador : integer range 0 to 50000001 := 0;
 		  
-
-	
-	
-	
-	
 begin
 
 process(CLOCK_50)
@@ -68,8 +63,6 @@ process(CLOCK_50)
                 end if;
             end if;
         end process;
-		  
-		  -- LEDG(7) <= tick;
 	
 	chave <= SW(0);
 	
@@ -98,10 +91,10 @@ process(CLOCK_50)
 	--------------------------------------------------------------------------
 	--Botoes
 
-	perifericos(0) <= KEY(0) when ad_vector(11) = '1' else '0';
-	perifericos(1) <= KEY(1) when ad_vector(12) = '1' else '0';
-	perifericos(2) <= KEY(2) when ad_vector(13) = '1' else '0';
-
+	perifericos(0) <= not KEY(0) when ad_vector(7) = '1' else '0';
+	perifericos(1) <= not KEY(1) when ad_vector(8) = '1' else '0';
+	perifericos(2) <= not KEY(2) when ad_vector(9) = '1' else '0';
+	
 	--------------------------------------------------------------------------
 	--Base de tempo
 
@@ -131,6 +124,8 @@ process(CLOCK_50)
 
 	--------------------------------------------------------------------------
 	--Display
+	
+	-- Só permite a escrita decodificada quando for para o display específico
 	
 	DISPLAYhex2: entity work.conversorHex7Seg port map(
 			enable => ad_vector(1),
@@ -179,15 +174,6 @@ process(CLOCK_50)
 			clk => CLOCK_50
 			
 	);
-
-	-- Só permite a escrita decodificada quando for para o display específico
-
-	--HEX2 <= saiDecode when ad_vector(1) = '1';
-	--HEX3 <= saiDecode when ad_vector(2) = '1';
-	--HEX4 <= saiDecode when ad_vector(3) = '1';
-	--HEX5 <= saiDecode when ad_vector(4) = '1';
-	--HEX6 <= saiDecode when ad_vector(5) = '1';
-	--HEX7 <= saiDecode when ad_vector(6) = '1';
 	
 	-- LEDR(0) <= SW(0); -- Indicativo visual
 

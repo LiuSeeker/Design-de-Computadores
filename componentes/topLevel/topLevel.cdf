@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/") File("topLevel.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/") File("topLevel.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

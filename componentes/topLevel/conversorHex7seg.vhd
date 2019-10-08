@@ -31,7 +31,8 @@ begin
                             "1111000" when dadoHex="0111" AND enable = '1' else ---7
                             "0000000" when dadoHex="1000" AND enable = '1' else ---8
                             "0010000" when dadoHex="1001" AND enable = '1' else ---9
-                            "1111111"; -- Apaga todos segmentos.
+                            "1111111" when enable = '1' AND dadoHex > "1001" else
+									 "1111111"; -- Apaga todos segmentos.
 
 	 process(clk)
 	begin
