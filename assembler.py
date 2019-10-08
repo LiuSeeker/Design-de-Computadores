@@ -30,7 +30,10 @@ perifs = {
     "DSP5": "0110",
     "BMUD": "0111",
     "BIMI": "1000",
-    "BIHR": "1001"
+    "BIHR": "1001",
+    "ZFLF": "1010",
+    "ZBIM": "1100",
+    "ZBIH": "1101",
 }
 
 def faz_4bits(numero):
@@ -58,7 +61,7 @@ saida.write("DATA_RADIX=BIN;\n\n")
 saida.write("CONTENT BEGIN\n\n")
 
 linhas = []
-with open("assembly.txt") as f:
+with open("assemblycompacto.txt") as f:
     for l in f:
         l = l.replace("\n", "")
         encontra = l.find("--")
@@ -124,9 +127,6 @@ for i in linhas:
             string = "1000" + jumps[i[1]] + "0000" + ";"
             saidastr = "   {} : {}\n".format(count, string)
         saida.write(saidastr)
-        
-        else:
-            print("Erro, instrução nao identificada")
     
     except:
         print("Encontramos uma irregularidade na instrução: " + str(count))

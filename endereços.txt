@@ -22,6 +22,10 @@ Endereço periféricos
 0111 - Botao muda horario
 1000 - Botao incrementa minuto
 1001 - Botao incrementa hora
+1010 - Zera reg base de tempo
+1011 - Zera reg botao muda horario
+1100 - Zera reg botao incrementa minuto
+1101 - Zera reg botao incrementa horario
 
 rxd - 0000
 zer - 0001
