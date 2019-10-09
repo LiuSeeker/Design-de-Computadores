@@ -1,5 +1,5 @@
 Analysis & Synthesis report for topLevel
-Tue Oct 08 22:30:16 2019
+Tue Oct 08 22:53:16 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,15 +63,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 08 22:30:16 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 08 22:53:16 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; topLevel                                    ;
 ; Top-level Entity Name              ; topLevel                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 267                                         ;
-;     Total combinational functions  ; 228                                         ;
-;     Dedicated logic registers      ; 126                                         ;
-; Total registers                    ; 126                                         ;
+; Total logic elements               ; 275                                         ;
+;     Total combinational functions  ; 236                                         ;
+;     Dedicated logic registers      ; 125                                         ;
+; Total registers                    ; 125                                         ;
 ; Total pins                         ; 91                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -219,20 +219,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 267            ;
+; Estimated Total logic elements              ; 275            ;
 ;                                             ;                ;
-; Total combinational functions               ; 228            ;
+; Total combinational functions               ; 236            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 150            ;
-;     -- 3 input functions                    ; 28             ;
-;     -- <=2 input functions                  ; 50             ;
+;     -- 4 input functions                    ; 153            ;
+;     -- 3 input functions                    ; 34             ;
+;     -- <=2 input functions                  ; 49             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 183            ;
-;     -- arithmetic mode                      ; 45             ;
+;     -- normal mode                          ; 192            ;
+;     -- arithmetic mode                      ; 44             ;
 ;                                             ;                ;
-; Total registers                             ; 126            ;
-;     -- Dedicated logic registers            ; 126            ;
+; Total registers                             ; 125            ;
+;     -- Dedicated logic registers            ; 125            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 91             ;
@@ -240,9 +240,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 125            ;
-; Total fan-out                               ; 1310           ;
-; Average fan-out                             ; 2.44           ;
+; Maximum fan-out                             ; 124            ;
+; Total fan-out                               ; 1335           ;
+; Average fan-out                             ; 2.46           ;
 +---------------------------------------------+----------------+
 
 
@@ -251,16 +251,16 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name        ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
-; |topLevel                                     ; 228 (0)             ; 126 (0)                   ; 0           ; 0            ; 0       ; 0         ; 91   ; 0            ; |topLevel                                                               ; topLevel           ; work         ;
-;    |addressDecoder:Decodificador|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|addressDecoder:Decodificador                                  ; addressDecoder     ; work         ;
-;    |contador:BaseTempo1|                      ; 32 (32)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo1                                           ; contador           ; work         ;
+; |topLevel                                     ; 236 (0)             ; 125 (0)                   ; 0           ; 0            ; 0       ; 0         ; 91   ; 0            ; |topLevel                                                               ; topLevel           ; work         ;
+;    |addressDecoder:Decodificador|             ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|addressDecoder:Decodificador                                  ; addressDecoder     ; work         ;
+;    |contador:BaseTempo1|                      ; 31 (31)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo1                                           ; contador           ; work         ;
 ;    |contador:BaseTempo2|                      ; 17 (17)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo2                                           ; contador           ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex2|             ; 14 (14)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex2                                  ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex3|             ; 8 (8)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex3                                  ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex4|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex4                                  ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex5|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex5                                  ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex6|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex6                                  ; conversorHex7Seg   ; work         ;
-;    |conversorHex7Seg:DISPLAYhex7|             ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex7                                  ; conversorHex7Seg   ; work         ;
+;    |conversorHex7Seg:DISPLAYhex7|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex7                                  ; conversorHex7Seg   ; work         ;
 ;    |mux1bit:MuxBaseTempo|                     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|mux1bit:MuxBaseTempo                                          ; mux1bit            ; work         ;
 ;    |processador:Processinho|                  ; 57 (1)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho                                       ; processador        ; work         ;
 ;       |UnidadeControle:UC|                    ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|UnidadeControle:UC                    ; UnidadeControle    ; work         ;
@@ -270,7 +270,7 @@ refer to the applicable agreement for further details.
 ;       |registrador1bit:RegTroll|              ; 4 (4)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|registrador1bit:RegTroll              ; registrador1bit    ; work         ;
 ;       |ula:ULA|                               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|ula:ULA                               ; ula                ; work         ;
 ;    |registrador1bitr:RegBaseTempo|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|registrador1bitr:RegBaseTempo                                 ; registrador1bitr   ; work         ;
-;    |rom:ROM0|                                 ; 67 (67)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0                                                      ; rom                ; work         ;
+;    |rom:ROM0|                                 ; 76 (76)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0                                                      ; rom                ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -280,8 +280,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 126   ;
-; Number of registers using Synchronous Clear  ; 40    ;
+; Total registers                              ; 125   ;
+; Number of registers using Synchronous Clear  ; 39    ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -311,10 +311,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex2|HEX[0]        ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex3|HEX[3]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex3|HEX[0]        ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex4|HEX[2]        ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex5|HEX[3]        ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex6|HEX[3]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex6|HEX[2]        ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex7|HEX[0]        ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |topLevel|processador:Processinho|mux:MuxPosULA|b[3] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
@@ -335,7 +335,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------+--------------------------------------+
 ; Parameter Name ; Value    ; Type                                 ;
 +----------------+----------+--------------------------------------+
-; divisor        ; 50000000 ; Signed Integer                       ;
+; divisor        ; 25000000 ; Signed Integer                       ;
 +----------------+----------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -519,21 +519,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 91                          ;
-; cycloneiii_ff         ; 126                         ;
+; cycloneiii_ff         ; 125                         ;
 ;     CLR               ; 1                           ;
 ;     ENA               ; 74                          ;
-;     SCLR              ; 40                          ;
+;     SCLR              ; 39                          ;
 ;     SLD               ; 8                           ;
 ;     plain             ; 3                           ;
-; cycloneiii_lcell_comb ; 238                         ;
-;     arith             ; 45                          ;
-;         2 data inputs ; 45                          ;
-;     normal            ; 193                         ;
+; cycloneiii_lcell_comb ; 246                         ;
+;     arith             ; 44                          ;
+;         2 data inputs ; 44                          ;
+;     normal            ; 202                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 12                          ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 28                          ;
-;         4 data inputs ; 150                         ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 153                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
 ; Average LUT depth     ; 4.74                        ;
@@ -555,7 +555,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 08 22:30:03 2019
+    Info: Processing started: Tue Oct 08 22:53:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off topLevel -c topLevel
 Info (20032): Parallel compilation is enabled and will use up to 6 processors
 Info (12021): Found 2 design units, including 1 entities, in source file unidadecontrole.vhd
@@ -686,14 +686,14 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
     Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 9
-Info (21057): Implemented 366 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 374 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 275 logic cells
+    Info (21061): Implemented 283 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Tue Oct 08 22:30:16 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 4820 megabytes
+    Info: Processing ended: Tue Oct 08 22:53:16 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
 
 

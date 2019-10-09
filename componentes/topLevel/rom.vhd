@@ -27,7 +27,7 @@ type memory_t is array (2**ADDR_WIDTH -1 downto 0) of std_logic_vector (DATA_WID
 signal content: memory_t;
 attribute ram_init_file : string;
 attribute ram_init_file of content:
-signal is "rominit2.mif";
+signal is "rominit.mif";
 
 begin
 

@@ -203,7 +203,6 @@ clk => contador[21].CLK
 clk => contador[22].CLK
 clk => contador[23].CLK
 clk => contador[24].CLK
-clk => contador[25].CLK
 reset => ~NO_FANOUT~
 saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
 

@@ -54,18 +54,18 @@ signal tick : std_logic;
 signal contador : integer range 0 to 50000001 := 0;
 		  
 begin
-
-process(CLOCK_50)
-        begin
-            if(rising_edge(CLOCK_50)) then
-                if contador = 500000000 then
-                    contador <= 0;
-                    tick <= not tick;
-                else
-                    contador <= contador + 1;
-                end if;
-            end if;
-        end process;
+--
+--process(CLOCK_50)
+--        begin
+--            if(rising_edge(CLOCK_50)) then
+--                if contador = 500000000 then
+--                    contador <= 0;
+--                    tick <= not tick;
+--                else
+--                    contador <= contador + 1;
+--                end if;
+--            end if;
+--        end process;
 	
 	chave <= SW(0);
 	
@@ -117,14 +117,14 @@ process(CLOCK_50)
 
 --	sigBut0 <= not KEY(0) when ad_vector(8) = '1' else '0';
 --	sigBut1 <= not KEY(1) when ad_vector(8) = '1' else '0';
-	perifericos(0) <= not KEY(0);-- when ad_vector(8) = '1' else '0';
-	perifericos(1) <= not KEY(1);-- when ad_vector(8) = '1' else '0';
-	perifericos(2) <= not KEY(2);-- when ad_vector(8) = '1' else '0';
+	perifericos(0) <= not KEY(0);
+	perifericos(1) <= not KEY(1);
+	perifericos(2) <= not KEY(2);
 	
 	--------------------------------------------------------------------------
 	--Base de tempo
 
-	BaseTempo1: entity work.contador generic map( divisor => 50000000 ) port map(
+	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
 			clk       => CLOCK_50,
 			reset => ad_vector(10),
 			saida_clk => saiBaseTempo1
