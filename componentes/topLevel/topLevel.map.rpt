@@ -1,5 +1,5 @@
 Analysis & Synthesis report for topLevel
-Tue Oct 08 08:42:41 2019
+Tue Oct 08 21:43:18 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,32 +14,31 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: addressDecoder:Decodificador
- 15. Parameter Settings for User Entity Instance: contador:BaseTempo1
- 16. Parameter Settings for User Entity Instance: contador:BaseTempo2
- 17. Parameter Settings for User Entity Instance: processador:Processinho
- 18. Parameter Settings for User Entity Instance: processador:Processinho|ula:ULA
- 19. Parameter Settings for User Entity Instance: processador:Processinho|mux:MuxPosULA
- 20. Parameter Settings for User Entity Instance: processador:Processinho|bancoRegistradores:BancoRegistradores
- 21. Parameter Settings for User Entity Instance: processador:Processinho|mux:MuxPC
- 22. Parameter Settings for User Entity Instance: processador:Processinho|adder:AdderPC
- 23. Parameter Settings for User Entity Instance: processador:Processinho|flip_flop:PC
- 24. Parameter Settings for User Entity Instance: rom:ROM0
- 25. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex7"
- 26. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex6"
- 27. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex5"
- 28. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex4"
- 29. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex3"
- 30. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex2"
- 31. Port Connectivity Checks: "addressDecoder:Decodificador"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: addressDecoder:Decodificador
+ 13. Parameter Settings for User Entity Instance: contador:BaseTempo1
+ 14. Parameter Settings for User Entity Instance: contador:BaseTempo2
+ 15. Parameter Settings for User Entity Instance: processador:Processinho
+ 16. Parameter Settings for User Entity Instance: processador:Processinho|ula:ULA
+ 17. Parameter Settings for User Entity Instance: processador:Processinho|mux:MuxPosULA
+ 18. Parameter Settings for User Entity Instance: processador:Processinho|bancoRegistradores:BancoRegistradores
+ 19. Parameter Settings for User Entity Instance: processador:Processinho|mux:MuxPC
+ 20. Parameter Settings for User Entity Instance: processador:Processinho|adder:AdderPC
+ 21. Parameter Settings for User Entity Instance: processador:Processinho|flip_flop:PC
+ 22. Parameter Settings for User Entity Instance: rom:ROM0
+ 23. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex7"
+ 24. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex6"
+ 25. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex5"
+ 26. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex4"
+ 27. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex3"
+ 28. Port Connectivity Checks: "conversorHex7Seg:DISPLAYhex2"
+ 29. Port Connectivity Checks: "registrador1bitr:RegBaseTempo"
+ 30. Port Connectivity Checks: "addressDecoder:Decodificador"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -65,15 +64,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 08 08:42:41 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 08 21:43:18 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; topLevel                                    ;
 ; Top-level Entity Name              ; topLevel                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 183                                         ;
-;     Total combinational functions  ; 177                                         ;
-;     Dedicated logic registers      ; 100                                         ;
-; Total registers                    ; 100                                         ;
+; Total logic elements               ; 280                                         ;
+;     Total combinational functions  ; 242                                         ;
+;     Dedicated logic registers      ; 125                                         ;
+; Total registers                    ; 125                                         ;
 ; Total pins                         ; 91                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -170,24 +169,21 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation attempted to use more processors than were available, which may cause increased compilation time. For lowest compilation time, correct your settings.
-+---------------------------------------------+
-; Parallel Compilation                        ;
-+-------------------------------+-------------+
-; Processors                    ; Number      ;
-+-------------------------------+-------------+
-; Number detected on machine    ; 4           ;
-; Maximum allowed               ; 6           ;
-;                               ;             ;
-; Average used                  ; 1.00        ;
-; Maximum used                  ; 6           ;
-;                               ;             ;
-; Usage by Processor            ; % Time Used ;
-;     Processor 1               ; 100.0%      ;
-;     Processor 2               ;   0.0%      ;
-;     Processors 3-4            ;   0.0%      ;
-;     Processors 5-6 (overused) ;   0.0%      ;
-+-------------------------------+-------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -195,25 +191,27 @@ Parallel compilation attempted to use more processors than were available, which
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                   ; Library ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
-; UnidadeControle.vhd              ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd    ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/ULA.vhd                ;         ;
-; topLevel.vhd                     ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd           ;         ;
-; rom.vhd                          ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/rom.vhd                ;         ;
-; registrador1bit.vhd              ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/registrador1bit.vhd    ;         ;
-; registrador.vhd                  ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/registrador.vhd        ;         ;
-; processador.vhd                  ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd        ;         ;
-; mux1bit.vhd                      ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux1bit.vhd            ;         ;
-; mux.vhd                          ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux.vhd                ;         ;
-; flip_flop.vhd                    ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flip_flop.vhd          ;         ;
-; flipFlop1bit.vhd                 ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flipFlop1bit.vhd       ;         ;
-; dmux.vhd                         ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/dmux.vhd               ;         ;
-; conversorHex7seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/conversorHex7seg.vhd   ;         ;
-; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/contador.vhd           ;         ;
-; buffer3state4bit.vhd             ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd   ;         ;
-; buffer3state.vhd                 ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state.vhd       ;         ;
-; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/bancoRegistradores.vhd ;         ;
-; addressDecoder.vhd               ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/addressDecoder.vhd     ;         ;
-; adder.vhd                        ; yes             ; User VHDL File  ; C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/adder.vhd              ;         ;
+; UnidadeControle.vhd              ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/UnidadeControle.vhd    ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/ULA.vhd                ;         ;
+; topLevel.vhd                     ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd           ;         ;
+; rom.vhd                          ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/rom.vhd                ;         ;
+; registrador1bit.vhd              ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bit.vhd    ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador.vhd        ;         ;
+; processador.vhd                  ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd        ;         ;
+; mux1bit.vhd                      ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux1bit.vhd            ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux.vhd                ;         ;
+; flip_flop.vhd                    ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd          ;         ;
+; flipFlop1bit.vhd                 ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flipFlop1bit.vhd       ;         ;
+; dmux.vhd                         ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/dmux.vhd               ;         ;
+; conversorHex7seg.vhd             ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/conversorHex7seg.vhd   ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/contador.vhd           ;         ;
+; buffer3state4bit.vhd             ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd   ;         ;
+; buffer3state.vhd                 ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state.vhd       ;         ;
+; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/bancoRegistradores.vhd ;         ;
+; addressDecoder.vhd               ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/addressDecoder.vhd     ;         ;
+; adder.vhd                        ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/adder.vhd              ;         ;
+; botao.vhd                        ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/botao.vhd              ;         ;
+; registrador1bitr.vhd             ; yes             ; User VHDL File  ; C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bitr.vhd   ;         ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -222,20 +220,20 @@ Parallel compilation attempted to use more processors than were available, which
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 183            ;
+; Estimated Total logic elements              ; 280            ;
 ;                                             ;                ;
-; Total combinational functions               ; 177            ;
+; Total combinational functions               ; 242            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 53             ;
-;     -- 3 input functions                    ; 25             ;
-;     -- <=2 input functions                  ; 99             ;
+;     -- 4 input functions                    ; 155            ;
+;     -- 3 input functions                    ; 30             ;
+;     -- <=2 input functions                  ; 57             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 99             ;
-;     -- arithmetic mode                      ; 78             ;
+;     -- normal mode                          ; 197            ;
+;     -- arithmetic mode                      ; 45             ;
 ;                                             ;                ;
-; Total registers                             ; 100            ;
-;     -- Dedicated logic registers            ; 100            ;
+; Total registers                             ; 125            ;
+;     -- Dedicated logic registers            ; 125            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 91             ;
@@ -243,9 +241,9 @@ Parallel compilation attempted to use more processors than were available, which
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 88             ;
-; Total fan-out                               ; 823            ;
-; Average fan-out                             ; 1.79           ;
+; Maximum fan-out                             ; 125            ;
+; Total fan-out                               ; 1348           ;
+; Average fan-out                             ; 2.46           ;
 +---------------------------------------------+----------------+
 
 
@@ -254,22 +252,27 @@ Parallel compilation attempted to use more processors than were available, which
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name        ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
-; |topLevel                                     ; 177 (48)            ; 100 (27)                  ; 0           ; 0            ; 0       ; 0         ; 91   ; 0            ; |topLevel                                                               ; topLevel           ; work         ;
-;    |addressDecoder:Decodificador|             ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|addressDecoder:Decodificador                                  ; addressDecoder     ; work         ;
-;    |buffer3state:TristateBaseTempo|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|buffer3state:TristateBaseTempo                                ; buffer3state       ; work         ;
-;    |contador:BaseTempo1|                      ; 47 (47)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo1                                           ; contador           ; work         ;
-;    |contador:BaseTempo2|                      ; 44 (44)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo2                                           ; contador           ; work         ;
-;    |conversorHex7Seg:DISPLAYhex2|             ; 3 (3)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex2                                  ; conversorHex7Seg   ; work         ;
-;    |conversorHex7Seg:DISPLAYhex3|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex3                                  ; conversorHex7Seg   ; work         ;
-;    |conversorHex7Seg:DISPLAYhex7|             ; 3 (3)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex7                                  ; conversorHex7Seg   ; work         ;
+; |topLevel                                     ; 242 (3)             ; 125 (0)                   ; 0           ; 0            ; 0       ; 0         ; 91   ; 0            ; |topLevel                                                               ; topLevel           ; work         ;
+;    |addressDecoder:Decodificador|             ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|addressDecoder:Decodificador                                  ; addressDecoder     ; work         ;
+;    |contador:BaseTempo1|                      ; 32 (32)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo1                                           ; contador           ; work         ;
+;    |contador:BaseTempo2|                      ; 17 (17)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|contador:BaseTempo2                                           ; contador           ; work         ;
+;    |conversorHex7Seg:DISPLAYhex2|             ; 14 (14)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex2                                  ; conversorHex7Seg   ; work         ;
+;    |conversorHex7Seg:DISPLAYhex3|             ; 11 (11)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex3                                  ; conversorHex7Seg   ; work         ;
+;    |conversorHex7Seg:DISPLAYhex4|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex4                                  ; conversorHex7Seg   ; work         ;
+;    |conversorHex7Seg:DISPLAYhex5|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex5                                  ; conversorHex7Seg   ; work         ;
+;    |conversorHex7Seg:DISPLAYhex6|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex6                                  ; conversorHex7Seg   ; work         ;
+;    |conversorHex7Seg:DISPLAYhex7|             ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|conversorHex7Seg:DISPLAYhex7                                  ; conversorHex7Seg   ; work         ;
 ;    |mux1bit:MuxBaseTempo|                     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|mux1bit:MuxBaseTempo                                          ; mux1bit            ; work         ;
-;    |processador:Processinho|                  ; 18 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho                                       ; processador        ; work         ;
-;       |UnidadeControle:UC|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|UnidadeControle:UC                    ; UnidadeControle    ; work         ;
-;       |bancoRegistradores:BancoRegistradores| ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|bancoRegistradores:BancoRegistradores ; bancoRegistradores ; work         ;
-;       |buffer3state4bit:Tristate|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|buffer3state4bit:Tristate             ; buffer3state4bit   ; work         ;
+;    |processador:Processinho|                  ; 61 (1)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho                                       ; processador        ; work         ;
+;       |UnidadeControle:UC|                    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|UnidadeControle:UC                    ; UnidadeControle    ; work         ;
+;       |bancoRegistradores:BancoRegistradores| ; 29 (29)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|bancoRegistradores:BancoRegistradores ; bancoRegistradores ; work         ;
+;       |buffer3state4bit:Tristate|             ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|buffer3state4bit:Tristate             ; buffer3state4bit   ; work         ;
 ;       |flip_flop:PC|                          ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|flip_flop:PC                          ; flip_flop          ; work         ;
-;       |mux:MuxPosULA|                         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|mux:MuxPosULA                         ; mux                ; work         ;
-;    |rom:ROM0|                                 ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0                                                      ; rom                ; work         ;
+;       |mux:MuxPosULA|                         ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|mux:MuxPosULA                         ; mux                ; work         ;
+;       |registrador1bit:RegTroll|              ; 3 (3)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|registrador1bit:RegTroll              ; registrador1bit    ; work         ;
+;       |ula:ULA|                               ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|processador:Processinho|ula:ULA                               ; ula                ; work         ;
+;    |registrador1bitr:RegBaseTempo|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|registrador1bitr:RegBaseTempo                                 ; registrador1bitr   ; work         ;
+;    |rom:ROM0|                                 ; 69 (69)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |topLevel|rom:ROM0                                                      ; rom                ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -279,71 +282,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+---------------------------------------------------+------------------------+
 ; Latch Name                                                  ; Latch Enable Signal                               ; Free of Timing Hazards ;
 +-------------------------------------------------------------+---------------------------------------------------+------------------------+
-; processador:Processinho|buffer3state4bit:Tristate|output[3] ; processador:Processinho|UnidadeControle:UC|Equal5 ; yes                    ;
 ; processador:Processinho|buffer3state4bit:Tristate|output[0] ; processador:Processinho|UnidadeControle:UC|Equal5 ; yes                    ;
-; buffer3state:TristateBaseTempo|output                       ; addressDecoder:Decodificador|Equal0               ; yes                    ;
-; Number of user-specified and inferred latches = 3           ;                                                   ;                        ;
+; processador:Processinho|buffer3state4bit:Tristate|output[3] ; processador:Processinho|UnidadeControle:UC|Equal5 ; yes                    ;
+; processador:Processinho|buffer3state4bit:Tristate|output[2] ; processador:Processinho|UnidadeControle:UC|Equal5 ; yes                    ;
+; processador:Processinho|buffer3state4bit:Tristate|output[1] ; processador:Processinho|UnidadeControle:UC|Equal5 ; yes                    ;
+; registrador1bitr:RegBaseTempo|q                             ; GND                                               ; yes                    ;
+; Number of user-specified and inferred latches = 5           ;                                                   ;                        ;
 +-------------------------------------------------------------+---------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                   ;
-+------------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                          ; Reason for Removal                          ;
-+------------------------------------------------------------------------+---------------------------------------------+
-; conversorHex7Seg:DISPLAYhex3|HEX[0..5]                                 ; Stuck at GND due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex3|HEX[6]                                    ; Stuck at VCC due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex4|HEX[0..5]                                 ; Stuck at GND due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex4|HEX[6]                                    ; Stuck at VCC due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex5|HEX[0..5]                                 ; Stuck at GND due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex5|HEX[6]                                    ; Stuck at VCC due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex6|HEX[0..5]                                 ; Stuck at GND due to stuck port clock_enable ;
-; conversorHex7Seg:DISPLAYhex6|HEX[6]                                    ; Stuck at VCC due to stuck port clock_enable ;
-; processador:Processinho|registrador1bit:RegTroll|q                     ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~12 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~16 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~20 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~24 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~28 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~32 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~15 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~19 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~23 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~27 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~31 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~35 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~10 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~14 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~18 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~22 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~26 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~30 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~34 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~38 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~9  ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~13 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~17 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~21 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~25 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~29 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~33 ; Stuck at GND due to stuck port data_in      ;
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~37 ; Stuck at GND due to stuck port data_in      ;
-; conversorHex7Seg:DISPLAYhex2|HEX[1]                                    ; Stuck at GND due to stuck port data_in      ;
-; conversorHex7Seg:DISPLAYhex7|HEX[1]                                    ; Stuck at GND due to stuck port data_in      ;
-; conversorHex7Seg:DISPLAYhex2|HEX[2]                                    ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 60                                 ;                                             ;
-+------------------------------------------------------------------------+---------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                    ;
-+------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
-; Register name                                                          ; Reason for Removal        ; Registers Removed due to This Register                                    ;
-+------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
-; processador:Processinho|bancoRegistradores:BancoRegistradores|banco~12 ; Stuck at GND              ; conversorHex7Seg:DISPLAYhex2|HEX[1], conversorHex7Seg:DISPLAYhex7|HEX[1], ;
-;                                                                        ; due to stuck port data_in ; conversorHex7Seg:DISPLAYhex2|HEX[2]                                       ;
-+------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -351,12 +297,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 100   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 125   ;
+; Number of registers using Synchronous Clear  ; 40    ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Clock Enable       ; 74    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -367,19 +313,28 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; conversorHex7Seg:DISPLAYhex2|HEX[6]    ; 1       ;
+; conversorHex7Seg:DISPLAYhex3|HEX[6]    ; 1       ;
+; conversorHex7Seg:DISPLAYhex4|HEX[6]    ; 1       ;
+; conversorHex7Seg:DISPLAYhex5|HEX[6]    ; 1       ;
+; conversorHex7Seg:DISPLAYhex6|HEX[6]    ; 1       ;
 ; conversorHex7Seg:DISPLAYhex7|HEX[6]    ; 1       ;
-; Total number of inverted registers = 2 ;         ;
+; Total number of inverted registers = 6 ;         ;
 +----------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex2|HEX[0] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex7|HEX[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex2|HEX[0]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex3|HEX[3]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex4|HEX[2]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex5|HEX[0]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex6|HEX[2]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |topLevel|conversorHex7Seg:DISPLAYhex7|HEX[3]        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |topLevel|processador:Processinho|mux:MuxPosULA|b[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -397,18 +352,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------+--------------------------------------+
 ; Parameter Name ; Value    ; Type                                 ;
 +----------------+----------+--------------------------------------+
-; divisor        ; 25000000 ; Signed Integer                       ;
+; divisor        ; 50000000 ; Signed Integer                       ;
 +----------------+----------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: contador:BaseTempo2 ;
-+----------------+---------+---------------------------------------+
-; Parameter Name ; Value   ; Type                                  ;
-+----------------+---------+---------------------------------------+
-; divisor        ; 6250000 ; Signed Integer                        ;
-+----------------+---------+---------------------------------------+
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; divisor        ; 10000 ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -551,12 +506,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+-------------------------------+
 
 
++-----------------------------------------------------------+
+; Port Connectivity Checks: "registrador1bitr:RegBaseTempo" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; d    ; Input ; Info     ; Stuck at VCC                    ;
++------+-------+----------+---------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "addressDecoder:Decodificador"                                                                 ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port           ; Type   ; Severity ; Details                                                                             ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
-; outzerabase    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outmudahor     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outinchor      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; outzeramudahor ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; outzeraincmin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; outzerainchor  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
@@ -569,22 +534,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 91                          ;
-; cycloneiii_ff         ; 100                         ;
-;     ENA               ; 15                          ;
+; cycloneiii_ff         ; 125                         ;
+;     ENA               ; 74                          ;
+;     SCLR              ; 40                          ;
 ;     SLD               ; 8                           ;
-;     plain             ; 77                          ;
-; cycloneiii_lcell_comb ; 181                         ;
-;     arith             ; 78                          ;
-;         2 data inputs ; 78                          ;
-;     normal            ; 103                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 53                          ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 252                         ;
+;     arith             ; 45                          ;
+;         2 data inputs ; 45                          ;
+;     normal            ; 207                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 155                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.40                        ;
-; Average LUT depth     ; 3.17                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 4.21                        ;
 +-----------------------+-----------------------------+
 
 
@@ -593,7 +559,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -603,180 +569,151 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 08 08:41:54 2019
+    Info: Processing started: Tue Oct 08 21:43:07 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off topLevel -c topLevel
 Info (20032): Parallel compilation is enabled and will use up to 6 processors
-Warning (20031): Parallel compilation is enabled for 6 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
 Info (12021): Found 2 design units, including 1 entities, in source file unidadecontrole.vhd
-    Info (12022): Found design unit 1: UnidadeControle-UC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 19
-    Info (12023): Found entity 1: UnidadeControle File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 5
+    Info (12022): Found design unit 1: UnidadeControle-UC File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 20
+    Info (12023): Found entity 1: UnidadeControle File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/UnidadeControle.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
-    Info (12022): Found design unit 1: ula-ulaula File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/ULA.vhd Line: 22
-    Info (12023): Found entity 1: ula File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/ULA.vhd Line: 5
+    Info (12022): Found design unit 1: ula-ulaula File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/ULA.vhd Line: 22
+    Info (12023): Found entity 1: ula File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/ULA.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
-    Info (12022): Found design unit 1: topLevel-comportamento File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 25
-    Info (12023): Found entity 1: topLevel File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 4
+    Info (12022): Found design unit 1: topLevel-comportamento File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 25
+    Info (12023): Found entity 1: topLevel File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
-    Info (12022): Found design unit 1: rom-arch_rom File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/rom.vhd Line: 24
-    Info (12023): Found entity 1: rom File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/rom.vhd Line: 8
+    Info (12022): Found design unit 1: rom-arch_rom File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/rom.vhd Line: 24
+    Info (12023): Found entity 1: rom File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/rom.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file registrador1bit.vhd
-    Info (12022): Found design unit 1: registrador1bit-arch_registrador File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/registrador1bit.vhd Line: 15
-    Info (12023): Found entity 1: registrador1bit File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/registrador1bit.vhd Line: 5
+    Info (12022): Found design unit 1: registrador1bit-arch_registrador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bit.vhd Line: 16
+    Info (12023): Found entity 1: registrador1bit File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
-    Info (12022): Found design unit 1: registrador-arch_registrador File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/registrador.vhd Line: 23
-    Info (12023): Found entity 1: registrador File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/registrador.vhd Line: 5
+    Info (12022): Found design unit 1: registrador-arch_registrador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador.vhd Line: 23
+    Info (12023): Found entity 1: registrador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file processador.vhd
-    Info (12022): Found design unit 1: processador-proc File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 28
-    Info (12023): Found entity 1: processador File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 5
+    Info (12022): Found design unit 1: processador-proc File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 28
+    Info (12023): Found entity 1: processador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux1bit.vhd
-    Info (12022): Found design unit 1: mux1bit-arch_MUX File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux1bit.vhd Line: 24
-    Info (12023): Found entity 1: mux1bit File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux1bit.vhd Line: 5
-Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux.vhd Line: 5
+    Info (12022): Found design unit 1: mux1bit-arch_MUX File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux1bit.vhd Line: 24
+    Info (12023): Found entity 1: mux1bit File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux1bit.vhd Line: 5
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
-    Info (12022): Found design unit 1: mux-arch_MUX File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux.vhd Line: 29
-    Info (12023): Found entity 1: mux File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/mux.vhd Line: 5
+    Info (12022): Found design unit 1: mux-arch_MUX File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux.vhd Line: 29
+    Info (12023): Found entity 1: mux File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/mux.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flip_flop.vhd
-    Info (12022): Found design unit 1: flip_flop-ARCH File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 20
-    Info (12023): Found entity 1: flip_flop File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 6
+    Info (12022): Found design unit 1: flip_flop-ARCH File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 20
+    Info (12023): Found entity 1: flip_flop File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file flipflop1bit.vhd
-    Info (12022): Found design unit 1: flipFlop1bit-ARCH File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flipFlop1bit.vhd Line: 15
-    Info (12023): Found entity 1: flipFlop1bit File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flipFlop1bit.vhd Line: 6
+    Info (12022): Found design unit 1: flipFlop1bit-ARCH File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flipFlop1bit.vhd Line: 15
+    Info (12023): Found entity 1: flipFlop1bit File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flipFlop1bit.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dmux.vhd
-    Info (12022): Found design unit 1: dmux-arch File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/dmux.vhd Line: 23
-    Info (12023): Found entity 1: dmux File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/dmux.vhd Line: 5
+    Info (12022): Found design unit 1: dmux-arch File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/dmux.vhd Line: 23
+    Info (12023): Found entity 1: dmux File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/dmux.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/conversorHex7seg.vhd Line: 19
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/conversorHex7seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/conversorHex7seg.vhd Line: 19
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/conversorHex7seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-divInteiro File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/contador.vhd Line: 20
-    Info (12023): Found entity 1: contador File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/contador.vhd Line: 5
+    Info (12022): Found design unit 1: contador-divInteiro File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/contador.vhd Line: 21
+    Info (12023): Found entity 1: contador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/contador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file buffer3state4bit.vhd
-    Info (12022): Found design unit 1: buffer3state4bit-arch_buffer3state File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 14
-    Info (12023): Found entity 1: buffer3state4bit File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 4
+    Info (12022): Found design unit 1: buffer3state4bit-arch_buffer3state File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 14
+    Info (12023): Found entity 1: buffer3state4bit File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer3state.vhd
-    Info (12022): Found design unit 1: buffer3state-arch_buffer3state File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state.vhd Line: 14
-    Info (12023): Found entity 1: buffer3state File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state.vhd Line: 4
+    Info (12022): Found design unit 1: buffer3state-arch_buffer3state File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state.vhd Line: 14
+    Info (12023): Found entity 1: buffer3state File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file bancoregistradores.vhd
-    Info (12022): Found design unit 1: bancoRegistradores-arch_bancoRegistradores File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 26
-    Info (12023): Found entity 1: bancoRegistradores File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 5
+    Info (12022): Found design unit 1: bancoRegistradores-arch_bancoRegistradores File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 26
+    Info (12023): Found entity 1: bancoRegistradores File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file addressdecoder.vhd
-    Info (12022): Found design unit 1: addressDecoder-endereco File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/addressDecoder.vhd Line: 32
-    Info (12023): Found entity 1: addressDecoder File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/addressDecoder.vhd Line: 5
+    Info (12022): Found design unit 1: addressDecoder-endereco File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/addressDecoder.vhd Line: 32
+    Info (12023): Found entity 1: addressDecoder File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/addressDecoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
-    Info (12022): Found design unit 1: adder-arch_adder File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/adder.vhd Line: 17
-    Info (12023): Found entity 1: adder File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/adder.vhd Line: 5
+    Info (12022): Found design unit 1: adder-arch_adder File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/adder.vhd Line: 17
+    Info (12023): Found entity 1: adder File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/adder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file botao.vhd
+    Info (12022): Found design unit 1: botao-arch_registrador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/botao.vhd Line: 16
+    Info (12023): Found entity 1: botao File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/botao.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registrador1bitr.vhd
+    Info (12022): Found design unit 1: registrador1bitr-arch_registrador File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bitr.vhd Line: 17
+    Info (12023): Found entity 1: registrador1bitr File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bitr.vhd Line: 5
 Info (12127): Elaborating entity "topLevel" for the top level hierarchy
-Info (12128): Elaborating entity "addressDecoder" for hierarchy "addressDecoder:Decodificador" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 72
-Info (12128): Elaborating entity "contador" for hierarchy "contador:BaseTempo1" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 101
-Info (12128): Elaborating entity "contador" for hierarchy "contador:BaseTempo2" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 106
-Info (12128): Elaborating entity "mux1bit" for hierarchy "mux1bit:MuxBaseTempo" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 111
-Info (12128): Elaborating entity "buffer3state" for hierarchy "buffer3state:TristateBaseTempo" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 119
-Info (10041): Inferred latch for "output" at buffer3state.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state.vhd Line: 18
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DISPLAYhex2" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 130
-Info (12128): Elaborating entity "processador" for hierarchy "processador:Processinho" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 183
-Warning (10873): Using initial value X (don't care) for net "LEDR[17..3]" at processador.vhd(21) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 21
-Info (12128): Elaborating entity "UnidadeControle" for hierarchy "processador:Processinho|UnidadeControle:UC" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 59
-Info (12128): Elaborating entity "ula" for hierarchy "processador:Processinho|ula:ULA" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 70
-Info (12128): Elaborating entity "mux" for hierarchy "processador:Processinho|mux:MuxPosULA" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 79
-Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "processador:Processinho|bancoRegistradores:BancoRegistradores" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 87
-Info (12128): Elaborating entity "mux" for hierarchy "processador:Processinho|mux:MuxPC" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 96
-Info (12128): Elaborating entity "adder" for hierarchy "processador:Processinho|adder:AdderPC" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 104
-Info (12128): Elaborating entity "flip_flop" for hierarchy "processador:Processinho|flip_flop:PC" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 109
-Info (12128): Elaborating entity "buffer3state4bit" for hierarchy "processador:Processinho|buffer3state4bit:Tristate" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 115
-Info (10041): Inferred latch for "output[0]" at buffer3state4bit.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
-Info (10041): Inferred latch for "output[1]" at buffer3state4bit.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
-Info (10041): Inferred latch for "output[2]" at buffer3state4bit.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
-Info (10041): Inferred latch for "output[3]" at buffer3state4bit.vhd(18) File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
-Info (12128): Elaborating entity "registrador1bit" for hierarchy "processador:Processinho|registrador1bit:RegTroll" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/processador.vhd Line: 122
-Info (12128): Elaborating entity "rom" for hierarchy "rom:ROM0" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 197
-Warning (10541): VHDL Signal Declaration warning at rom.vhd(27): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/rom.vhd Line: 27
+Info (12128): Elaborating entity "addressDecoder" for hierarchy "addressDecoder:Decodificador" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 75
+Info (12128): Elaborating entity "contador" for hierarchy "contador:BaseTempo1" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 127
+Info (12128): Elaborating entity "contador" for hierarchy "contador:BaseTempo2" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 133
+Info (12128): Elaborating entity "mux1bit" for hierarchy "mux1bit:MuxBaseTempo" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 139
+Info (12128): Elaborating entity "registrador1bitr" for hierarchy "registrador1bitr:RegBaseTempo" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 146
+Info (10041): Inferred latch for "q" at registrador1bitr.vhd(24) File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/registrador1bitr.vhd Line: 24
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DISPLAYhex2" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 167
+Info (12128): Elaborating entity "processador" for hierarchy "processador:Processinho" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 220
+Warning (10873): Using initial value X (don't care) for net "LEDR[14..3]" at processador.vhd(21) File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 21
+Info (12128): Elaborating entity "UnidadeControle" for hierarchy "processador:Processinho|UnidadeControle:UC" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 60
+Info (12128): Elaborating entity "ula" for hierarchy "processador:Processinho|ula:ULA" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 72
+Info (12128): Elaborating entity "mux" for hierarchy "processador:Processinho|mux:MuxPosULA" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 81
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "processador:Processinho|bancoRegistradores:BancoRegistradores" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 89
+Info (12128): Elaborating entity "mux" for hierarchy "processador:Processinho|mux:MuxPC" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 98
+Info (12128): Elaborating entity "adder" for hierarchy "processador:Processinho|adder:AdderPC" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 106
+Info (12128): Elaborating entity "flip_flop" for hierarchy "processador:Processinho|flip_flop:PC" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 111
+Info (12128): Elaborating entity "buffer3state4bit" for hierarchy "processador:Processinho|buffer3state4bit:Tristate" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 117
+Info (10041): Inferred latch for "output[0]" at buffer3state4bit.vhd(18) File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+Info (10041): Inferred latch for "output[1]" at buffer3state4bit.vhd(18) File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+Info (10041): Inferred latch for "output[2]" at buffer3state4bit.vhd(18) File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+Info (10041): Inferred latch for "output[3]" at buffer3state4bit.vhd(18) File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+Info (12128): Elaborating entity "registrador1bit" for hierarchy "processador:Processinho|registrador1bit:RegTroll" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/processador.vhd Line: 124
+Info (12128): Elaborating entity "rom" for hierarchy "rom:ROM0" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 234
+Warning (10541): VHDL Signal Declaration warning at rom.vhd(27): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/rom.vhd Line: 27
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "processador:Processinho|bancoRegistradores:BancoRegistradores|banco" is uninferred due to inappropriate RAM size File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 33
-Warning (13012): Latch processador:Processinho|buffer3state4bit:Tristate|output[3] has unsafe behavior File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|flip_flop:PC|data_out[0] File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 26
-Warning (13012): Latch processador:Processinho|buffer3state4bit:Tristate|output[0] has unsafe behavior File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|flip_flop:PC|data_out[0] File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 26
+    Info (276004): RAM logic "processador:Processinho|bancoRegistradores:BancoRegistradores|banco" is uninferred due to inappropriate RAM size File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/bancoRegistradores.vhd Line: 33
+Warning (13012): Latch processador:Processinho|buffer3state4bit:Tristate|output[0] has unsafe behavior File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|flip_flop:PC|data_out[6] File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 26
+Warning (13012): Latch processador:Processinho|buffer3state4bit:Tristate|output[3] has unsafe behavior File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|flip_flop:PC|data_out[6] File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 26
+Warning (13012): Latch processador:Processinho|buffer3state4bit:Tristate|output[2] has unsafe behavior File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|flip_flop:PC|data_out[6] File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 26
+Warning (13012): Latch processador:Processinho|buffer3state4bit:Tristate|output[1] has unsafe behavior File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/buffer3state4bit.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processador:Processinho|flip_flop:PC|data_out[6] File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/flip_flop.vhd Line: 26
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 16
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 17
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 18
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 19
-    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 20
-    Warning (13410): Pin "HEX7[1]" is stuck at GND File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 21
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 20 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd Line: 9
-Info (21057): Implemented 279 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/LiuSeeker/Desktop/6o-semestre/design-computadores/descomp/componentes/topLevel/topLevel.vhd Line: 9
+Info (21057): Implemented 379 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 188 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4833 megabytes
-    Info: Processing ended: Tue Oct 08 08:42:41 2019
-    Info: Elapsed time: 00:00:47
-    Info: Total CPU time (on all processors): 00:01:35
+    Info (21061): Implemented 288 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Tue Oct 08 21:43:18 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:22
 
 

@@ -1,0 +1,594 @@
+$comment
+	File created using the following command:
+		vcd file processador.msim.vcd -direction
+$end
+$date
+	Mon Oct 07 11:19:04 2019
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module processador_vhd_vec_tst $end
+$var wire 1 ! CLK $end
+$var wire 1 " dataRead [3] $end
+$var wire 1 # dataRead [2] $end
+$var wire 1 $ dataRead [1] $end
+$var wire 1 % dataRead [0] $end
+$var wire 1 & dataWrite [3] $end
+$var wire 1 ' dataWrite [2] $end
+$var wire 1 ( dataWrite [1] $end
+$var wire 1 ) dataWrite [0] $end
+$var wire 1 * instrucao [15] $end
+$var wire 1 + instrucao [14] $end
+$var wire 1 , instrucao [13] $end
+$var wire 1 - instrucao [12] $end
+$var wire 1 . instrucao [11] $end
+$var wire 1 / instrucao [10] $end
+$var wire 1 0 instrucao [9] $end
+$var wire 1 1 instrucao [8] $end
+$var wire 1 2 instrucao [7] $end
+$var wire 1 3 instrucao [6] $end
+$var wire 1 4 instrucao [5] $end
+$var wire 1 5 instrucao [4] $end
+$var wire 1 6 instrucao [3] $end
+$var wire 1 7 instrucao [2] $end
+$var wire 1 8 instrucao [1] $end
+$var wire 1 9 instrucao [0] $end
+$var wire 1 : ioAdress [3] $end
+$var wire 1 ; ioAdress [2] $end
+$var wire 1 < ioAdress [1] $end
+$var wire 1 = ioAdress [0] $end
+$var wire 1 > outAdress [7] $end
+$var wire 1 ? outAdress [6] $end
+$var wire 1 @ outAdress [5] $end
+$var wire 1 A outAdress [4] $end
+$var wire 1 B outAdress [3] $end
+$var wire 1 C outAdress [2] $end
+$var wire 1 D outAdress [1] $end
+$var wire 1 E outAdress [0] $end
+
+$scope module i1 $end
+$var wire 1 F gnd $end
+$var wire 1 G vcc $end
+$var wire 1 H unknown $end
+$var wire 1 I devoe $end
+$var wire 1 J devclrn $end
+$var wire 1 K devpor $end
+$var wire 1 L ww_devoe $end
+$var wire 1 M ww_devclrn $end
+$var wire 1 N ww_devpor $end
+$var wire 1 O ww_instrucao [15] $end
+$var wire 1 P ww_instrucao [14] $end
+$var wire 1 Q ww_instrucao [13] $end
+$var wire 1 R ww_instrucao [12] $end
+$var wire 1 S ww_instrucao [11] $end
+$var wire 1 T ww_instrucao [10] $end
+$var wire 1 U ww_instrucao [9] $end
+$var wire 1 V ww_instrucao [8] $end
+$var wire 1 W ww_instrucao [7] $end
+$var wire 1 X ww_instrucao [6] $end
+$var wire 1 Y ww_instrucao [5] $end
+$var wire 1 Z ww_instrucao [4] $end
+$var wire 1 [ ww_instrucao [3] $end
+$var wire 1 \ ww_instrucao [2] $end
+$var wire 1 ] ww_instrucao [1] $end
+$var wire 1 ^ ww_instrucao [0] $end
+$var wire 1 _ ww_dataRead [3] $end
+$var wire 1 ` ww_dataRead [2] $end
+$var wire 1 a ww_dataRead [1] $end
+$var wire 1 b ww_dataRead [0] $end
+$var wire 1 c ww_CLK $end
+$var wire 1 d ww_outAdress [7] $end
+$var wire 1 e ww_outAdress [6] $end
+$var wire 1 f ww_outAdress [5] $end
+$var wire 1 g ww_outAdress [4] $end
+$var wire 1 h ww_outAdress [3] $end
+$var wire 1 i ww_outAdress [2] $end
+$var wire 1 j ww_outAdress [1] $end
+$var wire 1 k ww_outAdress [0] $end
+$var wire 1 l ww_dataWrite [3] $end
+$var wire 1 m ww_dataWrite [2] $end
+$var wire 1 n ww_dataWrite [1] $end
+$var wire 1 o ww_dataWrite [0] $end
+$var wire 1 p ww_ioAdress [3] $end
+$var wire 1 q ww_ioAdress [2] $end
+$var wire 1 r ww_ioAdress [1] $end
+$var wire 1 s ww_ioAdress [0] $end
+$var wire 1 t \UC|outDemux~clkctrl_INCLK_bus\ [3] $end
+$var wire 1 u \UC|outDemux~clkctrl_INCLK_bus\ [2] $end
+$var wire 1 v \UC|outDemux~clkctrl_INCLK_bus\ [1] $end
+$var wire 1 w \UC|outDemux~clkctrl_INCLK_bus\ [0] $end
+$var wire 1 x \ULA|Equal0~1clkctrl_INCLK_bus\ [3] $end
+$var wire 1 y \ULA|Equal0~1clkctrl_INCLK_bus\ [2] $end
+$var wire 1 z \ULA|Equal0~1clkctrl_INCLK_bus\ [1] $end
+$var wire 1 { \ULA|Equal0~1clkctrl_INCLK_bus\ [0] $end
+$var wire 1 | \CLK~inputclkctrl_INCLK_bus\ [3] $end
+$var wire 1 } \CLK~inputclkctrl_INCLK_bus\ [2] $end
+$var wire 1 ~ \CLK~inputclkctrl_INCLK_bus\ [1] $end
+$var wire 1 !! \CLK~inputclkctrl_INCLK_bus\ [0] $end
+$var wire 1 "! \outAdress[0]~output_o\ $end
+$var wire 1 #! \outAdress[1]~output_o\ $end
+$var wire 1 $! \outAdress[2]~output_o\ $end
+$var wire 1 %! \outAdress[3]~output_o\ $end
+$var wire 1 &! \outAdress[4]~output_o\ $end
+$var wire 1 '! \outAdress[5]~output_o\ $end
+$var wire 1 (! \outAdress[6]~output_o\ $end
+$var wire 1 )! \outAdress[7]~output_o\ $end
+$var wire 1 *! \dataWrite[0]~output_o\ $end
+$var wire 1 +! \dataWrite[1]~output_o\ $end
+$var wire 1 ,! \dataWrite[2]~output_o\ $end
+$var wire 1 -! \dataWrite[3]~output_o\ $end
+$var wire 1 .! \ioAdress[0]~output_o\ $end
+$var wire 1 /! \ioAdress[1]~output_o\ $end
+$var wire 1 0! \ioAdress[2]~output_o\ $end
+$var wire 1 1! \ioAdress[3]~output_o\ $end
+$var wire 1 2! \CLK~input_o\ $end
+$var wire 1 3! \CLK~inputclkctrl_outclk\ $end
+$var wire 1 4! \PC|data_out[0]~8_combout\ $end
+$var wire 1 5! \instrucao[4]~input_o\ $end
+$var wire 1 6! \instrucao[13]~input_o\ $end
+$var wire 1 7! \instrucao[15]~input_o\ $end
+$var wire 1 8! \instrucao[12]~input_o\ $end
+$var wire 1 9! \instrucao[14]~input_o\ $end
+$var wire 1 :! \UC|comb~20_combout\ $end
+$var wire 1 ;! \UC|comb~21_combout\ $end
+$var wire 1 <! \UC|outAndPC~combout\ $end
+$var wire 1 =! \UC|comb~29_combout\ $end
+$var wire 1 >! \UC|comb~30_combout\ $end
+$var wire 1 ?! \UC|comb~27_combout\ $end
+$var wire 1 @! \UC|comb~28_combout\ $end
+$var wire 1 A! \UC|comb~32_combout\ $end
+$var wire 1 B! \UC|comb~31_combout\ $end
+$var wire 1 C! \instrucao[2]~input_o\ $end
+$var wire 1 D! \instrucao[3]~input_o\ $end
+$var wire 1 E! \instrucao[6]~input_o\ $end
+$var wire 1 F! \ULA|outData[3]~1_combout\ $end
+$var wire 1 G! \instrucao[1]~input_o\ $end
+$var wire 1 H! \instrucao[0]~input_o\ $end
+$var wire 1 I! \ULA|outData[3]~8_combout\ $end
+$var wire 1 J! \ULA|outData[3]~9_combout\ $end
+$var wire 1 K! \ULA|outData[3]~10_combout\ $end
+$var wire 1 L! \ULA|Equal0~1_combout\ $end
+$var wire 1 M! \ULA|Equal0~1clkctrl_outclk\ $end
+$var wire 1 N! \UC|Equal0~0_combout\ $end
+$var wire 1 O! \UC|comb~24_combout\ $end
+$var wire 1 P! \UC|outMuxPosULA~combout\ $end
+$var wire 1 Q! \dataRead[3]~input_o\ $end
+$var wire 1 R! \MuxPosULA|b[3]~3_combout\ $end
+$var wire 1 S! \UC|comb~25_combout\ $end
+$var wire 1 T! \UC|comb~26_combout\ $end
+$var wire 1 U! \UC|outBancoRegistradores~combout\ $end
+$var wire 1 V! \instrucao[5]~input_o\ $end
+$var wire 1 W! \BancoRegistradores|banco~60_combout\ $end
+$var wire 1 X! \BancoRegistradores|banco~31_q\ $end
+$var wire 1 Y! \BancoRegistradores|banco~63_combout\ $end
+$var wire 1 Z! \BancoRegistradores|banco~39_q\ $end
+$var wire 1 [! \BancoRegistradores|banco~62_combout\ $end
+$var wire 1 \! \BancoRegistradores|banco~27_q\ $end
+$var wire 1 ]! \BancoRegistradores|banco~35feeder_combout\ $end
+$var wire 1 ^! \BancoRegistradores|banco~61_combout\ $end
+$var wire 1 _! \BancoRegistradores|banco~35_q\ $end
+$var wire 1 `! \BancoRegistradores|banco~55_combout\ $end
+$var wire 1 a! \BancoRegistradores|banco~56_combout\ $end
+$var wire 1 b! \BancoRegistradores|banco~67_combout\ $end
+$var wire 1 c! \BancoRegistradores|banco~23_q\ $end
+$var wire 1 d! \BancoRegistradores|banco~64_combout\ $end
+$var wire 1 e! \BancoRegistradores|banco~19_q\ $end
+$var wire 1 f! \BancoRegistradores|banco~66_combout\ $end
+$var wire 1 g! \BancoRegistradores|banco~11_q\ $end
+$var wire 1 h! \BancoRegistradores|banco~15feeder_combout\ $end
+$var wire 1 i! \BancoRegistradores|banco~65_combout\ $end
+$var wire 1 j! \BancoRegistradores|banco~15_q\ $end
+$var wire 1 k! \BancoRegistradores|banco~57_combout\ $end
+$var wire 1 l! \BancoRegistradores|banco~58_combout\ $end
+$var wire 1 m! \BancoRegistradores|banco~59_combout\ $end
+$var wire 1 n! \ULA|outData[0]~3_combout\ $end
+$var wire 1 o! \ULA|outData[2]~6_combout\ $end
+$var wire 1 p! \ULA|outData[2]~7_combout\ $end
+$var wire 1 q! \dataRead[2]~input_o\ $end
+$var wire 1 r! \MuxPosULA|b[2]~2_combout\ $end
+$var wire 1 s! \BancoRegistradores|banco~30feeder_combout\ $end
+$var wire 1 t! \BancoRegistradores|banco~30_q\ $end
+$var wire 1 u! \BancoRegistradores|banco~38_q\ $end
+$var wire 1 v! \BancoRegistradores|banco~26_q\ $end
+$var wire 1 w! \BancoRegistradores|banco~34feeder_combout\ $end
+$var wire 1 x! \BancoRegistradores|banco~34_q\ $end
+$var wire 1 y! \BancoRegistradores|banco~50_combout\ $end
+$var wire 1 z! \BancoRegistradores|banco~51_combout\ $end
+$var wire 1 {! \BancoRegistradores|banco~22_q\ $end
+$var wire 1 |! \BancoRegistradores|banco~18_q\ $end
+$var wire 1 }! \BancoRegistradores|banco~10_q\ $end
+$var wire 1 ~! \BancoRegistradores|banco~14feeder_combout\ $end
+$var wire 1 !" \BancoRegistradores|banco~14_q\ $end
+$var wire 1 "" \BancoRegistradores|banco~52_combout\ $end
+$var wire 1 #" \BancoRegistradores|banco~53_combout\ $end
+$var wire 1 $" \BancoRegistradores|banco~54_combout\ $end
+$var wire 1 %" \ULA|flag~1_combout\ $end
+$var wire 1 &" \ULA|outData[0]~0_combout\ $end
+$var wire 1 '" \ULA|outData[0]~2_combout\ $end
+$var wire 1 (" \dataRead[0]~input_o\ $end
+$var wire 1 )" \MuxPosULA|b[0]~0_combout\ $end
+$var wire 1 *" \BancoRegistradores|banco~28feeder_combout\ $end
+$var wire 1 +" \BancoRegistradores|banco~28_q\ $end
+$var wire 1 ," \BancoRegistradores|banco~36_q\ $end
+$var wire 1 -" \BancoRegistradores|banco~24_q\ $end
+$var wire 1 ." \BancoRegistradores|banco~32feeder_combout\ $end
+$var wire 1 /" \BancoRegistradores|banco~32_q\ $end
+$var wire 1 0" \BancoRegistradores|banco~40_combout\ $end
+$var wire 1 1" \BancoRegistradores|banco~41_combout\ $end
+$var wire 1 2" \BancoRegistradores|banco~20_q\ $end
+$var wire 1 3" \BancoRegistradores|banco~16_q\ $end
+$var wire 1 4" \BancoRegistradores|banco~8_q\ $end
+$var wire 1 5" \BancoRegistradores|banco~12feeder_combout\ $end
+$var wire 1 6" \BancoRegistradores|banco~12_q\ $end
+$var wire 1 7" \BancoRegistradores|banco~42_combout\ $end
+$var wire 1 8" \BancoRegistradores|banco~43_combout\ $end
+$var wire 1 9" \BancoRegistradores|banco~44_combout\ $end
+$var wire 1 :" \dataRead[1]~input_o\ $end
+$var wire 1 ;" \ULA|outData[1]~4_combout\ $end
+$var wire 1 <" \ULA|outData[1]~5_combout\ $end
+$var wire 1 =" \MuxPosULA|b[1]~1_combout\ $end
+$var wire 1 >" \BancoRegistradores|banco~21feeder_combout\ $end
+$var wire 1 ?" \BancoRegistradores|banco~21_q\ $end
+$var wire 1 @" \BancoRegistradores|banco~17_q\ $end
+$var wire 1 A" \BancoRegistradores|banco~9_q\ $end
+$var wire 1 B" \BancoRegistradores|banco~13feeder_combout\ $end
+$var wire 1 C" \BancoRegistradores|banco~13_q\ $end
+$var wire 1 D" \BancoRegistradores|banco~47_combout\ $end
+$var wire 1 E" \BancoRegistradores|banco~48_combout\ $end
+$var wire 1 F" \BancoRegistradores|banco~29feeder_combout\ $end
+$var wire 1 G" \BancoRegistradores|banco~29_q\ $end
+$var wire 1 H" \BancoRegistradores|banco~37_q\ $end
+$var wire 1 I" \BancoRegistradores|banco~25_q\ $end
+$var wire 1 J" \BancoRegistradores|banco~33feeder_combout\ $end
+$var wire 1 K" \BancoRegistradores|banco~33_q\ $end
+$var wire 1 L" \BancoRegistradores|banco~45_combout\ $end
+$var wire 1 M" \BancoRegistradores|banco~46_combout\ $end
+$var wire 1 N" \BancoRegistradores|banco~49_combout\ $end
+$var wire 1 O" \ULA|flag~0_combout\ $end
+$var wire 1 P" \ULA|flag~2_combout\ $end
+$var wire 1 Q" \ULA|flag~3_combout\ $end
+$var wire 1 R" \ULA|flag~4_combout\ $end
+$var wire 1 S" \ULA|Equal0~0_combout\ $end
+$var wire 1 T" \ULA|flag~combout\ $end
+$var wire 1 U" \FlipFlop|data_out~feeder_combout\ $end
+$var wire 1 V" \FlipFlop|data_out~q\ $end
+$var wire 1 W" \comb~0_combout\ $end
+$var wire 1 X" \PC|data_out[0]~9\ $end
+$var wire 1 Y" \PC|data_out[1]~10_combout\ $end
+$var wire 1 Z" \PC|data_out[1]~11\ $end
+$var wire 1 [" \PC|data_out[2]~12_combout\ $end
+$var wire 1 \" \PC|data_out[2]~13\ $end
+$var wire 1 ]" \PC|data_out[3]~14_combout\ $end
+$var wire 1 ^" \instrucao[7]~input_o\ $end
+$var wire 1 _" \PC|data_out[3]~15\ $end
+$var wire 1 `" \PC|data_out[4]~16_combout\ $end
+$var wire 1 a" \instrucao[8]~input_o\ $end
+$var wire 1 b" \PC|data_out[4]~17\ $end
+$var wire 1 c" \PC|data_out[5]~18_combout\ $end
+$var wire 1 d" \instrucao[9]~input_o\ $end
+$var wire 1 e" \PC|data_out[5]~19\ $end
+$var wire 1 f" \PC|data_out[6]~20_combout\ $end
+$var wire 1 g" \instrucao[10]~input_o\ $end
+$var wire 1 h" \PC|data_out[6]~21\ $end
+$var wire 1 i" \PC|data_out[7]~22_combout\ $end
+$var wire 1 j" \instrucao[11]~input_o\ $end
+$var wire 1 k" \UC|comb~23_combout\ $end
+$var wire 1 l" \UC|comb~22_combout\ $end
+$var wire 1 m" \UC|outDemux~combout\ $end
+$var wire 1 n" \UC|outDemux~clkctrl_outclk\ $end
+$var wire 1 o" \PC|data_out\ [7] $end
+$var wire 1 p" \PC|data_out\ [6] $end
+$var wire 1 q" \PC|data_out\ [5] $end
+$var wire 1 r" \PC|data_out\ [4] $end
+$var wire 1 s" \PC|data_out\ [3] $end
+$var wire 1 t" \PC|data_out\ [2] $end
+$var wire 1 u" \PC|data_out\ [1] $end
+$var wire 1 v" \PC|data_out\ [0] $end
+$var wire 1 w" \Tristate|output\ [3] $end
+$var wire 1 x" \Tristate|output\ [2] $end
+$var wire 1 y" \Tristate|output\ [1] $end
+$var wire 1 z" \Tristate|output\ [0] $end
+$var wire 1 {" \ULA|outData\ [3] $end
+$var wire 1 |" \ULA|outData\ [2] $end
+$var wire 1 }" \ULA|outData\ [1] $end
+$var wire 1 ~" \ULA|outData\ [0] $end
+$var wire 1 !# \UC|outULA\ [2] $end
+$var wire 1 "# \UC|outULA\ [1] $end
+$var wire 1 ## \UC|outULA\ [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+0F
+1G
+xH
+1I
+1J
+1K
+1L
+1M
+1N
+xc
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+1/!
+10!
+01!
+x2!
+x3!
+14!
+15!
+16!
+07!
+08!
+19!
+1:!
+0;!
+0<!
+1=!
+0>!
+0?!
+1@!
+1A!
+0B!
+1C!
+0D!
+1E!
+0F!
+1G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+1O!
+0P!
+xQ!
+0R!
+1S!
+0T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+0[!
+0\!
+0]!
+0^!
+0_!
+0`!
+0a!
+0b!
+0c!
+0d!
+0e!
+0f!
+0g!
+0h!
+0i!
+0j!
+0k!
+0l!
+0m!
+0n!
+1o!
+0p!
+xq!
+0r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+0y!
+0z!
+0{!
+0|!
+0}!
+0~!
+0!"
+0""
+0#"
+0$"
+0%"
+0&"
+0'"
+x("
+0)"
+0*"
+0+"
+0,"
+0-"
+0."
+0/"
+00"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+x:"
+1;"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
+0B"
+0C"
+0D"
+0E"
+0F"
+0G"
+0H"
+0I"
+0J"
+0K"
+0L"
+0M"
+0N"
+0O"
+0P"
+0Q"
+1R"
+0S"
+0T"
+0U"
+0V"
+1W"
+0X"
+0Y"
+1Z"
+0["
+0\"
+0]"
+0^"
+1_"
+0`"
+0a"
+0b"
+0c"
+0d"
+1e"
+0f"
+0g"
+0h"
+0i"
+0j"
+0k"
+0l"
+1m"
+1n"
+0*
+1+
+1,
+0-
+0.
+0/
+00
+01
+02
+13
+04
+15
+06
+17
+18
+09
+0O
+1P
+1Q
+0R
+0S
+0T
+0U
+0V
+0W
+1X
+0Y
+1Z
+0[
+1\
+1]
+0^
+x_
+x`
+xa
+xb
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+1q
+1r
+0s
+0o"
+0p"
+0q"
+0r"
+0s"
+0t"
+0u"
+0v"
+0w"
+0x"
+0y"
+0z"
+0{"
+0|"
+0}"
+0~"
+1!#
+0"#
+1##
+1|
+1}
+1~
+x!!
+1x
+1y
+1z
+0{
+1t
+1u
+1v
+1w
+x"
+x#
+x$
+x%
+0&
+0'
+0(
+0)
+0:
+1;
+1<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+$end
+#1000000

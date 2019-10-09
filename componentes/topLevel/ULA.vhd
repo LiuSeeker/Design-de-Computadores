@@ -25,7 +25,7 @@ begin
 	outData <= std_logic_vector(unsigned(inB) + "0001") when sel = "000" else
 				  "0000";-- when sel = "010" OR sel = "101" OR sel = "110" OR sel = "111" else "0000";
 				  
-	flag <= '1' when (sel = "010" AND inA /= inB) else
+	flag <= '1' when (sel = "010" AND inA = inB) else
 			  '0';
 
 end architecture;

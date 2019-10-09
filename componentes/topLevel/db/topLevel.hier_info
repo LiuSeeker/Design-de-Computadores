@@ -1,32 +1,5 @@
 |topLevel
 CLOCK_50 => contador:BaseTempo1.clk
-CLOCK_50 => tick.CLK
-CLOCK_50 => contador[0].CLK
-CLOCK_50 => contador[1].CLK
-CLOCK_50 => contador[2].CLK
-CLOCK_50 => contador[3].CLK
-CLOCK_50 => contador[4].CLK
-CLOCK_50 => contador[5].CLK
-CLOCK_50 => contador[6].CLK
-CLOCK_50 => contador[7].CLK
-CLOCK_50 => contador[8].CLK
-CLOCK_50 => contador[9].CLK
-CLOCK_50 => contador[10].CLK
-CLOCK_50 => contador[11].CLK
-CLOCK_50 => contador[12].CLK
-CLOCK_50 => contador[13].CLK
-CLOCK_50 => contador[14].CLK
-CLOCK_50 => contador[15].CLK
-CLOCK_50 => contador[16].CLK
-CLOCK_50 => contador[17].CLK
-CLOCK_50 => contador[18].CLK
-CLOCK_50 => contador[19].CLK
-CLOCK_50 => contador[20].CLK
-CLOCK_50 => contador[21].CLK
-CLOCK_50 => contador[22].CLK
-CLOCK_50 => contador[23].CLK
-CLOCK_50 => contador[24].CLK
-CLOCK_50 => contador[25].CLK
 CLOCK_50 => contador:BaseTempo2.clk
 CLOCK_50 => conversorhex7seg:DISPLAYhex2.clk
 CLOCK_50 => conversorhex7seg:DISPLAYhex3.clk
@@ -34,6 +7,7 @@ CLOCK_50 => conversorhex7seg:DISPLAYhex4.clk
 CLOCK_50 => conversorhex7seg:DISPLAYhex5.clk
 CLOCK_50 => conversorhex7seg:DISPLAYhex6.clk
 CLOCK_50 => conversorhex7seg:DISPLAYhex7.clk
+CLOCK_50 => processador:Processinho.CLK
 SW[0] => mux1bit:MuxBaseTempo.sel
 SW[1] => ~NO_FANOUT~
 SW[2] => ~NO_FANOUT~
@@ -71,9 +45,9 @@ LEDR[11] <= processador:Processinho.LEDR[11]
 LEDR[12] <= processador:Processinho.LEDR[12]
 LEDR[13] <= processador:Processinho.LEDR[13]
 LEDR[14] <= processador:Processinho.LEDR[14]
-LEDR[15] <= processador:Processinho.LEDR[15]
-LEDR[16] <= processador:Processinho.LEDR[16]
-LEDR[17] <= processador:Processinho.LEDR[17]
+LEDR[15] <= perifericos[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[16] <= perifericos[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[17] <= perifericos[2].DB_MAX_OUTPUT_PORT_TYPE
 LEDG[0] <= processador:Processinho.outAdress[0]
 LEDG[1] <= processador:Processinho.outAdress[1]
 LEDG[2] <= processador:Processinho.outAdress[2]
@@ -184,19 +158,19 @@ endereco[3] => Equal11.IN1
 endereco[3] => Equal12.IN2
 endereco[3] => Equal13.IN1
 outBaseTempo <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-outDisplay0 <= outDisplay0.DB_MAX_OUTPUT_PORT_TYPE
-outDisplay1 <= outDisplay1.DB_MAX_OUTPUT_PORT_TYPE
-outDisplay2 <= outDisplay2.DB_MAX_OUTPUT_PORT_TYPE
-outDisplay3 <= outDisplay3.DB_MAX_OUTPUT_PORT_TYPE
-outDisplay4 <= outDisplay4.DB_MAX_OUTPUT_PORT_TYPE
-outDisplay5 <= outDisplay5.DB_MAX_OUTPUT_PORT_TYPE
-outMudaHor <= outMudaHor.DB_MAX_OUTPUT_PORT_TYPE
-outIncMin <= outIncMin.DB_MAX_OUTPUT_PORT_TYPE
-outIncHor <= outIncHor.DB_MAX_OUTPUT_PORT_TYPE
-outZeraBase <= outZeraBase.DB_MAX_OUTPUT_PORT_TYPE
-outZeraMudaHor <= outZeraMudaHor.DB_MAX_OUTPUT_PORT_TYPE
-outZeraIncMin <= outZeraIncMin.DB_MAX_OUTPUT_PORT_TYPE
-outZeraIncHor <= outZeraIncHor.DB_MAX_OUTPUT_PORT_TYPE
+outDisplay0 <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+outDisplay1 <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+outDisplay2 <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+outDisplay3 <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
+outDisplay4 <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
+outDisplay5 <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
+outMudaHor <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
+outIncMin <= Equal8.DB_MAX_OUTPUT_PORT_TYPE
+outIncHor <= Equal9.DB_MAX_OUTPUT_PORT_TYPE
+outZeraBase <= Equal10.DB_MAX_OUTPUT_PORT_TYPE
+outZeraMudaHor <= Equal11.DB_MAX_OUTPUT_PORT_TYPE
+outZeraIncMin <= Equal12.DB_MAX_OUTPUT_PORT_TYPE
+outZeraIncHor <= Equal13.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|contador:BaseTempo1
@@ -226,6 +200,8 @@ clk => contador[21].CLK
 clk => contador[22].CLK
 clk => contador[23].CLK
 clk => contador[24].CLK
+clk => contador[25].CLK
+reset => ~NO_FANOUT~
 saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -245,15 +221,7 @@ clk => contador[10].CLK
 clk => contador[11].CLK
 clk => contador[12].CLK
 clk => contador[13].CLK
-clk => contador[14].CLK
-clk => contador[15].CLK
-clk => contador[16].CLK
-clk => contador[17].CLK
-clk => contador[18].CLK
-clk => contador[19].CLK
-clk => contador[20].CLK
-clk => contador[21].CLK
-clk => contador[22].CLK
+reset => ~NO_FANOUT~
 saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -264,10 +232,14 @@ sel => b.OUTPUTSELECT
 b <= b.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|topLevel|buffer3state:TristateBaseTempo
-entrada => output$latch.DATAIN
-hab => output$latch.LATCH_ENABLE
-output <= output$latch.DB_MAX_OUTPUT_PORT_TYPE
+|topLevel|registrador1bitr:RegBaseTempo
+d => ~NO_FANOUT~
+clk => q.IN0
+reset => q.IN1
+reset => comb.IN1
+reset => q.IN1
+reset => comb.IN1
+q <= q$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|conversorHex7Seg:DISPLAYhex2
@@ -766,9 +738,6 @@ LEDR[11] <= <GND>
 LEDR[12] <= <GND>
 LEDR[13] <= <GND>
 LEDR[14] <= <GND>
-LEDR[15] <= <GND>
-LEDR[16] <= <GND>
-LEDR[17] <= <GND>
 outAdress[0] <= flip_flop:PC.data_out[0]
 outAdress[1] <= flip_flop:PC.data_out[1]
 outAdress[2] <= flip_flop:PC.data_out[2]
@@ -828,6 +797,7 @@ outBancoRegistradores <= outBancoRegistradores.DB_MAX_OUTPUT_PORT_TYPE
 outJzn <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
 outDemux <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
 outJmp <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
+outAttFlag <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|processador:Processinho|ula:ULA
@@ -1010,6 +980,7 @@ output[3] <= output[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => q~reg0.ENA
 
 
 |topLevel|rom:ROM0

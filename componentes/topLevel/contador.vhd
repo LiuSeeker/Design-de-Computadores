@@ -11,6 +11,7 @@ generic
 port
 	(
 		clk      :   in std_logic;
+		reset : in std_logic;
 		saida_clk :   out std_logic
 	);
    
@@ -24,13 +25,16 @@ signal contador : integer range 0 to divisor+1 := 0;
 	
 begin
 
-	process(clk)
+	process(all)
 	begin
+	
 		if rising_edge(clk) then
-			if contador = divisor then
+			if contador >= divisor then
 				contador <= 0;
-				tick <= not tick;
+				tick <= '1';--not tick;
+			
 			else
+				tick <= '0';
 				contador <= contador + 1;
 			end if;
 		end if;

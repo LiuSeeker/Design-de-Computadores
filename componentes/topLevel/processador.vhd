@@ -18,7 +18,7 @@ entity processador is
 				dataRead  :  in std_logic_vector(3 downto 0); 
 				CLK  :       in std_logic;
 				
-				LEDR : out std_logic_vector(17 downto 0);
+				LEDR : out std_logic_vector(14 downto 0);
 				outAdress :  out std_logic_vector(ROM_WIDTH-1 downto 0);
 				dataWrite:   out std_logic_vector(3 downto 0);
 				ioAdress:    out std_logic_vector(3 downto 0)
@@ -51,6 +51,7 @@ architecture proc of processador is
 	signal saidaPC          : std_logic_vector(7 downto 0) := "00000000";
 	signal saidaProcessador : std_logic_vector(7 downto 0);
 	signal saidaAdder			: std_logic_vector(7 downto 0);
+	signal seguraFlag       : std_logic;
 
 begin 
 
@@ -64,7 +65,8 @@ begin
 			outMuxPosULA => uc_vector(3),
 			outBancoRegistradores => uc_vector(2),
 			outJzn     => uc_vector(1),
-			outDemux     => uc_vector(0)
+			outDemux     => uc_vector(0),
+			outAttFlag => seguraFlag
 		);
 		
 	ULA: entity work.ula port map(
@@ -122,7 +124,8 @@ begin
 	RegTroll: entity work.registrador1bit port map(
 		d => flagULA,
 		clk => CLK,
-		q => 	saidaRegFlag
+		q => 	saidaRegFlag,
+		enable => seguraFlag
 		);
 		
 	LEDR(0) <= saidaRegFlag;

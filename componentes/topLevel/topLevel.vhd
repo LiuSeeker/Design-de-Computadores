@@ -42,6 +42,9 @@ architecture comportamento of topLevel is
 	signal saiMux        : std_logic;
 	signal saiBaseTempo1 : std_logic;
 	signal saiBaseTempo2 : std_logic;
+	signal saiRegBT : std_logic;
+	signal sigBut0 : std_logic;
+	signal sigBut1 : std_logic;
 	
 	signal chave         : std_logic;
 	
@@ -55,7 +58,7 @@ begin
 process(CLOCK_50)
         begin
             if(rising_edge(CLOCK_50)) then
-                if contador = 25000000 then
+                if contador = 500000000 then
                     contador <= 0;
                     tick <= not tick;
                 else
@@ -90,21 +93,46 @@ process(CLOCK_50)
 
 	--------------------------------------------------------------------------
 	--Botoes
+	
+--	RegBut0: entity work.botao port map(
+--		d => KEY(0),
+--		clk => CLOCK_50,
+--		enable => ad_vector(8),
+--		q => perifericos(0)
+--	);
+--	
+--	RegBut1: entity work.botao port map(
+--		d => KEY(1),
+--		clk => CLOCK_50,
+--		enable => ad_vector(8),
+--		q => perifericos(1)
+--	);
+--	RegBut2: entity work.botao port map(
+--		d => KEY(2),
+--		clk => CLOCK_50,
+--		enable => ad_vector(8),
+--		q => perifericos(2)
+--	);
 
-	perifericos(0) <= not KEY(0) when ad_vector(7) = '1' else '0';
+
+--	sigBut0 <= not KEY(0) when ad_vector(8) = '1' else '0';
+--	sigBut1 <= not KEY(1) when ad_vector(8) = '1' else '0';
+	perifericos(0) <= not KEY(0) when ad_vector(8) = '1' else '0';
 	perifericos(1) <= not KEY(1) when ad_vector(8) = '1' else '0';
-	perifericos(2) <= not KEY(2) when ad_vector(9) = '1' else '0';
+	perifericos(2) <= not KEY(2) when ad_vector(8) = '1' else '0';
 	
 	--------------------------------------------------------------------------
 	--Base de tempo
 
-	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
+	BaseTempo1: entity work.contador generic map( divisor => 50000000 ) port map(
 			clk       => CLOCK_50,
+			reset => ad_vector(10),
 			saida_clk => saiBaseTempo1
 	);
 	
-	BaseTempo2: entity work.contador generic map( divisor => 6250000 ) port map(
+	BaseTempo2: entity work.contador generic map( divisor => 10000 ) port map(
 			clk       => CLOCK_50,
+			reset => ad_vector(10),
 			saida_clk => saiBaseTempo2
 	);
 	
@@ -114,13 +142,22 @@ process(CLOCK_50)
 			sel => chave,
 			b   => saiMux
 		);
-	-- LEDR(17) <= saiMux;
+		
+	RegBaseTempo: entity work.registrador1bitr port map(
+		d => '1',
+		clk => saiMux,
+		reset => ad_vector(10),
+		q => saiRegBT
+	);
+		
+	perifericos(3) <= saiRegBT when ad_vector(0) = '1' else '0';
+	--LEDR(17) <= ad_vector(10);
 	
-	TristateBaseTempo: entity work.buffer3state port map(
-			entrada => saiMux,
-			hab     => ad_vector(0),
-			output  => perifericos(3)
-		);
+	--TristateBaseTempo: entity work.buffer3state port map(
+	--		entrada => saiMux,
+	--		hab     => ad_vector(0),
+	--		output  => perifericos(3)
+	--	);
 
 	--------------------------------------------------------------------------
 	--Display
@@ -181,10 +218,10 @@ process(CLOCK_50)
 	--Processador
 
 	Processinho: entity work.processador port map(
-			LEDR => LEDR,
+			LEDR => LEDR(14 downto 0),
 			instrucao  => saiROM,
 			dataRead   => perifericos,
-			CLK        => tick,
+			CLK        => CLOCK_50,
 			
 			outAdress  => proximoROM,
 			dataWrite  => dataDisplay,
@@ -201,8 +238,8 @@ process(CLOCK_50)
 	
 	LEDG <= proximoROM;
 
-	--LEDR(6) <= perifericos(0);
-	--LEDR(7) <= perifericos(1);
-	--LEDR(8) <= perifericos(2);
+	LEDR(17) <= perifericos(2);
+	LEDR(16) <= perifericos(1);
+	LEDR(15) <= perifericos(0);
 	
 end architecture;

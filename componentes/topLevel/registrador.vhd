@@ -27,7 +27,7 @@ begin
 	process (clk, reset)
 	begin
 		if (reset = '1') then
-			q <= "00000000";
+			q <= (OTHERS => '0');
 		elsif (rising_edge(clk)) then
 			if (clk_enable = '1') then
 				q <= d;

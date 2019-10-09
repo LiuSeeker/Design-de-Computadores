@@ -32,247 +32,47 @@ end entity;
 architecture endereco of addressDecoder is
 
 begin
-	process(endereco)
-	begin
-		if(endereco = "0000") then
-				outBaseTempo   <= '1'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0001") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '1';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0010") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '1';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0011") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '1';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0100") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '1';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0101") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '1';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0110") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '1';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "0111") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '1';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "1000") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '1';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "1001") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '1';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "1010") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '1';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "1011") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '1';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "1100") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '1';
-				outZeraIncHor  <= '0';
-		
-		elsif (endereco = "1101") then
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '1';
-		
-		else
-				outBaseTempo   <= '0'; 
-				outDisplay0    <= '0';
-				outDisplay1    <= '0';
-				outDisplay2    <= '0';
-				outDisplay3    <= '0';
-				outDisplay4    <= '0';
-				outDisplay5    <= '0';
-				outMudaHor     <= '0';
-				outIncMin      <= '0';
-				outIncHor      <= '0';
-				outZeraBase    <= '0';
-				outZeraMudaHor <= '0';
-				outZeraIncMin  <= '0';
-				outZeraIncHor  <= '0';
-	end if;
-	end process;
+
+	outBaseTempo <= '1' when endereco = "0000" else
+						 '0';
+						 
+	outDisplay0 <= '1' when endereco = "0001" else
+						 '0';
+	
+	outDisplay1 <= '1' when endereco = "0010" else
+						 '0';
+	
+	outDisplay2 <= '1' when endereco = "0011" else
+						 '0';
+	
+	outDisplay3 <= '1' when endereco = "0100" else
+						 '0';
+	
+	outDisplay4 <= '1' when endereco = "0101" else
+						 '0';
+	
+	outDisplay5 <= '1' when endereco = "0110" else
+						 '0';
+	
+	outMudaHor <= '1' when endereco = "0111" else
+						 '0';
+	
+	outIncMin <= '1' when endereco = "1000" else
+						 '0';
+	
+	outIncHor <= '1' when endereco = "1001" else
+						 '0';
+	
+	outZeraBase <= '1' when endereco = "1010" else
+						 '0';
+	
+	outZeraMudaHor <= '1' when endereco = "1011" else
+						 '0';
+	
+	outZeraIncMin <= '1' when endereco = "1100" else
+						 '0';
+	
+	outZeraIncHor <= '1' when endereco = "1101" else
+						 '0';
+	
 end endereco;

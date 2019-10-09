@@ -11,7 +11,8 @@ entity UnidadeControle is
 				outBancoRegistradores : out std_logic; -- 0 Read / 1 Write
 				outJzn : out std_logic;
 				outDemux : out std_logic;
-				outJmp : out std_logic
+				outJmp : out std_logic;
+				outAttFlag: out std_logic
 	);
 end entity;
 
@@ -38,7 +39,7 @@ begin
 	outMuxPosULA <= '1' when opcode = RXD else
 						 '0';
 						 
-	outBancoRegistradores <= '1' when opcode = RXD OR opcode = ZER OR opcode = INC OR opcode = LDI else
+	outBancoRegistradores <= '1' when opcode = RXD OR opcode = INC OR opcode = LDI else
 									 '0';
 									 
 	outJzn <= '1' when opcode = JNZ else
@@ -48,5 +49,7 @@ begin
 					'0';
 	
 	outJmp <= '1' when opcode = JMP else '0';
+	
+	outAttFlag <= '1' when opcode = CMP else '0';
 
 end architecture;
