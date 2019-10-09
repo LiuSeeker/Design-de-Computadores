@@ -117,9 +117,9 @@ process(CLOCK_50)
 
 --	sigBut0 <= not KEY(0) when ad_vector(8) = '1' else '0';
 --	sigBut1 <= not KEY(1) when ad_vector(8) = '1' else '0';
-	perifericos(0) <= not KEY(0) when ad_vector(8) = '1' else '0';
-	perifericos(1) <= not KEY(1) when ad_vector(8) = '1' else '0';
-	perifericos(2) <= not KEY(2) when ad_vector(8) = '1' else '0';
+	perifericos(0) <= not KEY(0);-- when ad_vector(8) = '1' else '0';
+	perifericos(1) <= not KEY(1);-- when ad_vector(8) = '1' else '0';
+	perifericos(2) <= not KEY(2);-- when ad_vector(8) = '1' else '0';
 	
 	--------------------------------------------------------------------------
 	--Base de tempo
@@ -150,7 +150,7 @@ process(CLOCK_50)
 		q => saiRegBT
 	);
 		
-	perifericos(3) <= saiRegBT when ad_vector(0) = '1' else '0';
+	perifericos(3) <= saiRegBT;-- when ad_vector(0) = '1' else '0';
 	--LEDR(17) <= ad_vector(10);
 	
 	--TristateBaseTempo: entity work.buffer3state port map(

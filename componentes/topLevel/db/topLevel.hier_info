@@ -26,9 +26,12 @@ SW[14] => ~NO_FANOUT~
 SW[15] => ~NO_FANOUT~
 SW[16] => ~NO_FANOUT~
 SW[17] => ~NO_FANOUT~
-KEY[0] => perifericos[0].DATAB
-KEY[1] => perifericos[1].DATAB
-KEY[2] => perifericos[2].DATAB
+KEY[0] => processador:Processinho.dataRead[0]
+KEY[0] => LEDR[15].DATAIN
+KEY[1] => processador:Processinho.dataRead[1]
+KEY[1] => LEDR[16].DATAIN
+KEY[2] => processador:Processinho.dataRead[2]
+KEY[2] => LEDR[17].DATAIN
 KEY[3] => ~NO_FANOUT~
 LEDR[0] <= processador:Processinho.LEDR[0]
 LEDR[1] <= processador:Processinho.LEDR[1]
@@ -45,9 +48,9 @@ LEDR[11] <= processador:Processinho.LEDR[11]
 LEDR[12] <= processador:Processinho.LEDR[12]
 LEDR[13] <= processador:Processinho.LEDR[13]
 LEDR[14] <= processador:Processinho.LEDR[14]
-LEDR[15] <= perifericos[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[16] <= perifericos[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[17] <= perifericos[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[15] <= KEY[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[16] <= KEY[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[17] <= KEY[2].DB_MAX_OUTPUT_PORT_TYPE
 LEDG[0] <= processador:Processinho.outAdress[0]
 LEDG[1] <= processador:Processinho.outAdress[1]
 LEDG[2] <= processador:Processinho.outAdress[2]
@@ -233,13 +236,10 @@ b <= b.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|registrador1bitr:RegBaseTempo
-d => ~NO_FANOUT~
-clk => q.IN0
-reset => q.IN1
-reset => comb.IN1
-reset => q.IN1
-reset => comb.IN1
-q <= q$latch.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|conversorHex7Seg:DISPLAYhex2
@@ -962,18 +962,18 @@ data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|processador:Processinho|buffer3state4bit:Tristate
-entrada[0] => output[0]$latch.DATAIN
-entrada[1] => output[1]$latch.DATAIN
-entrada[2] => output[2]$latch.DATAIN
-entrada[3] => output[3]$latch.DATAIN
-hab => output[0]$latch.LATCH_ENABLE
-hab => output[1]$latch.LATCH_ENABLE
-hab => output[2]$latch.LATCH_ENABLE
-hab => output[3]$latch.LATCH_ENABLE
-output[0] <= output[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
-output[1] <= output[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
-output[2] <= output[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
-output[3] <= output[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+entrada[0] => output[0].DATAIN
+entrada[1] => output[1].DATAIN
+entrada[2] => output[2].DATAIN
+entrada[3] => output[3].DATAIN
+hab => output[0].OE
+hab => output[1].OE
+hab => output[2].OE
+hab => output[3].OE
+output[0] <= output[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |topLevel|processador:Processinho|registrador1bit:RegTroll

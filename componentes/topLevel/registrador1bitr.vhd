@@ -21,9 +21,18 @@ signal qSig : std_logic;
 begin
 
 
-	q <= '0' when reset = '1'
-			else '1' when reset = '0' AND clk = '1';
-		
-
+--	q <= '0' when reset = '1'
+--			else '1' when reset = '0' AND clk = '1';
+--		
+process (clk, reset)
+begin
+	-- Reset whenever the reset signal goes low, regardless of the clock
+	if (reset = '1') then
+		q <= '0';
+	-- If not resetting, update the register output on the clock's rising edge
+	elsif (rising_edge(clk)) then
+		q <= d;
+	end if;
+end process;
 
 end arch_registrador;
