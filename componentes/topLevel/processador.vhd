@@ -18,7 +18,6 @@ entity processador is
 				dataRead  :  in std_logic_vector(3 downto 0); 
 				CLK  :       in std_logic;
 				
-				LEDR : out std_logic_vector(14 downto 0);
 				outAdress :  out std_logic_vector(ROM_WIDTH-1 downto 0);
 				dataWrite:   out std_logic_vector(3 downto 0);
 				ioAdress:    out std_logic_vector(3 downto 0)
@@ -78,7 +77,7 @@ begin
  			flag => flagULA
 		);
 	
-	MuxPosULA: entity work.mux port map(
+	MuxPosULA: entity work.mux2x1 port map(
 			a1  => saidaULA,
 			a2  => dataRead,
 			sel => uc_vector(3),
@@ -95,7 +94,7 @@ begin
         saida       => saidaBanco	
 		);
 		
-	MuxPC: entity work.mux generic map (dataW => 8) port map(
+	MuxPC: entity work.mux2x1 generic map (dataW => 8) port map(
 			a1  => saidaAdder,
 			a2  => barramento(11 downto 4),
 			sel => uc_vector(7) or (saidaRegFlag and uc_vector(1)),
@@ -113,14 +112,7 @@ begin
 			clk => CLK,
 			data_out => saidaPC
 		);
-		
-	Tristate: entity work.buffer3state4bit port map(
-			entrada => saidaBanco,
-			hab     => uc_vector(0),
-			
-			output  => saida3state
-		);
-		
+	
 	RegTroll: entity work.registrador1bit port map(
 		d => flagULA,
 		clk => CLK,
@@ -128,21 +120,9 @@ begin
 		enable => seguraFlag
 		);
 		
-	LEDR(0) <= saidaRegFlag;
-	LEDR(1) <= uc_vector(1);
-	LEDR(2) <= uc_vector(7);
 		
-	--LEDR(0) <= uc_vector(0);
-	--LEDR(2) <= uc_vector(1);
-	--LEDR(4) <= uc_vector(2);
-	--LEDR(6) <= uc_vector(3);
-	--LEDR(10 downto 8) <= uc_vector(6 downto 4);
-	--LEDR(17 downto 14) <= barramento(15 downto 12);
-	
-	--LEDR(3 downto 0) <= saidaBanco;
-			
 	outAdress <= saidaPC;
 	ioAdress <= barramento(3 downto 0);
-	dataWrite <= saida3state;
+	dataWrite <= saidaBanco;
 	
 end proc;	

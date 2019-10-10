@@ -12,7 +12,11 @@ entity topLevel is
         -- Output ports
 		LEDR     : out std_logic_vector(17 downto 0);
 		LEDG     : out std_logic_vector(7 downto 0);
-
+		
+		
+		HEX0     : out std_logic_vector(6 downto 0):= "1000000";
+		
+		
 		HEX2     : out std_logic_vector(6 downto 0):= "1000000";
 		HEX3     : out std_logic_vector(6 downto 0):= "1000000";
 		HEX4     : out std_logic_vector(6 downto 0):= "1000000";
@@ -42,31 +46,16 @@ architecture comportamento of topLevel is
 	signal saiMux        : std_logic;
 	signal saiBaseTempo1 : std_logic;
 	signal saiBaseTempo2 : std_logic;
-	signal saiRegBT : std_logic;
-	signal sigBut0 : std_logic;
-	signal sigBut1 : std_logic;
+	signal saiRegBT      : std_logic;
+	signal sigBut0       : std_logic;
+	signal sigBut1       : std_logic;
 	
 	signal chave         : std_logic;
 	
-	
-	
-signal tick : std_logic;
 signal contador : integer range 0 to 50000001 := 0;
 		  
 begin
---
---process(CLOCK_50)
---        begin
---            if(rising_edge(CLOCK_50)) then
---                if contador = 500000000 then
---                    contador <= 0;
---                    tick <= not tick;
---                else
---                    contador <= contador + 1;
---                end if;
---            end if;
---        end process;
-	
+
 	chave <= SW(0);
 	
 	--------------------------------------------------------------------------
@@ -94,37 +83,14 @@ begin
 	--------------------------------------------------------------------------
 	--Botoes
 	
---	RegBut0: entity work.botao port map(
---		d => KEY(0),
---		clk => CLOCK_50,
---		enable => ad_vector(8),
---		q => perifericos(0)
---	);
---	
---	RegBut1: entity work.botao port map(
---		d => KEY(1),
---		clk => CLOCK_50,
---		enable => ad_vector(8),
---		q => perifericos(1)
---	);
---	RegBut2: entity work.botao port map(
---		d => KEY(2),
---		clk => CLOCK_50,
---		enable => ad_vector(8),
---		q => perifericos(2)
---	);
-
-
---	sigBut0 <= not KEY(0) when ad_vector(8) = '1' else '0';
---	sigBut1 <= not KEY(1) when ad_vector(8) = '1' else '0';
-	perifericos(0) <= not KEY(0);
-	perifericos(1) <= not KEY(1);
-	perifericos(2) <= not KEY(2);
+	perifericos(0) <= NOT KEY(0);
+	perifericos(1) <= NOT KEY(1);
+	perifericos(2) <= NOT KEY(2);
 	
 	--------------------------------------------------------------------------
 	--Base de tempo
-
-	BaseTempo1: entity work.contador generic map( divisor => 25000000 ) port map(
+	
+	BaseTempo1: entity work.contador generic map( divisor => 12500000 ) port map(
 			clk       => CLOCK_50,
 			reset => ad_vector(10),
 			saida_clk => saiBaseTempo1
@@ -150,15 +116,8 @@ begin
 		q => saiRegBT
 	);
 		
-	perifericos(3) <= saiRegBT;-- when ad_vector(0) = '1' else '0';
-	--LEDR(17) <= ad_vector(10);
+	perifericos(3) <= saiRegBT;
 	
-	--TristateBaseTempo: entity work.buffer3state port map(
-	--		entrada => saiMux,
-	--		hab     => ad_vector(0),
-	--		output  => perifericos(3)
-	--	);
-
 	--------------------------------------------------------------------------
 	--Display
 	
@@ -212,13 +171,20 @@ begin
 			
 	);
 	
-	-- LEDR(0) <= SW(0); -- Indicativo visual
+	DISPLAYhex0: entity work.conversorHex7Seg port map( --DISPLAY MOSTRA APENAS O READ DOS PERIFERICOS
+			enable => '1',
+		  	dadoHex => perifericos(3) & perifericos(2) & perifericos(1) & perifericos(0),
+			HEX => HEX0,
+			clk => CLOCK_50
+			
+	);
+	
+	LEDR(0) <= SW(0); -- Indicativo visual
 
 	--------------------------------------------------------------------------
 	--Processador
 
 	Processinho: entity work.processador port map(
-			LEDR => LEDR(14 downto 0),
 			instrucao  => saiROM,
 			dataRead   => perifericos,
 			CLK        => CLOCK_50,
@@ -238,8 +204,8 @@ begin
 	
 	LEDG <= proximoROM;
 
-	LEDR(17) <= perifericos(2);
-	LEDR(16) <= perifericos(1);
-	LEDR(15) <= perifericos(0);
+	LEDR(16) <= perifericos(2);
+	LEDR(15) <= perifericos(1);
+	LEDR(14) <= perifericos(0);
 	
 end architecture;

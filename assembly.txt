@@ -1,0 +1,57 @@
+ZERO: zer ZFLF
+LOOP: rxd FLFP, REGA --check base de tempo
+cmp REGA, $8
+jnz SOMATEMPO
+cmp REGA, $9 --checa se o botao 1 foi pressionado
+jnz SOMAMIN
+cmp REGA, $10 --checa se o botao 2 foi pressionado
+jnz SOMAH
+cmp REGA, $12 --checa se o botao 3 foi pressionado
+jnz ZERATUDO
+jmp LOOP
+SOMATEMPO: inc REG0 
+cmp REG0, $10 -- se unidade do segundo passar de 10, concerta o segundo
+jnz CONCERTADSEG
+jmp WRITES
+CONCERTADSEG: ldi REG0, $0
+inc REG1
+cmp REG1, $6 -- se dezena do segundo passar de 6, concerta a dezena do segundo
+jnz CONCERTAMIN
+jmp WRITES
+CONCERTAMIN: ldi REG1, $0
+SOMAMIN: inc REG2 --unidade minuto
+cmp REG2, $10 --se a unidade do minuto passar de 10, concerta o minuto
+jnz CONCERTADMIN
+jmp WRITES
+CONCERTADMIN: ldi REG2, $0
+inc REG3 --dezena minuto
+cmp REG3, $6 --se a dezena do minuto passar de 6, concerta a dezena do minuto
+jnz CONCERTAH
+jmp WRITES
+CONCERTAH: ldi REG3, $0
+SOMAH: inc REG4 --unidade hora
+cmp REG5, $2 -- ao somar a unidade da hora, checa se dezena da hora é 2, pra nao passar de 24h
+jnz CHECK24
+cmp REG4, $10 -- checa se a unidade da hora nao passou de 10
+jnz CONCERTADH 
+jmp WRITES
+CHECK24: cmp REG4, $4 -- se for 24h, zera todos os valores
+jnz ZERATUDO
+jmp WRITES
+CONCERTADH: ldi REG4, $0 --concerta a dezena hora
+inc REG5
+jmp WRITES
+ZERATUDO: ldi REG0, $0 --zera todos os valores 
+ldi REG1, $0
+ldi REG2, $0
+ldi REG3, $0
+ldi REG4, $0
+ldi REG5, $0
+jmp WRITES
+WRITES: wrt REG0, DSP0 --escreve todos os registradores nos displays
+wrt REG1, DSP1
+wrt REG2, DSP2
+wrt REG3, DSP3
+wrt REG4, DSP4
+wrt REG5, DSP5
+jmp ZERO

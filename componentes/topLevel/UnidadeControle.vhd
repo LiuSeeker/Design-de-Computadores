@@ -35,7 +35,7 @@ begin
 				 "010" when opcode = CMP else
 				 "000" when opcode = INC else
 				 "100";
-					
+	
 	outMuxPosULA <= '1' when opcode = RXD else
 						 '0';
 						 

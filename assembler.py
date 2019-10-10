@@ -61,7 +61,7 @@ saida.write("DATA_RADIX=BIN;\n\n")
 saida.write("CONTENT BEGIN\n\n")
 
 linhas = []
-with open("assemblycompacto.txt") as f:
+with open("assembly.txt") as f:
     for l in f:
         l = l.replace("\n", "")
         encontra = l.find("--")
@@ -94,42 +94,42 @@ for i in linhas:
             i[1] = p
 
     opcode = i[0]
-    try:
-        if opcode == "rxd":
-            string = "00000000"+ perifs[i[1]] + regs[i[2]] + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-        
-        elif opcode == "zer":
-            string = "000100000000"+ regs[i[1]] + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-
-        elif opcode == "cmp":
-            string = "00100000"+ regs[i[1]] + faz_4bits(int(i[2][1:])) + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-        
-        elif opcode == "jnz":
-            string = "0011" + jumps[i[1]] + "0000" + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-
-        elif opcode == "inc":
-            string = "01000000" + regs[i[1]] + "0000" + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-
-        elif opcode == "wrt":
-            string = "01100000" + regs[i[1]] + perifs[i[2]] + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-        
-        elif opcode == "ldi":
-            string = "01110000" + regs[i[1]] + faz_4bits(int(i[2][1:])) + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-
-        elif opcode == "jmp":
-            string = "1000" + jumps[i[1]] + "0000" + ";"
-            saidastr = "   {} : {}\n".format(count, string)
-        saida.write(saidastr)
+    #try:
+    if opcode == "rxd":
+        string = "00000000"+ regs[i[2]] + perifs[i[1]]  + ";"
+        saidastr = "   {} : {}\n".format(count, string)
     
-    except:
-        print("Encontramos uma irregularidade na instrução: " + str(count))
+    elif opcode == "zer":
+        string = "000100000000"+ perifs[i[1]] + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+
+    elif opcode == "cmp":
+        string = "00100000"+ regs[i[1]] + faz_4bits(int(i[2][1:])) + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+    
+    elif opcode == "jnz":
+        string = "0011" + jumps[i[1]] + "0000" + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+
+    elif opcode == "inc":
+        string = "01000000" + regs[i[1]] + "0000" + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+
+    elif opcode == "wrt":
+        string = "01100000" + regs[i[1]] + perifs[i[2]] + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+    
+    elif opcode == "ldi":
+        string = "01110000" + regs[i[1]] + faz_4bits(int(i[2][1:])) + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+
+    elif opcode == "jmp":
+        string = "1000" + jumps[i[1]] + "0000" + ";"
+        saidastr = "   {} : {}\n".format(count, string)
+    saida.write(saidastr)
+    
+    #except:
+        #print("Encontramos uma irregularidade na instrução: " + str(count))
     count += 1
 
 fim = "   [{}..255] : {}\n".format(count, "1000111111110000;")

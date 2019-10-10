@@ -15,6 +15,6 @@ architecture arch_buffer3state of buffer3state4bit is
 
 begin
 	
-		output <= entrada when (hab = '1') else (others => 'Z');
+		output <= entrada when (hab = '1') else "ZZZZ";
 	
 end arch_buffer3state;
