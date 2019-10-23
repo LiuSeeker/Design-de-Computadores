@@ -1,0 +1,36 @@
+Quartus Prime Archive log --	C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/topLevel.qarlog
+
+Archive:	C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/topLevel.qar
+Date:		Fri Oct 11 11:11:52 2019
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/ULA.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/UnidadeControle.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/adder.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/addressDecoder.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/bancoRegistradores.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/botao.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/buffer3state.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/contador.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/conversorHex7seg.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/dmux.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/flipFlop1bit.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/flip_flop.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/mux1bit.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/mux2x1.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/processador.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/registrador.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/registrador1bit.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/registrador1bitr.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/rom.vhd
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/romtest.mif
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/topLevel.qpf
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/topLevel.qsf
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/topLevel.sdc
+C:/Users/jorge/Desktop/Insper/Design de Computadores/descomp/componentes/topLevel/topLevel.vhd
+d:/quartus/quartus/bin64/assignment_defaults.qdf
+	======= Total: 25 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

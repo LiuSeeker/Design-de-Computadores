@@ -1,6 +1,6 @@
 Endereço - Significado
 
-Endereço banco regs
+Endereço banco regs:
 0000 - unidade de segundo
 0001 - decimal de segundo
 0010 - unidade de minuto
@@ -11,7 +11,7 @@ Endereço banco regs
 0111 - REGB
 
 
-Endereço periféricos
+Endereço periféricos:
 0000 - Base de tempo
 0001 - Display 0
 0010 - Display 1
@@ -27,6 +27,7 @@ Endereço periféricos
 1100 - Zera reg botao incrementa minuto
 1101 - Zera reg botao incrementa horario
 
+opcode:
 rxd - 0000
 zer - 0001
 cmp - 0010
