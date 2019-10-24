@@ -1,6 +1,6 @@
 |topLevel
-KEY[0] => registradorgenerico:PC.RST
-KEY[1] => ~NO_FANOUT~
+KEY[0] => detectorborda:DB0.entrada
+KEY[1] => detectorborda:DB1.entrada
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
 SW[0] => ula:ULA1.sel
@@ -21,27 +21,26 @@ SW[14] => ~NO_FANOUT~
 SW[15] => ~NO_FANOUT~
 SW[16] => bancoregistradores:BR1.escreveC
 SW[17] => registradorgenerico:PC.ENABLE
-CLOCK_50 => registradorgenerico:PC.CLK
-CLOCK_50 => rom:ROM1.clk
-CLOCK_50 => bancoregistradores:BR1.clk
-LEDR[0] <= rom:ROM1.Dado[0]
-LEDR[1] <= rom:ROM1.Dado[1]
-LEDR[2] <= rom:ROM1.Dado[2]
-LEDR[3] <= rom:ROM1.Dado[3]
-LEDR[4] <= rom:ROM1.Dado[4]
-LEDR[5] <= rom:ROM1.Dado[5]
-LEDR[6] <= <GND>
-LEDR[7] <= <GND>
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
-LEDR[10] <= <GND>
-LEDR[11] <= <GND>
-LEDR[12] <= <GND>
-LEDR[13] <= <GND>
-LEDR[14] <= <GND>
-LEDR[15] <= <GND>
-LEDR[16] <= <GND>
-LEDR[17] <= <GND>
+CLOCK_50 => detectorborda:DB1.clk
+CLOCK_50 => detectorborda:DB0.clk
+LEDR[0] << ula:ULA1.outData[0]
+LEDR[1] << ula:ULA1.outData[1]
+LEDR[2] << ula:ULA1.outData[2]
+LEDR[3] << ula:ULA1.outData[3]
+LEDR[4] << ula:ULA1.outData[4]
+LEDR[5] << ula:ULA1.outData[5]
+LEDR[6] << ula:ULA1.outData[6]
+LEDR[7] << ula:ULA1.outData[7]
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+LEDR[10] << <GND>
+LEDR[11] << <GND>
+LEDR[12] << <GND>
+LEDR[13] << <GND>
+LEDR[14] << <GND>
+LEDR[15] << <GND>
+LEDR[16] << <GND>
+LEDR[17] << <GND>
 
 
 |topLevel|registradorGenerico:PC
@@ -801,5 +800,19 @@ outData[28] <= outData.DB_MAX_OUTPUT_PORT_TYPE
 outData[29] <= outData.DB_MAX_OUTPUT_PORT_TYPE
 outData[30] <= outData.DB_MAX_OUTPUT_PORT_TYPE
 outData[31] <= outData.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|topLevel|detectorBorda:DB1
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|topLevel|detectorBorda:DB0
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -8,8 +8,8 @@ entity topLevel is
 		SW  : IN std_logic_vector(17 DOWNTO 0);
 		
 		CLOCK_50 : IN std_logic;
-		
-		LEDR : OUT std_logic_vector(17 DOWNTO 0)
+	
+		LEDR : OUT std_logic_vector(17 DOWNTO 0) := (others => '0')
 		);
 end entity;
 
@@ -21,10 +21,12 @@ architecture arch of topLevel IS
 	signal REG1       : std_logic_vector(31 DOWNTO 0);
 	signal REG2       : std_logic_vector(31 DOWNTO 0);
 	signal REG3       : std_logic_vector(31 DOWNTO 0);
+	signal saidaBorda0: std_logic;
+	signal saidaBorda1: std_logic;
 
 begin
 	
-	LEDR(5 downto 0) <= saidaROM(5 downto 0); 
+	LEDR(7 downto 0) <= REG3(7 downto 0); 
 		
 		
 	
@@ -33,8 +35,8 @@ begin
 		DIN  	    	=> saidaAdder,
 		DOUT 		   => saidaPC,
 		ENABLE		=> SW(17), -------------------------------------------------
-		CLK 			=> CLOCK_50,
-		RST 			=> not KEY(0) ----------------------------------------------
+		CLK 			=> saidaBorda1,
+		RST 			=> saidaBorda0 ----------------------------------------------
 		);
 				
 	ADDER : entity work.somadorGenerico 
@@ -46,14 +48,14 @@ begin
 	
 	ROM1 : entity work.ROM
 	port map (
-	    clk      => CLOCK_50,
+	    clk      => saidaBorda1,
 		 Endereco => saidaPC,
 		 Dado     => saidaROM
 			);
 	
 	BR1 : entity work.bancoRegistradores
 	port map (
-		clk             => CLOCK_50,
+		clk             => saidaBorda1,
 		enderecoA       => saidaROM(25 DOWNTO 21),
 		enderecoB       => saidaROM(20 DOWNTO 16),
 		enderecoC       => saidaROM(15 DOWNTO 11),
@@ -71,6 +73,20 @@ begin
 
 		outData 	 => REG3
 		);
+	
+	DB1 : entity work.detectorBorda
+	port map(
+		clk => CLOCK_50,
+		entrada => not KEY(1),
+		saida => saidaBorda1
+	);
+	
+	DB0 : entity work.detectorBorda
+	port map(
+		clk => CLOCK_50,
+		entrada => not KEY(0),
+		saida => saidaBorda0
+	);
 	
 end architecture;
 		  
