@@ -1,0 +1,24 @@
+Quartus Prime Archive log --	C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/entrega4.qarlog
+
+Archive:	C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/entrega4.qar
+Date:		Fri Oct 25 11:12:06 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/ROM.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/ULA.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/Waveform.vwf
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/bancoRegistradores.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/conversorHex7seg.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/detectorBorda.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/entrega4.qpf
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/entrega4.qsf
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/entrega4_assignment_defaults.qdf
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/registradorGenerico.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/somadorGenerico.vhd
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/topLevel.sdc
+C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/topLevel.vhd
+	======= Total: 13 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

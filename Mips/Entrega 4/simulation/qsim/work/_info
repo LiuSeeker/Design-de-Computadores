@@ -1,0 +1,147 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/simulation/qsim
+Ehard_block
+Z1 w1572012417
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
+R0
+Z8 8entrega4.vho
+Z9 Fentrega4.vho
+l0
+L34
+VOgIg9T_BR7joedFDVM>H13
+!s100 A`ID_i56<Ua56=ZD=[EG=2
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1572012418
+!i10b 1
+Z12 !s108 1572012418.000000
+Z13 !s90 -work|work|entrega4.vho|
+Z14 !s107 entrega4.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 OgIg9T_BR7joedFDVM>H13
+l63
+L49
+VUYQiVeN8LEDb;OF10NKim3
+!s100 SCKlHe`JiNVjD>gU8NlmR0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etoplevel
+R1
+R3
+R7
+R2
+Z17 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+R4
+R5
+R6
+Z18 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+R0
+R8
+R9
+l0
+L78
+VZ26>MBO4DYXQ96fjaATgi2
+!s100 0UPG6X7f79Sko<5jlP0aW1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 8 toplevel 0 22 Z26>MBO4DYXQ96fjaATgi2
+l275
+L139
+V>2KkdbAaNb]Fm]VeWel[51
+!s100 ?XTTjgO6_4lg9XC[KBTRe3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etoplevel_vhd_vec_tst
+Z19 w1572012415
+R5
+R6
+R0
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
+l0
+L31
+V_@`AlHnm6V4HKPbWLjAiM3
+!s100 N8dQLA3RKh?4IQ^_C_>fE1
+R10
+32
+Z22 !s110 1572012419
+!i10b 1
+R12
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
+!i113 1
+R15
+R16
+Atoplevel_arch
+R5
+R6
+Z25 DEx4 work 20 toplevel_vhd_vec_tst 0 22 _@`AlHnm6V4HKPbWLjAiM3
+l50
+L33
+VA3YB?aK17g<B4CJ@zVAXa2
+!s100 1dNDk6J2l:do>]>B2IMk=0
+R10
+32
+R22
+!i10b 1
+R12
+R23
+R24
+!i113 1
+R15
+R16

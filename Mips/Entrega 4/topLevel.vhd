@@ -7,8 +7,9 @@ entity topLevel is
 		KEY : IN std_logic_vector(3 DOWNTO 0);
 		SW  : IN std_logic_vector(17 DOWNTO 0);
 		
+		
 		CLOCK_50 : IN std_logic;
-	
+		HEX0     : out std_logic_vector(6 downto 0):= "1000000";
 		LEDR : OUT std_logic_vector(17 DOWNTO 0) := (others => '0')
 		);
 end entity;
@@ -28,7 +29,11 @@ begin
 	
 	LEDR(7 downto 0) <= REG3(7 downto 0); 
 		
-		
+	DISPLAY: entity work.conversorHex7Seg port map(
+			enable => SW(15),
+		  	dadoHex => REG3(3 downto 0),
+			HEX => HEX0
+	);
 	
 	PC : entity work.registradorGenerico generic map (larguraDados => 32)
 	port map (
@@ -41,7 +46,7 @@ begin
 				
 	ADDER : entity work.somadorGenerico 
 	port map (
-		entradaA		=> "00000000000000000000000000000001",
+		entradaA		=> "00000000000000000000000000000100",
 		entradaB		=> saidaPC,
 		saida			=> saidaAdder
 		);
