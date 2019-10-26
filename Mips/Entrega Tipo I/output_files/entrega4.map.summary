@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Oct 26 00:17:36 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : entrega4
+Top-level Entity Name : topLevel
+Family : Cyclone IV E
+Total logic elements : 28
+    Total combinational functions : 28
+    Dedicated logic registers : 10
+Total registers : 10
+Total pins : 41
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
