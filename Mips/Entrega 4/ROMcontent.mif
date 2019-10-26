@@ -6,6 +6,6 @@ DATA_RADIX=HEX;
 CONTENT BEGIN
 --endereco : dado;
     0    :   0109C020;   --add t8 t0 t1
-    1    :   0148C820;   --add t9 t2 t0
+    1    :   0158C820;   --add t9 t2 t8
     [2..63] : 00000000;
 END;

@@ -1,5 +1,5 @@
 Flow report for entrega4
-Wed Oct 23 09:35:24 2019
+Fri Oct 25 11:06:57 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Oct 23 09:35:21 2019       ;
+; Flow Status                        ; Successful - Fri Oct 25 11:06:57 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; entrega4                                    ;
 ; Top-level Entity Name              ; topLevel                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 26 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 26 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 10 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 10                                          ;
-; Total pins                         ; 41 / 529 ( 8 % )                            ;
+; Total logic elements               ; 38 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 38 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 15 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 16                                          ;
+; Total pins                         ; 48 / 529 ( 9 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -64,30 +64,31 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/23/2019 09:34:49 ;
+; Start date & time ; 10/25/2019 11:03:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; entrega4            ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 5025749304548.157183408919752          ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; topLevel    ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; topLevel    ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; topLevel    ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; topLevel                               ; entrega4      ; --          ; --         ;
-; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --          ; --         ;
-; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 145667773513591.157201220303012        ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; topLevel    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; topLevel    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; topLevel    ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; topLevel                               ; entrega4      ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                    ; --            ; --          ; eda_blast_fpga ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --          ; --             ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --          ; --             ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -95,11 +96,15 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4812 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:15     ; 1.0                     ; 5860 MB             ; 00:00:25                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4693 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4879 MB             ; 00:00:02                           ;
-; Total                ; 00:00:33     ; --                      ; --                  ; 00:00:57                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4801 MB             ; 00:00:41                           ;
+; Fitter               ; 00:00:16     ; 1.0                     ; 5432 MB             ; 00:00:21                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4687 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4820 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4639 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:14                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,10 +113,14 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-O1VBKR0I  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-O1VBKR0I  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-O1VBKR0I  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-O1VBKR0I  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-L9L3CE0  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -122,6 +131,10 @@ quartus_map --read_settings_files=on --write_settings_files=off entrega4 -c entr
 quartus_fit --read_settings_files=off --write_settings_files=off entrega4 -c entrega4
 quartus_asm --read_settings_files=off --write_settings_files=off entrega4 -c entrega4
 quartus_sta entrega4 -c entrega4
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off entrega4 -c entrega4 --vector_source="C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/Waveform.vwf" --testbench_file="C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/simulation/qsim/" entrega4 -c entrega4
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off entrega4 -c entrega4 --vector_source="C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/Waveform.vwf" --testbench_file="C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Dell/Desktop/Insper/2019.2/Design de Computadores/descomp/Mips/Entrega 4/simulation/qsim/" entrega4 -c entrega4
 
 
 
