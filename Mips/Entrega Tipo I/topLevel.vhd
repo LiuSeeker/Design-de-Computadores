@@ -20,15 +20,17 @@ architecture arch of topLevel IS
 	signal saidaROM   : std_logic_vector(31 DOWNTO 0);
 	signal REG1       : std_logic_vector(31 DOWNTO 0);
 	signal REG2       : std_logic_vector(31 DOWNTO 0);
-	signal REG3       : std_logic_vector(31 DOWNTO 0);
-	signal saidaExt	: std_logic_vector(31 DOWNTO 0);
-	signal saidaMux	: std_logic_vector(31 DOWNTO 0);
+    signal saidaRAM   : std_logic_vector(31 DOWNTO 0);
+    signal saidaULA   : std_logic_vector(31 DOWNTO 0);
+	signal saidaExt	  : std_logic_vector(31 DOWNTO 0);
+    signal saidaMux	  : std_logic_vector(31 DOWNTO 0);
+	signal saidaMux2  : std_logic_vector(31 DOWNTO 0);
 	signal saidaBorda0: std_logic;
-	signal saidaBorda1: std_logic;
+    signal saidaBorda1: std_logic;
 
 begin
 	
-	LEDR(7 downto 0) <= REG3(7 downto 0); 
+	LEDR(7 downto 0) <= saidaULA(7 downto 0); 
 	
 	PC : entity work.registradorGenerico generic map (larguraDados => 32)
 	port map (
@@ -59,7 +61,7 @@ begin
 		enderecoA       => saidaROM(25 DOWNTO 21),
 		enderecoB       => saidaROM(20 DOWNTO 16),
 		enderecoC       => saidaROM(15 DOWNTO 11),
-		dadoEscritaC    => REG3,
+		dadoEscritaC    => saidaMux2,
 		escreveC        => SW(16), ---------------------------------------------
 		saidaA          => REG1,
 		saidaB          => REG2
@@ -71,7 +73,7 @@ begin
 		inB 		 => saidaMux,
 		sel 		 => SW(0), ----------------------------------------------------
 
-		outData 	 => REG3
+		outData 	 => saidaULA
 		);
 	
 	DB1 : entity work.detectorBorda
@@ -107,7 +109,33 @@ begin
         sel => SW(1),
         b => saidaMux
         );
-	
+		  
+	RAM : entity work.RAM
+	generic map(
+        dataWidth => 32,
+        addrWidth => 32
+	    )
+    port map(
+        addr => saidaULA,
+        we => SW(2),
+        clk => CLOCK_50,
+        dado_in => REG2,
+        dado_out => saidaRAM
+        );
+    
+    MUX2 : entity work.mux2x1
+    generic map(
+        dataW => 32
+        )
+    port map(
+        a1 => saidaUla,
+        a2 => saidaRAM,
+        sel => SW(3),
+        b => saidaMux2
+        );
+    
+    
+        
 end architecture;
 		  
 		  
