@@ -110,7 +110,7 @@ begin
         b => saidaMux
         );
 		  
-	RAM : entity work.RAM
+	RAM1 : entity work.RAM
 	generic map(
         dataWidth => 32,
         addrWidth => 32
