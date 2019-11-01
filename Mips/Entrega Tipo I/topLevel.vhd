@@ -16,74 +16,78 @@ end entity;
 architecture arch of topLevel IS
 
 	signal saidaPC    : std_logic_vector(31 DOWNTO 0);
-	signal saidaAdder : std_logic_vector(31 DOWNTO 0);
+	signal saidaAdderPc : std_logic_vector(31 DOWNTO 0);
+	signal saidaAdderJmp : std_logic_vector(31 DOWNTO 0);
 	signal saidaROM   : std_logic_vector(31 DOWNTO 0);
-	signal REG1       : std_logic_vector(31 DOWNTO 0);
-	signal REG2       : std_logic_vector(31 DOWNTO 0);
-    signal saidaRAM   : std_logic_vector(31 DOWNTO 0);
-    signal saidaULA   : std_logic_vector(31 DOWNTO 0);
-	signal saidaExt	  : std_logic_vector(31 DOWNTO 0);
-    signal saidaMux	  : std_logic_vector(31 DOWNTO 0);
-	signal saidaMux2  : std_logic_vector(31 DOWNTO 0);
+	signal saidaBR1       : std_logic_vector(31 DOWNTO 0);
+	signal saidaBR2       : std_logic_vector(31 DOWNTO 0);
+   signal saidaRAM   : std_logic_vector(31 DOWNTO 0);
+   signal saidaULA   : std_logic_vector(31 DOWNTO 0);
+	signal saidaExt	: std_logic_vector(31 DOWNTO 0);
+	signal saidaMUXREG2IM : std_logic_vector(31 DOWNTO 0);
+	signal saidaMUXULARAM : std_logic_vector(31 DOWNTO 0);
+	signal saidaMUXPCBEQ : std_logic_vector(31 DOWNTO 0);
+	signal saidaShifterIm : std_logic_vector(31 DOWNTO 0);
+	signal saidaMUXRTRD : std_logic_vector(4 DOWNTO 0);
 	signal saidaBorda0: std_logic;
-    signal saidaBorda1: std_logic;
+   signal saidaBorda1: std_logic;
+   signal zeroUla: std_logic;
 
 begin
 	
-	LEDR(7 downto 0) <= saidaULA(7 downto 0); 
-	
 	PC : entity work.registradorGenerico generic map (larguraDados => 32)
 	port map (
-		DIN  	    	=> saidaAdder,
+		DIN  	    	=> saidaMUXPCBEQ,
 		DOUT 		   => saidaPC,
 		ENABLE		   => SW(17), -------------------------------------------------
 		CLK 			=> saidaBorda1,
 		RST 			=> saidaBorda0 ----------------------------------------------
 		);
 				
-	ADDER : entity work.somadorGenerico 
+	ADDERPC : entity work.somadorGenerico 
 	port map (
 		entradaA		=> "00000000000000000000000000000100",
 		entradaB		=> saidaPC,
-		saida			=> saidaAdder
+		saida			=> saidaAdderPc
 		);
 	
 	ROM1 : entity work.ROM
 	port map (
-	    clk      => saidaBorda1,
-		 Endereco => saidaPC,
-		 Dado     => saidaROM
-			);
+		clk      => saidaBorda1,
+		Endereco => saidaPC,
+		Dado     => saidaROM
+		);
 	
 	BR1 : entity work.bancoRegistradores
 	port map (
 		clk             => saidaBorda1,
 		enderecoA       => saidaROM(25 DOWNTO 21),
 		enderecoB       => saidaROM(20 DOWNTO 16),
-		enderecoC       => saidaROM(15 DOWNTO 11),
-		dadoEscritaC    => saidaMux2,
+		enderecoC       => saidaMUXRTRD,
+		dadoEscritaC    => saidaMUXULARAM,
 		escreveC        => SW(16), ---------------------------------------------
-		saidaA          => REG1,
-		saidaB          => REG2
+		saidaA          => saidaBR1,
+		saidaB          => saidaBR2
 		);
 					  
 	ULA1 : entity work.ULA
 	port map (
-		inA 		 => REG1,
-		inB 		 => saidaMux,
+		inA 		 => saidaBR1,
+		inB 		 => saidaMUXREG2IM,
 		sel 		 => SW(0), ----------------------------------------------------
 
-		outData 	 => saidaULA
+		outData 	 => saidaULA,
+		zer => zeroUla
 		);
 	
-	DB1 : entity work.detectorBorda
+	K1 : entity work.detectorBorda
 	port map(
 		clk => CLOCK_50,
 		entrada => not KEY(1),
 		saida => saidaBorda1
 	    );
 	
-	DB0 : entity work.detectorBorda
+	K0 : entity work.detectorBorda
 	port map(
 		clk => CLOCK_50,
 		entrada => not KEY(0),
@@ -99,15 +103,15 @@ begin
         B => saidaExt
         );
 
-    MUX1 : entity work.mux2x1
+    MUXREG2IM : entity work.mux2x1
     generic map(
         dataW => 32
         )
     port map(
-        a1 => REG2,
+        a1 => saidaBR2,
         a2 => saidaExt,
         sel => SW(1),
-        b => saidaMux
+        b => saidaMUXREG2IM
         );
 		  
 	RAM1 : entity work.RAM
@@ -119,23 +123,60 @@ begin
         addr => saidaULA,
         we => SW(2),
         clk => CLOCK_50,
-        dado_in => REG2,
+        dado_in => saidaBR2,
         dado_out => saidaRAM
         );
     
-    MUX2 : entity work.mux2x1
-    generic map(
-        dataW => 32
-        )
-    port map(
-        a1 => saidaUla,
-        a2 => saidaRAM,
-        sel => SW(3),
-        b => saidaMux2
-        );
+	MUXULARAM : entity work.mux2x1
+	generic map(
+		dataW => 32
+		)
+	port map(
+		a1 => saidaUla,
+		a2 => saidaRAM,
+		sel => SW(3),
+		b => saidaMUXULARAM
+		);
     
-    
-        
+	MUXRTRD : entity work.mux2x1
+	generic map(
+		dataW => 5
+		)
+   port map(
+		a1 => saidaROM(20 DOWNTO 16),
+		a2 => saidaROM(15 DOWNTO 11),
+		sel => SW(4),
+		b => saidaMUXRTRD
+		);
+		
+	SHIFTERIM : entity work.shifterEsq
+	generic map(
+		dataW => 32,
+		nshift => 2
+		)
+	port map(
+		a => saidaExt,
+		b => saidaShifterIm
+		);
+
+	ADDERJMP : entity work.somadorGenerico
+	port map(
+		entradaA		=> saidaAdderPC,
+		entradaB		=> saidaShifterIm,
+		saida			=> saidaAdderJmp
+		);
+		
+	MUXPCBEQ : entity work.mux2x1
+	generic map(
+		dataW => 32
+		)
+   port map(
+		a1 => saidaAdderPC,
+		a2 => saidaAdderJmp,
+		sel => SW(5) and zeroUla,
+		b => saidaMUXPCBEQ
+		);
+	
 end architecture;
 		  
 		  

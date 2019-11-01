@@ -13,16 +13,23 @@ entity ula is
 				inB  : in std_logic_vector(DATA_WIDTH-1 downto 0);
 				sel  : in std_logic;
 				
-				outData : out std_logic_vector(DATA_WIDTH-1 downto 0)
+				outData : out std_logic_vector(DATA_WIDTH-1 downto 0);
+				zer : out std_logic
 	);
 end entity;
 
 
 architecture ulaula of ula is
+
+signal zero : std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
+
 begin
 
 	outData <= std_logic_vector(unsigned(inB) + unsigned(inA)) when sel = '0' else
 				  std_logic_vector(unsigned(inA) - unsigned(inB)) when sel = '1' else
-				  "00000000000000000000000000000000";
+				  (others => '0');
+				  
+	zer <= '1' when outData = zero
+			else '0';
 				  
 end architecture;
