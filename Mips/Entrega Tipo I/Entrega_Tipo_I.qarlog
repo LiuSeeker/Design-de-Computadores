@@ -1,0 +1,27 @@
+Quartus Prime Archive log --	D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/Entrega_Tipo_I.qarlog
+
+Archive:	D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/Entrega_Tipo_I.qar
+Date:		Fri Nov 01 14:44:22 2019
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/RAM.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/ROM.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/ULA.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/Waveform.vwf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/bancoRegistradores.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/detectorBorda.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/entrega4.qpf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/entrega4.qsf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/entrega4_assignment_defaults.qdf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/extensorSinal.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/mux2x1.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/registradorGenerico.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/shifterEsq.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/somadorGenerico.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/topLevel.sdc
+D:/Insper/Design de Computadores/descomp/Mips/Entrega Tipo I/topLevel.vhd
+	======= Total: 16 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -19,5 +19,14 @@ architecture bhv of UC_ULA is
     signal ALUop_s : STD_LOGIC_VECTOR(ALU_OP_WIDTH-1 DOWNTO 0);
 begin
 
-
+			ALUctr <= "0010" when ALUop = "000" else
+						 "0110" when ALUop = "001" else
+						 "0010" when ALUop = "011" else
+						 "0010" when ALUop = "010" AND funct(3 DOWNTO 0) = "0000" else
+						 "0110" when ALUop = "010" AND funct(3 DOWNTO 0) = "0010" else
+						 "0000" when ALUop = "010" AND funct(3 DOWNTO 0) = "0100" else
+						 "0001" when ALUop = "010" AND funct(3 DOWNTO 0) = "0101" else
+						 "0111" when ALUop = "010" AND funct(3 DOWNTO 0) = "1010" else
+						 "0010";
+						 
 end bhv;

@@ -32,8 +32,17 @@ architecture arch of topLevel IS
 	signal saidaBorda0: std_logic;
    signal saidaBorda1: std_logic;
    signal zeroUla: std_logic;
+	signal writeRAM: std_logic;
+	signal selMUXULARAM: std_logic;
+	signal selMUXBEQ: std_logic;
 
 begin
+
+	LEDR(7 DOWNTO 0) <= saidaBR2(7 DOWNTO 0);
+
+	writeRAM <= '1' when saidaROM(31 DOWNTO 26) = "101011" else '0';
+	selMUXULARAM <= '1' when saidaROM(31 DOWNTO 26) = "100011" else '0';
+	selMUXBEQ <= '1' when saidaROM(31 DOWNTO 26) = "000100" else '0';
 	
 	PC : entity work.registradorGenerico generic map (larguraDados => 32)
 	port map (
@@ -121,7 +130,7 @@ begin
 	    )
     port map(
         addr => saidaULA,
-        we => SW(2),
+        we => writeRAM,
         clk => CLOCK_50,
         dado_in => saidaBR2,
         dado_out => saidaRAM
@@ -134,7 +143,7 @@ begin
 	port map(
 		a1 => saidaUla,
 		a2 => saidaRAM,
-		sel => SW(3),
+		sel => selMUXULARAM,
 		b => saidaMUXULARAM
 		);
     
@@ -173,7 +182,7 @@ begin
    port map(
 		a1 => saidaAdderPC,
 		a2 => saidaAdderJmp,
-		sel => SW(5) and zeroUla,
+		sel => selMUXBEQ and zeroUla,
 		b => saidaMUXPCBEQ
 		);
 	

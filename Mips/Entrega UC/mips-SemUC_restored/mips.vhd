@@ -9,7 +9,8 @@ use work.constantesMIPS.all;
 entity mips is
 	port
     (
-        clk			            : IN  STD_LOGIC
+        clk			            : IN  STD_LOGIC;
+		  PC							: OUT 
     );
 end entity;
 

@@ -5,7 +5,7 @@ DATA_RADIX=HEX;
 
 CONTENT BEGIN
 --endereco : dado;
-    0    :   8C080008;   --lw t0 0x8(zero)
-    1    :   8C090010;   --lw t1 0x10(zero)
+    0    :   AD2B0000;   --sw t3, 0x0(t1)
+    1    :   8D2A0000;   --LW t2, 0x0(t1)
     [2..63] : 00000000;
 END;
