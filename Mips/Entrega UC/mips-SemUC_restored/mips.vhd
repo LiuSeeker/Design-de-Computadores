@@ -10,7 +10,8 @@ entity mips is
 	port
     (
         clk			            : IN  STD_LOGIC;
-		  PC							: OUT 
+		  LEDR						: OUT std_logic_vector(17 DOWNTO 0);
+		  ULAout						: OUT std_logic_vector(31 DOWNTO 0)
     );
 end entity;
 
@@ -34,6 +35,8 @@ begin
     FD : entity work.fluxo_dados 
 	port map
 	(
+		  ULAout => ULAout,
+		  LED1  => LEDR,
         clk	                    => clk,
         pontosDeControle        => pontosDeControle,
         instrucao               => instrucao

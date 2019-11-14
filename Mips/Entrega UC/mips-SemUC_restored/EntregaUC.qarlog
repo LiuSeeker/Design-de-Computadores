@@ -1,0 +1,32 @@
+Quartus Prime Archive log --	D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/EntregaUC.qarlog
+
+Archive:	D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/EntregaUC.qar
+Date:		Thu Nov 14 13:49:59 2019
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/ROM.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Registrador.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/UC_ULA.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/ULA.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform.vwf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/assignment_defaults.qdf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/bancoRegistradores.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/clock_generator.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/constantesMIPS.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/estendeSinalGenerico.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/mips.qpf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/mips.qsf
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/mips.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/muxGenerico2.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/shift2.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/shift2_imediato.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/single_port_RAM.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/soma4.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/somador.vhd
+D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/uc.vhd
+	======= Total: 21 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
