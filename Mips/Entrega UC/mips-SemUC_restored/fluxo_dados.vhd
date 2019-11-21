@@ -12,6 +12,8 @@ entity fluxo_dados is
     );
 	port
     (
+			LED1: out std_logic_vector(17 downto 0);
+			ULAout : out std_logic_vector(31 downto 0);
         clk			            : IN STD_LOGIC;
         pontosDeControle        : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH-1 DOWNTO 0);
         instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
@@ -75,7 +77,8 @@ architecture estrutural of fluxo_dados is
     alias imediato  : std_logic_vector(15 downto 0) is instrucao_s(15 downto 0);
 
 begin
-
+	LED1(5 downto 0) <= PC_s(5 downto 0);
+	ULAout <= saida_ula;
     instrucao <= instrucao_s;
 
     sel_mux_beq <= sel_beq AND Z_out;

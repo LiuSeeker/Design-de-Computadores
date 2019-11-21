@@ -5,10 +5,10 @@ KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
 SW[0] => ula:ULA1.sel
 SW[1] => mux2x1:MUXREG2IM.sel
-SW[2] => ram:RAM1.we
-SW[3] => mux2x1:MUXULARAM.sel
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
 SW[4] => mux2x1:MUXRTRD.sel
-SW[5] => comb.IN1
+SW[5] => ~NO_FANOUT~
 SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
@@ -24,24 +24,24 @@ SW[17] => registradorgenerico:PC.ENABLE
 CLOCK_50 => detectorborda:K1.clk
 CLOCK_50 => detectorborda:K0.clk
 CLOCK_50 => ram:RAM1.clk
-LEDR[0] <= <GND>
-LEDR[1] <= <GND>
-LEDR[2] <= <GND>
-LEDR[3] <= <GND>
-LEDR[4] <= <GND>
-LEDR[5] <= <GND>
-LEDR[6] <= <GND>
-LEDR[7] <= <GND>
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
-LEDR[10] <= <GND>
-LEDR[11] <= <GND>
-LEDR[12] <= <GND>
-LEDR[13] <= <GND>
-LEDR[14] <= <GND>
-LEDR[15] <= <GND>
-LEDR[16] <= <GND>
-LEDR[17] <= <GND>
+LEDR[0] << bancoregistradores:BR1.saidaB[0]
+LEDR[1] << bancoregistradores:BR1.saidaB[1]
+LEDR[2] << bancoregistradores:BR1.saidaB[2]
+LEDR[3] << bancoregistradores:BR1.saidaB[3]
+LEDR[4] << bancoregistradores:BR1.saidaB[4]
+LEDR[5] << bancoregistradores:BR1.saidaB[5]
+LEDR[6] << bancoregistradores:BR1.saidaB[6]
+LEDR[7] << bancoregistradores:BR1.saidaB[7]
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+LEDR[10] << <GND>
+LEDR[11] << <GND>
+LEDR[12] << <GND>
+LEDR[13] << <GND>
+LEDR[14] << <GND>
+LEDR[15] << <GND>
+LEDR[16] << <GND>
+LEDR[17] << <GND>
 
 
 |topLevel|registradorGenerico:PC

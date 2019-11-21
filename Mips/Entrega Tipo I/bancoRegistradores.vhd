@@ -36,16 +36,16 @@ architecture comportamento of bancoRegistradores is
         return memoria_t is variable tmp : memoria_t := (others => (others => '0'));
   begin
         -- Inicializa os endereços:
-		  tmp(0) := x"00000000";
-		  tmp(1) := x"11111111";
-        tmp(2) := x"11111111";
-        tmp(3) := x"11111111";
-        tmp(4) := x"11111111";
-        tmp(5) := x"11111111";
-        tmp(6) := x"11111111";
-        tmp(7) := x"11111111";
-        tmp(8) := x"00000001";
-        tmp(9) := x"00000002";
+		  tmp(0)  := x"00000000";
+		  tmp(1)  := x"11111111";
+        tmp(2)  := x"11111111";
+        tmp(3)  := x"11111111";
+        tmp(4)  := x"11111111";
+        tmp(5)  := x"11111111";
+        tmp(6)  := x"11111111";
+        tmp(7)  := x"11111111";
+        tmp(8)  := x"00000001";
+        tmp(9)  := x"00000002";
         tmp(10) := x"0000000A";
         tmp(11) := x"00000014";
         tmp(12) := x"00000005";
