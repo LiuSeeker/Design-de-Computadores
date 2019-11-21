@@ -12,10 +12,7 @@ entity fluxo_dados is
     );
 	port
     (
-			LED1: out std_logic_vector(17 downto 0);
-			ULAout : out std_logic_vector(31 downto 0);
         clk			            : IN STD_LOGIC;
-        pontosDeControle        : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH-1 DOWNTO 0);
         instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
     );
 end entity;
@@ -58,16 +55,18 @@ architecture estrutural of fluxo_dados is
     -- Sinais dos registradores do pipeline
     signal saida_reg1 : std_logic_vector(REG1_WIDTH-1 downto 0);
 
+    signal pontosDeControle_s : std_logic_vector(CONTROLWORD_WIDTH-1 DOWNTO 0);
+
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(10 downto 8);
-    alias escreve_RC        : std_logic is pontosDeControle(7);
-    alias escreve_RAM       : std_logic is pontosDeControle(6);
-    alias leitura_RAM       : std_logic is pontosDeControle(5);
-    alias sel_mux_ula_mem   : std_logic is pontosDeControle(4);
-    alias sel_mux_rd_rt     : std_logic is pontosDeControle(3);
-    alias sel_mux_banco_ula : std_logic is pontosDeControle(2);
-    alias sel_beq           : std_logic is pontosDeControle(1);
-    alias sel_mux_jump      : std_logic is pontosDeControle(0);
+    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle_s(10 downto 8);
+    alias escreve_RC        : std_logic is pontosDeControle_s(7);
+    alias escreve_RAM       : std_logic is pontosDeControle_s(6);
+    alias leitura_RAM       : std_logic is pontosDeControle_s(5);
+    alias sel_mux_ula_mem   : std_logic is pontosDeControle_s(4);
+    alias sel_mux_rd_rt     : std_logic is pontosDeControle_s(3);
+    alias sel_mux_banco_ula : std_logic is pontosDeControle_s(2);
+    alias sel_beq           : std_logic is pontosDeControle_s(1);
+    alias sel_mux_jump      : std_logic is pontosDeControle_s(0);
 
     -- Parsing da instrucao
     alias RS_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(25 downto 21);
@@ -76,9 +75,9 @@ architecture estrutural of fluxo_dados is
     alias funct     : std_logic_vector(FUNCT_WIDTH-1 downto 0) is  instrucao_s(5 DOWNTO 0);
     alias imediato  : std_logic_vector(15 downto 0) is instrucao_s(15 downto 0);
 
+    alias opcode : std_logic_vector(OPCODE_WIDTH-1 downto 0) is instrucao_s(31 DOWNTO 26);
+
 begin
-	LED1(5 downto 0) <= PC_s(5 downto 0);
-	ULAout <= saida_ula;
     instrucao <= instrucao_s;
 
     sel_mux_beq <= sel_beq AND Z_out;
@@ -268,10 +267,11 @@ begin
             saida    => saida_mux_jump
         );
 
-    --UC : entity work.uc
-    --    port map(
-    --        opcode
-    --    );
+    UC : entity work.uc
+        port map(
+            opcode => opcode,
+            pontosDeControle => pontosDeControle_s
+        );
 
     REG1 : entity work.Registrador
         generic map(
