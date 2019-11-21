@@ -19,10 +19,13 @@ begin
     process(opcode)
 	 begin
 	 case opcode is
-		when "000000" => pontosDeControle <= "XXX10001000",
-		when "100011" => pontosDeControle <= "XXX10110100",
-		when "101011" => pontosDeControle <= "XXX01000100",
-		when "000100" => pontosDeControle <= "XXX00000010",
-		when "000010" => pontosDeControle <= "XXX00000001"
+		when "000000" => pontosDeControle <= "XXX10001000";
+		when "100011" => pontosDeControle <= "XXX10110100";
+		when "101011" => pontosDeControle <= "XXX01000100";
+		when "000100" => pontosDeControle <= "XXX00000010";
+		when "000010" => pontosDeControle <= "XXX00000001";
+		when others => report "unreachable" severity failure;
+	end case;
+	end process;
 	 
 end bhv;

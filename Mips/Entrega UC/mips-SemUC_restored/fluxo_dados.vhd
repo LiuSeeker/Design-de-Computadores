@@ -53,6 +53,9 @@ architecture estrutural of fluxo_dados is
     -- Controle da ULA
     signal ULActr : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
 
+    -- Sinais dos registradores do pipeline
+    signal saida_reg1 : std_logic_vector(REG1_WIDTH-1 downto 0);
+
     -- Codigos da palavra de controle:
     alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(10 downto 8);
     alias escreve_RC        : std_logic is pontosDeControle(7);
@@ -81,7 +84,7 @@ begin
     PC_4_concat_imed <= PC_mais_4(31 downto 28) & saida_shift_jump;
 
     -- Banco de registradores
-     BR: entity work.bancoRegistradores 
+    BR: entity work.bancoRegistradores 
         generic map (
             larguraDados => DATA_WIDTH, 
             larguraEndBancoRegs => 5
@@ -98,7 +101,7 @@ begin
         );
     
     -- ULA
-     ULA: entity work.ULA
+    ULA: entity work.ULA
         generic map (
             NUM_BITS => DATA_WIDTH
         )
@@ -119,7 +122,7 @@ begin
         );
      
     -- PC e somadores
-     PC: entity work.Registrador
+    PC: entity work.Registrador
         generic map (
             NUM_BITS => DATA_WIDTH
         )
@@ -131,7 +134,7 @@ begin
             reset    => '1' -- reset negado
         );
     
-     Somador_imediato: entity work.somador 
+    Somador_imediato: entity work.somador 
         generic map (
             larguraDados => DATA_WIDTH
         )
@@ -141,7 +144,7 @@ begin
             saida    => PC_mais_4_mais_imediato
         );
     
-     Somador: entity work.soma4
+    Somador: entity work.soma4
         generic map (
             larguraDados => DATA_WIDTH
         )
@@ -162,7 +165,7 @@ begin
         );
     
     -- RAM: escreve valor lido no registrador B no endereço de memória de acordo com a saída da ULA
-     RAM: entity work.single_port_RAM 
+    RAM: entity work.single_port_RAM 
         generic map (
             dataWidth => DATA_WIDTH, 
             addrWidth => ADDR_WIDTH
@@ -177,7 +180,7 @@ begin
         ); 
 
      -- Componentes manipuladores do imediato
-     extensor: entity work.estendeSinalGenerico 
+    extensor: entity work.estendeSinalGenerico 
         generic map (
             larguraDadoEntrada => 16,
             larguraDadoSaida   => DATA_WIDTH
@@ -187,7 +190,7 @@ begin
             estendeSinal_OUT => sinal_ext 
         ); 
 
-     shift: entity work.shift2_imediato 
+    shift: entity work.shift2_imediato 
         generic map (
             larguraDado => DATA_WIDTH
         )
@@ -197,7 +200,7 @@ begin
         );
     
     -- Componentes manipuladores do endereço de jump
-     shift_jump: entity work.shift2 
+    shift_jump: entity work.shift2 
         generic map (
             larguraDado => 26
         )
@@ -207,7 +210,7 @@ begin
         );
     
     -- MUXs
-     mux_Ula_Memoria: entity work.muxGenerico2 
+    mux_Ula_Memoria: entity work.muxGenerico2 
         generic map (
             larguraDados => DATA_WIDTH
         )
@@ -218,7 +221,7 @@ begin
             saida    => saida_mux_ula_mem
         );
 	 
-     mux_Rd_Rt: entity work.muxGenerico2 
+    mux_Rd_Rt: entity work.muxGenerico2 
         generic map (
             larguraDados => REGBANK_ADDR_WIDTH
         )
@@ -229,7 +232,7 @@ begin
             saida    => saida_mux_rd_rt
         );
 	
-     mux_Banco_Ula: entity work.muxGenerico2 
+    mux_Banco_Ula: entity work.muxGenerico2 
         generic map (
             larguraDados => DATA_WIDTH
         )
@@ -240,7 +243,7 @@ begin
             saida    => saida_mux_banco_ula
         );
 		
-     mux_beq: entity work.muxGenerico2 
+    mux_beq: entity work.muxGenerico2 
         generic map (
             larguraDados => DATA_WIDTH
         )
@@ -251,7 +254,7 @@ begin
             saida    => saida_mux_beq
         );
 		
-     mux_jump: entity work.muxGenerico2 
+    mux_jump: entity work.muxGenerico2 
         generic map (
             larguraDados => DATA_WIDTH
         )
@@ -260,6 +263,23 @@ begin
             entradaB => PC_4_concat_imed,
             seletor  => sel_mux_jump,
             saida    => saida_mux_jump
+        );
+
+    --UC : entity work.uc
+    --    port map(
+    --        opcode
+    --    );
+
+    REG1 : entity work.Registrador
+        generic map(
+            NUM_BITS => REG1_WIDTH
+        )
+        port map(
+            clk => clk,
+            enable => '1',
+            reset => '1',
+            data_in => instrucao_s & PC_mais_4,
+            data_out => saida_reg1
         );
 
 end architecture;
