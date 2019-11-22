@@ -12,8 +12,7 @@ entity fluxo_dados is
     );
 	port
     (
-        clk			            : IN STD_LOGIC;
-        instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
+        clk			            : IN STD_LOGIC
     );
 end entity;
 
@@ -54,31 +53,55 @@ architecture estrutural of fluxo_dados is
 
     -- Sinais dos registradores do pipeline
     signal saida_reg1 : std_logic_vector(REG1_WIDTH-1 downto 0);
+    signal saida_reg2 : std_logic_vector(REG2_WIDTH-1 downto 0);
 
     signal pontosDeControle_s : std_logic_vector(CONTROLWORD_WIDTH-1 DOWNTO 0);
 
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle_s(10 downto 8);
-    alias escreve_RC        : std_logic is pontosDeControle_s(7);
-    alias escreve_RAM       : std_logic is pontosDeControle_s(6);
-    alias leitura_RAM       : std_logic is pontosDeControle_s(5);
-    alias sel_mux_ula_mem   : std_logic is pontosDeControle_s(4);
-    alias sel_mux_rd_rt     : std_logic is pontosDeControle_s(3);
-    alias sel_mux_banco_ula : std_logic is pontosDeControle_s(2);
-    alias sel_beq           : std_logic is pontosDeControle_s(1);
-    alias sel_mux_jump      : std_logic is pontosDeControle_s(0);
+    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle_s(10 downto 8); -- ex
+    alias escreve_RC        : std_logic is pontosDeControle_s(7); -- wb
+    alias escreve_RAM       : std_logic is pontosDeControle_s(6); -- M
+    alias leitura_RAM       : std_logic is pontosDeControle_s(5); -- M
+    alias sel_mux_ula_mem   : std_logic is pontosDeControle_s(4); -- wb
+    alias sel_mux_rd_rt     : std_logic is pontosDeControle_s(3); -- ex
+    alias sel_mux_banco_ula : std_logic is pontosDeControle_s(2); -- ex
+    alias sel_beq           : std_logic is pontosDeControle_s(1); -- M
+    alias sel_mux_jump      : std_logic is pontosDeControle_s(0); -- M
 
-    -- Parsing da instrucao
-    alias RS_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(25 downto 21);
-    alias RT_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(20 downto 16);
-    alias RD_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(15 downto 11);
-    alias funct     : std_logic_vector(FUNCT_WIDTH-1 downto 0) is  instrucao_s(5 DOWNTO 0);
-    alias imediato  : std_logic_vector(15 downto 0) is instrucao_s(15 downto 0);
+    -- Parsing da instrucao (REG1)
+    alias REG1_instrucao : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg1(63 downto 32);
+    alias REG1_PC_mais_4 : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg1(31 downto 0);
 
-    alias opcode : std_logic_vector(OPCODE_WIDTH-1 downto 0) is instrucao_s(31 DOWNTO 26);
+    alias opcode : std_logic_vector(OPCODE_WIDTH-1 downto 0) is REG1_instrucao(31 DOWNTO 26);
+    alias RS_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is REG1_instrucao(25 downto 21);
+    alias RT_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is REG1_instrucao(20 downto 16);
+    alias RD_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is REG1_instrucao(15 downto 11);
+    alias imediato  : std_logic_vector(15 downto 0) is REG1_instrucao(15 downto 0);
+
+    -- Execucao da instrucao (REG2)
+    alias REG2_RD_addr : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg2(148 downto 144);
+    alias REG2_RT_addr : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg2(143 downto 139);
+    alias REG2_sinal_ext : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(138 downto 107);
+    alias funct : std_logic_vector(FUNCT_WIDTH-1 downto 0) is saida_reg2(112 DOWNTO 107);
+    alias REG2_RB : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(106 downto 75);
+    alias REG2_RA : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(74 downto 43);
+    alias REG2_PC_mais_4 : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(42 downto 11);
+    alias REG2_pontosDeControle_s : std_logic_vector(CONTROLWORD_WIDTH-1 DOWNTO 0) is saida_reg2(10 downto 0);
+
+    alias REG2_ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is REG2_pontosDeControle_s(10 downto 8); -- ex
+    alias REG2_escreve_RC        : std_logic is REG2_pontosDeControle_s(7); -- wb
+    alias REG2_escreve_RAM       : std_logic is REG2_pontosDeControle_s(6); -- M
+    alias REG2_leitura_RAM       : std_logic is REG2_pontosDeControle_s(5); -- M
+    alias REG2_sel_mux_ula_mem   : std_logic is REG2_pontosDeControle_s(4); -- wb
+    alias REG2_sel_mux_rd_rt     : std_logic is REG2_pontosDeControle_s(3); -- ex
+    alias REG2_sel_mux_banco_ula : std_logic is REG2_pontosDeControle_s(2); -- ex
+    alias REG2_sel_beq           : std_logic is REG2_pontosDeControle_s(1); -- M
+    alias REG2_sel_mux_jump      : std_logic is REG2_pontosDeControle_s(0); -- M
+
+    
+    
 
 begin
-    instrucao <= instrucao_s;
 
     sel_mux_beq <= sel_beq AND Z_out;
 
@@ -108,7 +131,7 @@ begin
             NUM_BITS => DATA_WIDTH
         )
 		port map (
-            A   => RA,
+            A   => REG2_RA,
             B   => saida_mux_banco_ula,
             ctr => ULActr,
             C   => saida_ula,
@@ -119,7 +142,7 @@ begin
         port map
         (
             funct  => funct,
-            ALUop  => ULAop,
+            ALUop  => REG2_ULAop,
             ALUctr => ULActr
         );
      
@@ -142,7 +165,7 @@ begin
         )
 		port map (
             entradaA => entrada_somador_beq,
-            entradaB => PC_mais_4,
+            entradaB => REG2_PC_mais_4,
             saida    => PC_mais_4_mais_imediato
         );
     
@@ -197,7 +220,7 @@ begin
             larguraDado => DATA_WIDTH
         )
 		port map (
-            shift_IN  => sinal_ext,
+            shift_IN  => REG2_sinal_ext,
             shift_OUT => entrada_somador_beq
         );
     
@@ -207,7 +230,7 @@ begin
             larguraDado => 26
         )
 		port map (
-            shift_IN  => instrucao_s(25 downto 0),
+            shift_IN  => REG1_instrucao(25 downto 0),
             shift_OUT => saida_shift_jump
         );
     
@@ -228,9 +251,9 @@ begin
             larguraDados => REGBANK_ADDR_WIDTH
         )
 		port map (
-            entradaA => RT_addr, 
-            entradaB => RD_addr,
-            seletor  => sel_mux_rd_rt,
+            entradaA => REG2_RT_addr, 
+            entradaB => REG2_RD_addr,
+            seletor  => REG2_sel_mux_rd_rt,
             saida    => saida_mux_rd_rt
         );
 	
@@ -239,9 +262,9 @@ begin
             larguraDados => DATA_WIDTH
         )
 		port map (
-            entradaA => RB, 
-            entradaB => sinal_ext,  
-            seletor  => sel_mux_banco_ula,
+            entradaA => REG2_RB, 
+            entradaB => REG2_sinal_ext,  
+            seletor  => REG2_sel_mux_banco_ula,
             saida    => saida_mux_banco_ula
         );
 		
@@ -283,6 +306,18 @@ begin
             reset => '1',
             data_in => instrucao_s & PC_mais_4,
             data_out => saida_reg1
+        );
+
+    REG2 : entity work.Registrador
+        generic map(
+            NUM_BITS => REG2_WIDTH
+        )
+        port map(
+            clk => clk,
+            enable => '1',
+            reset => '1',
+            data_in => RD_addr & RT_addr & sinal_ext & RB & RA & REG1_PC_mais_4 & pontosDeControle_s,
+            data_out => saida_reg2
         );
 
 end architecture;

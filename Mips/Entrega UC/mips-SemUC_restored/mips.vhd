@@ -16,9 +16,6 @@ end entity;
 architecture estrutural of mips is
 
 	-- Declaração de sinais auxiliares
-    signal instrucao            : STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
-    signal ALUop                : STD_LOGIC_VECTOR(ALU_OP_WIDTH-1 DOWNTO 0);
-    signal ALUctr               : STD_LOGIC_VECTOR(CTRL_ALU_WIDTH-1 DOWNTO 0);
 
     -- Sinal de clock auxiliar para simulação
     -- signal clk  : STD_LOGIC;
@@ -30,8 +27,7 @@ begin
     FD : entity work.fluxo_dados 
 	port map
 	(
-        clk	                    => clk,
-        instrucao               => instrucao
+        clk	                    => clk
     );
 
 end architecture;
