@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim
 Ehard_block
-Z1 w1573749784
+Z1 w1574963190
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 N5CzKW88F^ShIK@<7Vek12
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -25,9 +25,9 @@ VOgIg9T_BR7joedFDVM>H13
 !s100 A`ID_i56<Ua56=ZD=[EG=2
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1573749785
+Z11 !s110 1574963190
 !i10b 1
-Z12 !s108 1573749785.000000
+Z12 !s108 1574963190.000000
 Z13 !s90 -work|work|mips.vho|
 Z14 !s107 mips.vho|
 !i113 1
@@ -41,10 +41,10 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 OgIg9T_BR7joedFDVM>H13
-l64
-L50
-V`^CmQg<48W[ez[JL_5@Yn2
-!s100 2S?JL;LJ@<3:BHXTNcXS]3
+l63
+L49
+VUYQiVeN8LEDb;OF10NKim3
+!s100 SCKlHe`JiNVjD>gU8NlmR0
 R10
 32
 R11
@@ -69,9 +69,9 @@ R0
 R8
 R9
 l0
-L79
-V`[zNLWbbIIOYm[5R[Agd11
-!s100 ec5AGg`6U;65@IPMD9Q;F2
+L78
+V7aiH1KFMUkOK:RJG0F[P`0
+!s100 :?8Ke1E9o2<SU9CJWJR5P0
 R10
 32
 R11
@@ -91,14 +91,14 @@ R4
 R5
 R6
 R18
-DEx4 work 4 mips 0 22 `[zNLWbbIIOYm[5R[Agd11
-l5471
-L141
-V>aMfLdWWdgPmIhE8m_`AD2
-!s100 iBIY9OGTRCG:i;3lOW5H21
+DEx4 work 4 mips 0 22 7aiH1KFMUkOK:RJG0F[P`0
+l176
+L121
+VmZQkh<eTWh^98OIklAf?Z0
+!s100 =>8fU2?2U7Jm[QHQI9imn2
 R10
 32
-!s110 1573749786
+R11
 !i10b 1
 R12
 R13
@@ -107,41 +107,41 @@ R14
 R15
 R16
 Emips_vhd_vec_tst
-Z19 w1573749783
+Z19 w1574963189
 R5
 R6
 R0
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
+Z20 8Waveform1.vwf.vht
+Z21 FWaveform1.vwf.vht
 l0
 L31
 V9DlO:XLN`VbaHK^H76nVA3
 !s100 H7f7B9Gbj_T4GFE4m1]5D2
 R10
 32
-Z22 !s110 1573749790
+R11
 !i10b 1
-Z23 !s108 1573749789.000000
-Z24 !s90 -work|work|Waveform.vwf.vht|
-Z25 !s107 Waveform.vwf.vht|
+R12
+Z22 !s90 -work|work|Waveform1.vwf.vht|
+Z23 !s107 Waveform1.vwf.vht|
 !i113 1
 R15
 R16
 Amips_arch
 R5
 R6
-Z26 DEx4 work 16 mips_vhd_vec_tst 0 22 9DlO:XLN`VbaHK^H76nVA3
-l46
+Z24 DEx4 work 16 mips_vhd_vec_tst 0 22 9DlO:XLN`VbaHK^H76nVA3
+l48
 L33
-Z27 V1mo:VToMiVkQiJAncTzDQ1
-Z28 !s100 ZIVb=8SUYU79F;1ZhXFQn1
+VWnz9mS4AaXHJ[AY_USdgK3
+!s100 9;llUHOgQV@Y4aU`oU>_T0
 R10
 32
-R22
+R11
 !i10b 1
+R12
+R22
 R23
-R24
-R25
 !i113 1
 R15
 R16

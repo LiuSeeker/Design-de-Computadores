@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips -c mips --vector_source="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform.vwf" --testbench_file="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips -c mips --vector_source="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform1.vwf" --testbench_file="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/Waveform1.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,10 +25,10 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Nov 14 13:43:03 2019
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips -c mips --vector_source="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform.vwf" --testbench_file="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/Waveform.vwf.vht"
+    Info: Processing started: Thu Nov 28 14:46:28 2019
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips -c mips --vector_source="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform1.vwf" --testbench_file="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/Waveform1.vwf.vht"
 
-tor source file when writing test bench files
+en writing test bench files
 
 Completed successfully. 
 
@@ -52,12 +52,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Nov 14 13:43:03 2019
+    Info: Processing started: Thu Nov 28 14:46:29 2019
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/" mips -c mips
 Info (204019): Generated file mips.vho in folder "D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4659 megabytes
-    Info: Processing ended: Thu Nov 14 13:43:04 2019
+    Info: Peak virtual memory: 4644 megabytes
+    Info: Processing ended: Thu Nov 28 14:46:30 2019
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -81,7 +81,7 @@ Reading D:/Quartus/modelsim_ase/tcl/vsim/pref.tcl
 # do mips.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:43:05 on Nov 14,2019
+# Start time: 14:46:30 on Nov 28,2019
 # vcom -work work mips.vho 
 
 # -- Loading package STANDARD
@@ -97,25 +97,22 @@ Reading D:/Quartus/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package altera_primitives_components
 # -- Compiling entity mips
 # -- Compiling architecture structure of mips
-
-# End time: 13:43:09 on Nov 14,2019, Elapsed time: 0:00:04
+# End time: 14:46:30 on Nov 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:43:09 on Nov 14,2019
-# vcom -work work Waveform.vwf.vht 
+# Start time: 14:46:30 on Nov 28,2019
+# vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
-
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mips_vhd_vec_tst
 # -- Compiling architecture mips_arch of mips_vhd_vec_tst
 
-# End time: 13:43:10 on Nov 14,2019, Elapsed time: 0:00:01
+# End time: 14:46:30 on Nov 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.mips_vhd_vec_tst 
-# Start time: 13:43:10 on Nov 14,2019
+# Start time: 14:46:30 on Nov 28,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -131,28 +128,24 @@ Reading D:/Quartus/modelsim_ase/tcl/vsim/pref.tcl
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
 # Loading cycloneive.cycloneive_io_ibuf(arch)
-# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
-# Loading cycloneive.cycloneive_ena_reg(behave)
-# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 668498 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # after#35
 
-# End time: 13:43:14 on Nov 14,2019, Elapsed time: 0:00:04
-# Errors: 0, Warnings: 1
+# End time: 14:46:31 on Nov 28,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform.vwf...
+Reading D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/Waveform1.vwf...
 
 Reading D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/mips.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/mips_20191114134315.sim.vwf
+Writing the resulting VWF to D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/qsim/mips_20191128144631.sim.vwf
 
 Finished VCD to VWF conversion.
 

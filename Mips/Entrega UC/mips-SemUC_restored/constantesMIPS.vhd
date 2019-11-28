@@ -13,7 +13,9 @@ package constantesMIPS is
   constant ALU_OP_WIDTH : natural := 3;
   constant CTRL_ALU_WIDTH : natural := 4;
   constant REG1_WIDTH : natural := 64;
-  constant REG2_WIDTH : NATURAL := 149;
+  constant REG2_WIDTH : natural := 149;
+  constant REG3_WIDTH : natural := 108;
+  constant REG4_WIDTH : natural := 71;
 
 -- codigos das instrucoes do DLX:
    subtype opCode_t      is std_logic_vector(OPCODE_WIDTH-1 downto 0);

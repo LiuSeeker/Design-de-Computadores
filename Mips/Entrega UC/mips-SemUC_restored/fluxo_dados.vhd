@@ -12,7 +12,8 @@ entity fluxo_dados is
     );
 	port
     (
-        clk			            : IN STD_LOGIC
+        clk			            : IN STD_LOGIC;
+		  saida_hex : OUT std_logic_vector(31 downto 0)
     );
 end entity;
 
@@ -54,6 +55,8 @@ architecture estrutural of fluxo_dados is
     -- Sinais dos registradores do pipeline
     signal saida_reg1 : std_logic_vector(REG1_WIDTH-1 downto 0);
     signal saida_reg2 : std_logic_vector(REG2_WIDTH-1 downto 0);
+    signal saida_reg3 : std_logic_vector(REG3_WIDTH-1 downto 0);
+    signal saida_reg4 : std_logic_vector(REG4_WIDTH-1 downto 0);
 
     signal pontosDeControle_s : std_logic_vector(CONTROLWORD_WIDTH-1 DOWNTO 0);
 
@@ -68,16 +71,18 @@ architecture estrutural of fluxo_dados is
     alias sel_beq           : std_logic is pontosDeControle_s(1); -- M
     alias sel_mux_jump      : std_logic is pontosDeControle_s(0); -- M
 
+	 
     -- Parsing da instrucao (REG1)
     alias REG1_instrucao : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg1(63 downto 32);
     alias REG1_PC_mais_4 : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg1(31 downto 0);
-
-    alias opcode : std_logic_vector(OPCODE_WIDTH-1 downto 0) is REG1_instrucao(31 DOWNTO 26);
+	 
+    alias opcode    : std_logic_vector(OPCODE_WIDTH-1 downto 0) is REG1_instrucao(31 DOWNTO 26);
     alias RS_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is REG1_instrucao(25 downto 21);
     alias RT_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is REG1_instrucao(20 downto 16);
     alias RD_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is REG1_instrucao(15 downto 11);
     alias imediato  : std_logic_vector(15 downto 0) is REG1_instrucao(15 downto 0);
-
+	 
+	 
     -- Execucao da instrucao (REG2)
     alias REG2_RD_addr : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg2(148 downto 144);
     alias REG2_RT_addr : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg2(143 downto 139);
@@ -87,7 +92,7 @@ architecture estrutural of fluxo_dados is
     alias REG2_RA : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(74 downto 43);
     alias REG2_PC_mais_4 : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(42 downto 11);
     alias REG2_pontosDeControle_s : std_logic_vector(CONTROLWORD_WIDTH-1 DOWNTO 0) is saida_reg2(10 downto 0);
-
+	 
     alias REG2_ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is REG2_pontosDeControle_s(10 downto 8); -- ex
     alias REG2_escreve_RC        : std_logic is REG2_pontosDeControle_s(7); -- wb
     alias REG2_escreve_RAM       : std_logic is REG2_pontosDeControle_s(6); -- M
@@ -97,17 +102,39 @@ architecture estrutural of fluxo_dados is
     alias REG2_sel_mux_banco_ula : std_logic is REG2_pontosDeControle_s(2); -- ex
     alias REG2_sel_beq           : std_logic is REG2_pontosDeControle_s(1); -- M
     alias REG2_sel_mux_jump      : std_logic is REG2_pontosDeControle_s(0); -- M
+	 
 
+	 -- (REG3)
+	 alias REG3_RD_addr           : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg3(107 downto 103);
+	 alias REG3_write_data        : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg3(102 downto 71);
+	 alias REG3_addr_data         : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg3(70 downto 39);
+	 alias REG3_zero              : std_logic is saida_reg3(38);
+	 alias REG3_PC_mais_shift     : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg3(37 downto 6);
+    alias REG3_escreve_RC        : std_logic is saida_reg3(5); -- wb
+	 alias REG3_escreve_RAM       : std_logic is saida_reg3(4); -- m
+	 alias REG3_leitura_RAM       : std_logic is saida_reg3(3); -- m
+    alias REG3_sel_mux_ula_mem   : std_logic is saida_reg3(2); -- wb
+	 alias REG3_sel_beq           : std_logic is saida_reg3(1); -- m
+	 alias REG3_sel_mux_jump      : std_logic is saida_reg3(0); -- m
     
     
+	 -- (REG4)
+	 alias REG4_RD_addr           : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg4(70 downto 66);
+	 alias REG4_addr_data         : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg4(65 downto 34);
+	 alias REG4_read_data         : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg4(33 downto 2);
+	 alias REG4_sel_mux_ula_mem   : std_logic is saida_reg4(1);
+	 alias REG4_escreve_RC        : std_logic is saida_reg4(0);
 
 begin
-
-    sel_mux_beq <= sel_beq AND Z_out;
+	
+	
+	saida_hex(7 downto 0) <= PC_s(7 downto 0);
+ 	
+    sel_mux_beq <= REG3_sel_beq AND REG3_zero;
 
     -- Ajuste do PC para jump (concatena com imediato multiplicado por 4)
     PC_4_concat_imed <= PC_mais_4(31 downto 28) & saida_shift_jump;
-
+	 
     -- Banco de registradores
     BR: entity work.bancoRegistradores 
         generic map (
@@ -117,10 +144,10 @@ begin
         port map (
             enderecoA => RS_addr,
             enderecoB => RT_addr,
-            enderecoC => saida_mux_rd_rt,
+            enderecoC => REG4_RD_addr,
             clk          => clk,
             dadoEscritaC => saida_mux_ula_mem, 
-            escreveC     => escreve_RC,
+            escreveC     => REG4_escreve_RC,
             saidaA       => RA,
             saidaB       => RB
         );
@@ -196,11 +223,11 @@ begin
             addrWidth => ADDR_WIDTH
         )
 		port map (
-            endereco    => saida_ula, 
-            we          => escreve_RAM,
-            re          => leitura_RAM,
+            endereco    => REG3_addr_data, 
+            we          => REG3_escreve_RAM,
+            re          => REG3_leitura_RAM,
             clk         => clk,
-            dado_write  => RB,
+            dado_write  => REG3_write_data,
             dado_read   => dado_lido_mem
         ); 
 
@@ -240,9 +267,9 @@ begin
             larguraDados => DATA_WIDTH
         )
 		port map (
-            entradaA => saida_ula, 
-            entradaB => dado_lido_mem, 
-            seletor  => sel_mux_ula_mem,
+            entradaA => REG4_addr_data, 
+            entradaB => REG4_read_data, 
+            seletor  => REG4_sel_mux_ula_mem,
             saida    => saida_mux_ula_mem
         );
 	 
@@ -286,7 +313,7 @@ begin
 		port map (
             entradaA => saida_mux_beq,
             entradaB => PC_4_concat_imed,
-            seletor  => sel_mux_jump,
+            seletor  => REG3_sel_mux_jump,
             saida    => saida_mux_jump
         );
 
@@ -295,7 +322,8 @@ begin
             opcode => opcode,
             pontosDeControle => pontosDeControle_s
         );
-
+		  
+	 -- REGS pipeline
     REG1 : entity work.Registrador
         generic map(
             NUM_BITS => REG1_WIDTH
@@ -319,5 +347,29 @@ begin
             data_in => RD_addr & RT_addr & sinal_ext & RB & RA & REG1_PC_mais_4 & pontosDeControle_s,
             data_out => saida_reg2
         );
+		  
+	 REG3 : entity work.Registrador
+		  generic map(
+				NUM_BITS => REG3_WIDTH
+		  )
+		  port map(
+				clk => clk,
+				enable => '1',
+				reset => '1',
+				data_in => saida_mux_rd_rt & REG2_RB & saida_ula & Z_out & PC_mais_4_mais_imediato & REG2_pontosDeControle_s(7) & REG2_pontosDeControle_s(6) & REG2_pontosDeControle_s(5) & REG2_pontosDeControle_s(4) & REG2_pontosDeControle_s(1) & REG2_pontosDeControle_s(0), 
+				data_out => saida_reg3
+		  );
+		  
+	 REG4 : entity work.Registrador
+		  generic map(
+				NUM_BITS => REG4_WIDTH
+		  )
+		  port map(
+				clk => clk,
+				enable => '1',
+				reset => '1',
+				data_in => REG3_RD_addr & REG3_addr_data & dado_lido_mem & REG3_sel_mux_ula_mem & REG3_escreve_RC,
+				data_out => saida_reg4
+		  );
 
 end architecture;
