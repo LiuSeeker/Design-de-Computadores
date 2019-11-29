@@ -13,7 +13,8 @@ entity fluxo_dados is
 	port
     (
         clk			            : IN STD_LOGIC;
-		  saida_hex : OUT std_logic_vector(31 downto 0)
+		  saida_hex : OUT std_logic_vector(31 downto 0);
+		  saida_ponto : out std_logic_vector(10 downto 0)
     );
 end entity;
 
@@ -69,7 +70,7 @@ architecture estrutural of fluxo_dados is
     alias sel_mux_rd_rt     : std_logic is pontosDeControle_s(3); -- ex
     alias sel_mux_banco_ula : std_logic is pontosDeControle_s(2); -- ex
     alias sel_beq           : std_logic is pontosDeControle_s(1); -- M
-    alias sel_mux_jump      : std_logic is pontosDeControle_s(0); -- M
+    alias sel_mux_jump      : std_logic is pontosDeControle_s(0);
 
 	 
     -- Parsing da instrucao (REG1)
@@ -128,8 +129,14 @@ architecture estrutural of fluxo_dados is
 begin
 	
 	
-	saida_hex(7 downto 0) <= PC_s(7 downto 0);
+	 saida_hex(7 downto 0) <= PC_s(7 downto 0);
+	 saida_hex(15 downto 8) <= REG2_RA(7 downto 0);
+	 saida_hex(23 downto 16) <= saida_mux_banco_ula(7 downto 0);
+	 saida_hex(31 downto 24) <= saida_ula(7 downto 0);
+	 
+	 saida_ponto(10 downto 0) <= pontosDeControle_s;
  	
+	
     sel_mux_beq <= REG3_sel_beq AND REG3_zero;
 
     -- Ajuste do PC para jump (concatena com imediato multiplicado por 4)
@@ -313,7 +320,7 @@ begin
 		port map (
             entradaA => saida_mux_beq,
             entradaB => PC_4_concat_imed,
-            seletor  => REG3_sel_mux_jump,
+            seletor  => sel_mux_jump,
             saida    => saida_mux_jump
         );
 
