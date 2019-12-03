@@ -55,9 +55,9 @@ architecture assincrona OF ROM IS
     end initMemory;
 
   signal memROM: blocoMemoria := initMemory;
-  -- attribute ram_init_file : string;
-  -- attribute ram_init_file of memROM:
-  -- signal is "ROMcontent.mif";
+--  attribute ram_init_file : string;
+--  attribute ram_init_file of memROM:
+--  signal is "ROMcontent.mif";
 
 -- Utiliza uma quantidade menor de endereços locais:
    signal EnderecoLocal : std_logic_vector(memoryAddrWidth-1 downto 0);

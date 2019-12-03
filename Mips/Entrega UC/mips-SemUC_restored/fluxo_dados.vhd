@@ -70,10 +70,10 @@ architecture estrutural of fluxo_dados is
     alias sel_mux_rd_rt     : std_logic is pontosDeControle_s(3); -- ex
     alias sel_mux_banco_ula : std_logic is pontosDeControle_s(2); -- ex
     alias sel_beq           : std_logic is pontosDeControle_s(1); -- M
-    alias sel_mux_jump      : std_logic is pontosDeControle_s(0);
+    alias sel_mux_jump      : std_logic is pontosDeControle_s(0); -- M
 
 	 
-    -- Parsing da instrucao (REG1)
+    -- (REG_IF_ID)
     alias REG1_instrucao : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg1(63 downto 32);
     alias REG1_PC_mais_4 : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg1(31 downto 0);
 	 
@@ -84,7 +84,7 @@ architecture estrutural of fluxo_dados is
     alias imediato  : std_logic_vector(15 downto 0) is REG1_instrucao(15 downto 0);
 	 
 	 
-    -- Execucao da instrucao (REG2)
+    -- (REG_ID_EX)
     alias REG2_RD_addr : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg2(148 downto 144);
     alias REG2_RT_addr : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg2(143 downto 139);
     alias REG2_sinal_ext : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg2(138 downto 107);
@@ -105,7 +105,7 @@ architecture estrutural of fluxo_dados is
     alias REG2_sel_mux_jump      : std_logic is REG2_pontosDeControle_s(0); -- M
 	 
 
-	 -- (REG3)
+	 -- (REG_EX_MEM)
 	 alias REG3_RD_addr           : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg3(107 downto 103);
 	 alias REG3_write_data        : std_logic_vector(DATA_WIDTH-1 downto 0) is saida_reg3(102 downto 71);
 	 alias REG3_addr_data         : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg3(70 downto 39);
@@ -119,7 +119,7 @@ architecture estrutural of fluxo_dados is
 	 alias REG3_sel_mux_jump      : std_logic is saida_reg3(0); -- m
     
     
-	 -- (REG4)
+	 -- (REG_MEM_WB)
 	 alias REG4_RD_addr           : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is saida_reg4(70 downto 66);
 	 alias REG4_addr_data         : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg4(65 downto 34);
 	 alias REG4_read_data         : std_logic_vector(ADDR_WIDTH-1 downto 0) is saida_reg4(33 downto 2);
