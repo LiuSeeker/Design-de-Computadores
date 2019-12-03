@@ -308,7 +308,7 @@ begin
         )
 		port map (
             entradaA => PC_mais_4,
-            entradaB => PC_mais_4_mais_imediato,
+            entradaB => REG3_PC_mais_shift,
             seletor  => sel_mux_beq,
             saida    => saida_mux_beq
         );
@@ -331,7 +331,7 @@ begin
         );
 		  
 	 -- REGS pipeline
-    REG1 : entity work.Registrador
+    REG_IF_ID : entity work.Registrador
         generic map(
             NUM_BITS => REG1_WIDTH
         )
@@ -343,7 +343,7 @@ begin
             data_out => saida_reg1
         );
 
-    REG2 : entity work.Registrador
+    REG_ID_EX : entity work.Registrador
         generic map(
             NUM_BITS => REG2_WIDTH
         )
@@ -355,7 +355,7 @@ begin
             data_out => saida_reg2
         );
 		  
-	 REG3 : entity work.Registrador
+	 REG_EX_MEM : entity work.Registrador
 		  generic map(
 				NUM_BITS => REG3_WIDTH
 		  )
@@ -367,7 +367,7 @@ begin
 				data_out => saida_reg3
 		  );
 		  
-	 REG4 : entity work.Registrador
+	 REG_MEM_WB : entity work.Registrador
 		  generic map(
 				NUM_BITS => REG4_WIDTH
 		  )

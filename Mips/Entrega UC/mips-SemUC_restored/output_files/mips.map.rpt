@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mips
-Fri Nov 29 15:32:25 2019
+Tue Dec 03 09:03:48 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -37,17 +37,17 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  29. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_Banco_Ula
  30. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_beq
  31. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jump
- 32. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG1
- 33. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG2
- 34. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG3
- 35. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG4
+ 32. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_IF_ID
+ 33. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_ID_EX
+ 34. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_EX_MEM
+ 35. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_MEM_WB
  36. Parameter Settings for Inferred Entity Instance: fluxo_dados:FD|ROM:ROM|altsyncram:memROM_rtl_0
  37. Parameter Settings for Inferred Entity Instance: fluxo_dados:FD|single_port_RAM:RAM|altsyncram:ram_rtl_0
  38. altsyncram Parameter Settings by Entity Instance
- 39. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG4"
- 40. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG3"
- 41. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG2"
- 42. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG1"
+ 39. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_MEM_WB"
+ 40. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_EX_MEM"
+ 41. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_ID_EX"
+ 42. Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_IF_ID"
  43. Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC"
  44. Post-Synthesis Netlist Statistics for Top Partition
  45. Elapsed Time Per Partition
@@ -77,15 +77,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 29 15:32:25 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 03 09:03:48 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; mips                                        ;
 ; Top-level Entity Name              ; mips                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,842                                       ;
+; Total logic elements               ; 2,843                                       ;
 ;     Total combinational functions  ; 1,765                                       ;
-;     Dedicated logic registers      ; 1,250                                       ;
-; Total registers                    ; 1250                                        ;
+;     Dedicated logic registers      ; 1,257                                       ;
+; Total registers                    ; 1257                                        ;
 ; Total pins                         ; 69                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 4,096                                       ;
@@ -245,7 +245,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Estimated Total logic elements              ; 2,842                   ;
+; Estimated Total logic elements              ; 2,843                   ;
 ;                                             ;                         ;
 ; Total combinational functions               ; 1765                    ;
 ; Logic element usage by number of LUT inputs ;                         ;
@@ -257,8 +257,8 @@ refer to the applicable agreement for further details.
 ;     -- normal mode                          ; 1693                    ;
 ;     -- arithmetic mode                      ; 72                      ;
 ;                                             ;                         ;
-; Total registers                             ; 1250                    ;
-;     -- Dedicated logic registers            ; 1250                    ;
+; Total registers                             ; 1257                    ;
+;     -- Dedicated logic registers            ; 1257                    ;
 ;     -- I/O registers                        ; 0                       ;
 ;                                             ;                         ;
 ; I/O pins                                    ; 69                      ;
@@ -267,9 +267,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0                       ;
 ;                                             ;                         ;
 ; Maximum fan-out node                        ; edgeDetector:edge|saida ;
-; Maximum fan-out                             ; 1313                    ;
-; Total fan-out                               ; 10930                   ;
-; Average fan-out                             ; 3.40                    ;
+; Maximum fan-out                             ; 1320                    ;
+; Total fan-out                               ; 10944                   ;
+; Average fan-out                             ; 3.39                    ;
 +---------------------------------------------+-------------------------+
 
 
@@ -278,7 +278,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name        ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+--------------------+--------------+
-; |mips                                        ; 1765 (0)            ; 1250 (0)                  ; 4096        ; 0            ; 0       ; 0         ; 69   ; 0            ; |mips                                                                                        ; mips               ; work         ;
+; |mips                                        ; 1765 (0)            ; 1257 (0)                  ; 4096        ; 0            ; 0       ; 0         ; 69   ; 0            ; |mips                                                                                        ; mips               ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex0|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|conversorHex7Seg:DISPLAYhex0                                                           ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex1|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|conversorHex7Seg:DISPLAYhex1                                                           ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex2|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|conversorHex7Seg:DISPLAYhex2                                                           ; conversorHex7Seg   ; work         ;
@@ -288,15 +288,15 @@ refer to the applicable agreement for further details.
 ;    |conversorHex7Seg:DISPLAYhex6|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|conversorHex7Seg:DISPLAYhex6                                                           ; conversorHex7Seg   ; work         ;
 ;    |conversorHex7Seg:DISPLAYhex7|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|conversorHex7Seg:DISPLAYhex7                                                           ; conversorHex7Seg   ; work         ;
 ;    |edgeDetector:edge|                       ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|edgeDetector:edge                                                                      ; edgeDetector       ; work         ;
-;    |fluxo_dados:FD|                          ; 1707 (1)            ; 1249 (0)                  ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD                                                                         ; fluxo_dados        ; work         ;
+;    |fluxo_dados:FD|                          ; 1707 (1)            ; 1256 (0)                  ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD                                                                         ; fluxo_dados        ; work         ;
 ;       |ROM:ROM|                              ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ROM:ROM                                                                 ; ROM                ; work         ;
 ;          |altsyncram:memROM_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ROM:ROM|altsyncram:memROM_rtl_0                                         ; altsyncram         ; work         ;
 ;             |altsyncram_4661:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ROM:ROM|altsyncram:memROM_rtl_0|altsyncram_4661:auto_generated          ; altsyncram_4661    ; work         ;
 ;       |Registrador:PC|                       ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:PC                                                          ; Registrador        ; work         ;
-;       |Registrador:REG1|                     ; 0 (0)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG1                                                        ; Registrador        ; work         ;
-;       |Registrador:REG2|                     ; 1 (1)               ; 98 (98)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG2                                                        ; Registrador        ; work         ;
-;       |Registrador:REG3|                     ; 1 (1)               ; 74 (74)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG3                                                        ; Registrador        ; work         ;
-;       |Registrador:REG4|                     ; 0 (0)               ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG4                                                        ; Registrador        ; work         ;
+;       |Registrador:REG_EX_MEM|               ; 7 (7)               ; 81 (81)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG_EX_MEM                                                  ; Registrador        ; work         ;
+;       |Registrador:REG_ID_EX|                ; 1 (1)               ; 98 (98)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG_ID_EX                                                   ; Registrador        ; work         ;
+;       |Registrador:REG_IF_ID|                ; 0 (0)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG_IF_ID                                                   ; Registrador        ; work         ;
+;       |Registrador:REG_MEM_WB|               ; 0 (0)               ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:REG_MEM_WB                                                  ; Registrador        ; work         ;
 ;       |UC_ULA:UCULA|                         ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|UC_ULA:UCULA                                                            ; UC_ULA             ; work         ;
 ;       |ULA:ULA|                              ; 188 (188)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ULA:ULA                                                                 ; ULA                ; work         ;
 ;       |bancoRegistradores:BR|                ; 1413 (1413)         ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|bancoRegistradores:BR                                                   ; bancoRegistradores ; work         ;
@@ -308,7 +308,6 @@ refer to the applicable agreement for further details.
 ;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|single_port_RAM:RAM|altsyncram:ram_rtl_0                                ; altsyncram         ; work         ;
 ;             |altsyncram_2jd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|single_port_RAM:RAM|altsyncram:ram_rtl_0|altsyncram_2jd1:auto_generated ; altsyncram_2jd1    ; work         ;
 ;       |soma4:Somador|                        ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|soma4:Somador                                                           ; soma4              ; work         ;
-;       |somador:Somador_imediato|             ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|somador:Somador_imediato                                                ; somador            ; work         ;
 ;       |uc:UC|                                ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|uc:UC                                                                   ; uc                 ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -324,95 +323,72 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                         ;
-+--------------------------------------------------+---------------------------------------------------------+
-; Register name                                    ; Reason for Removal                                      ;
-+--------------------------------------------------+---------------------------------------------------------+
-; fluxo_dados:FD|Registrador:REG2|data_s[10]       ; Stuck at GND due to stuck port data_in                  ;
-; fluxo_dados:FD|Registrador:REG2|data_s[122..138] ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[148] ;
-; fluxo_dados:FD|Registrador:REG2|data_s[121]      ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[147] ;
-; fluxo_dados:FD|Registrador:REG2|data_s[120]      ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[146] ;
-; fluxo_dados:FD|Registrador:REG2|data_s[119]      ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[145] ;
-; fluxo_dados:FD|Registrador:REG2|data_s[118]      ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[144] ;
-; fluxo_dados:FD|Registrador:REG2|data_s[3]        ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[9]   ;
-; fluxo_dados:FD|Registrador:REG2|data_s[8]        ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[1]   ;
-; fluxo_dados:FD|Registrador:PC|data_s[1]          ; Merged with fluxo_dados:FD|Registrador:PC|data_s[0]     ;
-; fluxo_dados:FD|Registrador:REG2|data_s[12]       ; Merged with fluxo_dados:FD|Registrador:REG2|data_s[11]  ;
-; fluxo_dados:FD|Registrador:REG1|data_s[1]        ; Merged with fluxo_dados:FD|Registrador:REG1|data_s[0]   ;
-; fluxo_dados:FD|Registrador:PC|data_s[8..31]      ; Lost fanout                                             ;
-; fluxo_dados:FD|Registrador:REG2|data_s[19..42]   ; Lost fanout                                             ;
-; fluxo_dados:FD|Registrador:REG1|data_s[8..31]    ; Lost fanout                                             ;
-; Total Number of Removed Registers = 99           ;                                                         ;
-+--------------------------------------------------+---------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                   ;
++-------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                         ; Reason for Removal                                           ;
++-------------------------------------------------------+--------------------------------------------------------------+
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[10]       ; Stuck at GND due to stuck port data_in                       ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[122..138] ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[148] ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[121]      ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[147] ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[120]      ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[146] ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[119]      ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[145] ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[118]      ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[144] ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[3]        ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[9]   ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[8]        ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[1]   ;
+; fluxo_dados:FD|Registrador:PC|data_s[1]               ; Merged with fluxo_dados:FD|Registrador:PC|data_s[0]          ;
+; fluxo_dados:FD|Registrador:REG_EX_MEM|data_s[7]       ; Merged with fluxo_dados:FD|Registrador:REG_EX_MEM|data_s[6]  ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[12]       ; Merged with fluxo_dados:FD|Registrador:REG_ID_EX|data_s[11]  ;
+; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[1]        ; Merged with fluxo_dados:FD|Registrador:REG_IF_ID|data_s[0]   ;
+; fluxo_dados:FD|Registrador:PC|data_s[8..31]           ; Lost fanout                                                  ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[19..42]   ; Lost fanout                                                  ;
+; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[8..31]    ; Lost fanout                                                  ;
+; Total Number of Removed Registers = 100               ;                                                              ;
++-------------------------------------------------------+--------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                         ;
-+------------------------------------------+--------------------+-------------------------------------------------------------------------------------+
-; Register name                            ; Reason for Removal ; Registers Removed due to This Register                                              ;
-+------------------------------------------+--------------------+-------------------------------------------------------------------------------------+
-; fluxo_dados:FD|Registrador:PC|data_s[31] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:PC|data_s[30], fluxo_dados:FD|Registrador:PC|data_s[29], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[28], fluxo_dados:FD|Registrador:PC|data_s[27], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[26], fluxo_dados:FD|Registrador:PC|data_s[25], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[24], fluxo_dados:FD|Registrador:PC|data_s[23], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[22], fluxo_dados:FD|Registrador:PC|data_s[21], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[20], fluxo_dados:FD|Registrador:PC|data_s[19], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[18], fluxo_dados:FD|Registrador:PC|data_s[17], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[16], fluxo_dados:FD|Registrador:PC|data_s[15], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[14], fluxo_dados:FD|Registrador:PC|data_s[13], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[12], fluxo_dados:FD|Registrador:PC|data_s[11], ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[10], fluxo_dados:FD|Registrador:PC|data_s[9],  ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:PC|data_s[8],                                            ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[42],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[41],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[40],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[39],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[38],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[37],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[36],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[35],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[34],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[33],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[32],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[31],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[30],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[29],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[28],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[27],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[26],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[25],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[24],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[23],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[22],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[21],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[20],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG2|data_s[19],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[31],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[30],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[29],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[28],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[27],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[26],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[25],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[24],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[23],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[22],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[21],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[20],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[19],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[18],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[17],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[16],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[15],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[14],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[13],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[12],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[11],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[10],                                         ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[9],                                          ;
-;                                          ;                    ; fluxo_dados:FD|Registrador:REG1|data_s[8]                                           ;
-+------------------------------------------+--------------------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                ;
++-------------------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; Register name                                   ; Reason for Removal ; Registers Removed due to This Register                                              ;
++-------------------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; fluxo_dados:FD|Registrador:PC|data_s[31]        ; Lost Fanouts       ; fluxo_dados:FD|Registrador:PC|data_s[30], fluxo_dados:FD|Registrador:PC|data_s[29], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[28], fluxo_dados:FD|Registrador:PC|data_s[27], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[26], fluxo_dados:FD|Registrador:PC|data_s[25], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[24], fluxo_dados:FD|Registrador:PC|data_s[23], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[22], fluxo_dados:FD|Registrador:PC|data_s[21], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[20], fluxo_dados:FD|Registrador:PC|data_s[19], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[18], fluxo_dados:FD|Registrador:PC|data_s[17], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[16], fluxo_dados:FD|Registrador:PC|data_s[15], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[14], fluxo_dados:FD|Registrador:PC|data_s[13], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[12], fluxo_dados:FD|Registrador:PC|data_s[11], ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[10], fluxo_dados:FD|Registrador:PC|data_s[9],  ;
+;                                                 ;                    ; fluxo_dados:FD|Registrador:PC|data_s[8]                                             ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[42] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[31]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[41] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[30]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[40] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[29]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[39] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[28]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[38] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[27]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[37] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[26]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[36] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[25]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[35] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[24]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[34] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[23]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[33] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[22]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[32] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[21]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[31] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[20]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[30] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[19]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[29] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[18]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[28] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[17]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[27] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[16]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[26] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[15]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[25] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[14]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[24] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[13]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[23] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[12]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[22] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[11]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[21] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[10]                                     ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[20] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[9]                                      ;
+; fluxo_dados:FD|Registrador:REG_ID_EX|data_s[19] ; Lost Fanouts       ; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[8]                                      ;
++-------------------------------------------------+--------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -420,7 +396,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1250  ;
+; Total registers                              ; 1257  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 6     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -430,26 +406,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                         ;
-+------------------------------------------------+----------------------------------------------+------+
-; Register Name                                  ; Megafunction                                 ; Type ;
-+------------------------------------------------+----------------------------------------------+------+
-; fluxo_dados:FD|Registrador:REG1|data_s[32..63] ; fluxo_dados:FD|ROM:ROM|memROM_rtl_0          ; RAM  ;
-; fluxo_dados:FD|Registrador:REG4|data_s[2..33]  ; fluxo_dados:FD|single_port_RAM:RAM|ram_rtl_0 ; RAM  ;
-+------------------------------------------------+----------------------------------------------+------+
++-----------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                              ;
++-----------------------------------------------------+----------------------------------------------+------+
+; Register Name                                       ; Megafunction                                 ; Type ;
++-----------------------------------------------------+----------------------------------------------+------+
+; fluxo_dados:FD|Registrador:REG_IF_ID|data_s[32..63] ; fluxo_dados:FD|ROM:ROM|memROM_rtl_0          ; RAM  ;
+; fluxo_dados:FD|Registrador:REG_MEM_WB|data_s[2..33] ; fluxo_dados:FD|single_port_RAM:RAM|ram_rtl_0 ; RAM  ;
++-----------------------------------------------------+----------------------------------------------+------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[12]   ;
-; 8:1                ; 23 bits   ; 115 LEs       ; 69 LEs               ; 46 LEs                 ; Yes        ; |mips|fluxo_dados:FD|Registrador:REG3|data_s[63] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|uc:UC|pontosDeControle[2]   ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |mips|fluxo_dados:FD|ULA:ULA|Mux26               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[12]         ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 69 LEs               ; 46 LEs                 ; Yes        ; |mips|fluxo_dados:FD|Registrador:REG_EX_MEM|data_s[63] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|uc:UC|pontosDeControle[2]         ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |mips|fluxo_dados:FD|ULA:ULA|Mux26                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -637,43 +613,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG1 ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; num_bits       ; 64    ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_IF_ID ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; num_bits       ; 64    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG2 ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; num_bits       ; 149   ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_ID_EX ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; num_bits       ; 149   ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG3 ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; num_bits       ; 108   ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_EX_MEM ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; num_bits       ; 108   ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG4 ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; num_bits       ; 71    ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:REG_MEM_WB ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; num_bits       ; 71    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -830,46 +806,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG4" ;
-+--------+-------+----------+---------------------------------+
-; Port   ; Type  ; Severity ; Details                         ;
-+--------+-------+----------+---------------------------------+
-; enable ; Input ; Info     ; Stuck at VCC                    ;
-; reset  ; Input ; Info     ; Stuck at VCC                    ;
-+--------+-------+----------+---------------------------------+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_MEM_WB" ;
++--------+-------+----------+---------------------------------------+
+; Port   ; Type  ; Severity ; Details                               ;
++--------+-------+----------+---------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                          ;
+; reset  ; Input ; Info     ; Stuck at VCC                          ;
++--------+-------+----------+---------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG3"                                                               ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; enable          ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; reset           ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; data_out[37..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; data_out[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_EX_MEM"                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; enable      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; reset       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; data_out[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG2" ;
-+--------+-------+----------+---------------------------------+
-; Port   ; Type  ; Severity ; Details                         ;
-+--------+-------+----------+---------------------------------+
-; enable ; Input ; Info     ; Stuck at VCC                    ;
-; reset  ; Input ; Info     ; Stuck at VCC                    ;
-+--------+-------+----------+---------------------------------+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_ID_EX" ;
++--------+-------+----------+--------------------------------------+
+; Port   ; Type  ; Severity ; Details                              ;
++--------+-------+----------+--------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                         ;
+; reset  ; Input ; Info     ; Stuck at VCC                         ;
++--------+-------+----------+--------------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG1" ;
-+--------+-------+----------+---------------------------------+
-; Port   ; Type  ; Severity ; Details                         ;
-+--------+-------+----------+---------------------------------+
-; enable ; Input ; Info     ; Stuck at VCC                    ;
-; reset  ; Input ; Info     ; Stuck at VCC                    ;
-+--------+-------+----------+---------------------------------+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|Registrador:REG_IF_ID" ;
++--------+-------+----------+--------------------------------------+
+; Port   ; Type  ; Severity ; Details                              ;
++--------+-------+----------+--------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                         ;
+; reset  ; Input ; Info     ; Stuck at VCC                         ;
++--------+-------+----------+--------------------------------------+
 
 
 +-----------------------------------------------------------+
@@ -888,10 +863,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 69                          ;
-; cycloneiii_ff         ; 1250                        ;
+; cycloneiii_ff         ; 1257                        ;
 ;     ENA               ; 1024                        ;
 ;     SLD               ; 6                           ;
-;     plain             ; 220                         ;
+;     plain             ; 227                         ;
 ; cycloneiii_lcell_comb ; 1769                        ;
 ;     arith             ; 72                          ;
 ;         2 data inputs ; 5                           ;
@@ -905,7 +880,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.10                       ;
-; Average LUT depth     ; 4.41                        ;
+; Average LUT depth     ; 4.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -924,7 +899,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Nov 29 15:32:11 2019
+    Info: Processing started: Tue Dec 03 09:03:35 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips -c mips
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
@@ -1001,10 +976,10 @@ Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:s
 Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_Ula_Memoria" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 272
 Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_Rd_Rt" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 283
 Info (12128): Elaborating entity "uc" for hierarchy "fluxo_dados:FD|uc:UC" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 327
-Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG1" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 334
-Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG2" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 346
-Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG3" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 358
-Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG4" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 370
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG_IF_ID" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 334
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG_ID_EX" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 346
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG_EX_MEM" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 358
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:REG_MEM_WB" File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/fluxo_dados.vhd Line: 370
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:BR|bancoReg" is uninferred due to asynchronous read logic File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/bancoRegistradores.vhd Line: 56
     Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:BR|bancoReg" is uninferred due to asynchronous read logic File: D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/bancoRegistradores.vhd Line: 56
@@ -1067,15 +1042,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 72 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3027 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3028 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 67 output pins
-    Info (21061): Implemented 2894 logic cells
+    Info (21061): Implemented 2895 logic cells
     Info (21064): Implemented 64 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4824 megabytes
-    Info: Processing ended: Fri Nov 29 15:32:25 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Tue Dec 03 09:03:48 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:26
 
 

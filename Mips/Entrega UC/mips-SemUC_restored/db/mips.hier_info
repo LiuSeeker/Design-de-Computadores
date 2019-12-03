@@ -1,73 +1,73 @@
 |mips
 CLOCK_50 => edgedetector:edge.clk
 KEY[0] => edgedetector:edge.entrada
-LEDR[0] << fluxo_dados:FD.saida_ponto[0]
-LEDR[1] << fluxo_dados:FD.saida_ponto[1]
-LEDR[2] << fluxo_dados:FD.saida_ponto[2]
-LEDR[3] << fluxo_dados:FD.saida_ponto[3]
-LEDR[4] << fluxo_dados:FD.saida_ponto[4]
-LEDR[5] << fluxo_dados:FD.saida_ponto[5]
-LEDR[6] << fluxo_dados:FD.saida_ponto[6]
-LEDR[7] << fluxo_dados:FD.saida_ponto[7]
-LEDR[8] << fluxo_dados:FD.saida_ponto[8]
-LEDR[9] << fluxo_dados:FD.saida_ponto[9]
-LEDR[10] << fluxo_dados:FD.saida_ponto[10]
-HEX0[0] << conversorhex7seg:DISPLAYhex0.saida7seg[0]
-HEX0[1] << conversorhex7seg:DISPLAYhex0.saida7seg[1]
-HEX0[2] << conversorhex7seg:DISPLAYhex0.saida7seg[2]
-HEX0[3] << conversorhex7seg:DISPLAYhex0.saida7seg[3]
-HEX0[4] << conversorhex7seg:DISPLAYhex0.saida7seg[4]
-HEX0[5] << conversorhex7seg:DISPLAYhex0.saida7seg[5]
-HEX0[6] << conversorhex7seg:DISPLAYhex0.saida7seg[6]
-HEX1[0] << conversorhex7seg:DISPLAYhex1.saida7seg[0]
-HEX1[1] << conversorhex7seg:DISPLAYhex1.saida7seg[1]
-HEX1[2] << conversorhex7seg:DISPLAYhex1.saida7seg[2]
-HEX1[3] << conversorhex7seg:DISPLAYhex1.saida7seg[3]
-HEX1[4] << conversorhex7seg:DISPLAYhex1.saida7seg[4]
-HEX1[5] << conversorhex7seg:DISPLAYhex1.saida7seg[5]
-HEX1[6] << conversorhex7seg:DISPLAYhex1.saida7seg[6]
-HEX2[0] << conversorhex7seg:DISPLAYhex2.saida7seg[0]
-HEX2[1] << conversorhex7seg:DISPLAYhex2.saida7seg[1]
-HEX2[2] << conversorhex7seg:DISPLAYhex2.saida7seg[2]
-HEX2[3] << conversorhex7seg:DISPLAYhex2.saida7seg[3]
-HEX2[4] << conversorhex7seg:DISPLAYhex2.saida7seg[4]
-HEX2[5] << conversorhex7seg:DISPLAYhex2.saida7seg[5]
-HEX2[6] << conversorhex7seg:DISPLAYhex2.saida7seg[6]
-HEX3[0] << conversorhex7seg:DISPLAYhex3.saida7seg[0]
-HEX3[1] << conversorhex7seg:DISPLAYhex3.saida7seg[1]
-HEX3[2] << conversorhex7seg:DISPLAYhex3.saida7seg[2]
-HEX3[3] << conversorhex7seg:DISPLAYhex3.saida7seg[3]
-HEX3[4] << conversorhex7seg:DISPLAYhex3.saida7seg[4]
-HEX3[5] << conversorhex7seg:DISPLAYhex3.saida7seg[5]
-HEX3[6] << conversorhex7seg:DISPLAYhex3.saida7seg[6]
-HEX4[0] << conversorhex7seg:DISPLAYhex4.saida7seg[0]
-HEX4[1] << conversorhex7seg:DISPLAYhex4.saida7seg[1]
-HEX4[2] << conversorhex7seg:DISPLAYhex4.saida7seg[2]
-HEX4[3] << conversorhex7seg:DISPLAYhex4.saida7seg[3]
-HEX4[4] << conversorhex7seg:DISPLAYhex4.saida7seg[4]
-HEX4[5] << conversorhex7seg:DISPLAYhex4.saida7seg[5]
-HEX4[6] << conversorhex7seg:DISPLAYhex4.saida7seg[6]
-HEX5[0] << conversorhex7seg:DISPLAYhex5.saida7seg[0]
-HEX5[1] << conversorhex7seg:DISPLAYhex5.saida7seg[1]
-HEX5[2] << conversorhex7seg:DISPLAYhex5.saida7seg[2]
-HEX5[3] << conversorhex7seg:DISPLAYhex5.saida7seg[3]
-HEX5[4] << conversorhex7seg:DISPLAYhex5.saida7seg[4]
-HEX5[5] << conversorhex7seg:DISPLAYhex5.saida7seg[5]
-HEX5[6] << conversorhex7seg:DISPLAYhex5.saida7seg[6]
-HEX6[0] << conversorhex7seg:DISPLAYhex6.saida7seg[0]
-HEX6[1] << conversorhex7seg:DISPLAYhex6.saida7seg[1]
-HEX6[2] << conversorhex7seg:DISPLAYhex6.saida7seg[2]
-HEX6[3] << conversorhex7seg:DISPLAYhex6.saida7seg[3]
-HEX6[4] << conversorhex7seg:DISPLAYhex6.saida7seg[4]
-HEX6[5] << conversorhex7seg:DISPLAYhex6.saida7seg[5]
-HEX6[6] << conversorhex7seg:DISPLAYhex6.saida7seg[6]
-HEX7[0] << conversorhex7seg:DISPLAYhex7.saida7seg[0]
-HEX7[1] << conversorhex7seg:DISPLAYhex7.saida7seg[1]
-HEX7[2] << conversorhex7seg:DISPLAYhex7.saida7seg[2]
-HEX7[3] << conversorhex7seg:DISPLAYhex7.saida7seg[3]
-HEX7[4] << conversorhex7seg:DISPLAYhex7.saida7seg[4]
-HEX7[5] << conversorhex7seg:DISPLAYhex7.saida7seg[5]
-HEX7[6] << conversorhex7seg:DISPLAYhex7.saida7seg[6]
+LEDR[0] <= fluxo_dados:FD.saida_ponto[0]
+LEDR[1] <= fluxo_dados:FD.saida_ponto[1]
+LEDR[2] <= fluxo_dados:FD.saida_ponto[2]
+LEDR[3] <= fluxo_dados:FD.saida_ponto[3]
+LEDR[4] <= fluxo_dados:FD.saida_ponto[4]
+LEDR[5] <= fluxo_dados:FD.saida_ponto[5]
+LEDR[6] <= fluxo_dados:FD.saida_ponto[6]
+LEDR[7] <= fluxo_dados:FD.saida_ponto[7]
+LEDR[8] <= fluxo_dados:FD.saida_ponto[8]
+LEDR[9] <= fluxo_dados:FD.saida_ponto[9]
+LEDR[10] <= fluxo_dados:FD.saida_ponto[10]
+HEX0[0] <= conversorhex7seg:DISPLAYhex0.saida7seg[0]
+HEX0[1] <= conversorhex7seg:DISPLAYhex0.saida7seg[1]
+HEX0[2] <= conversorhex7seg:DISPLAYhex0.saida7seg[2]
+HEX0[3] <= conversorhex7seg:DISPLAYhex0.saida7seg[3]
+HEX0[4] <= conversorhex7seg:DISPLAYhex0.saida7seg[4]
+HEX0[5] <= conversorhex7seg:DISPLAYhex0.saida7seg[5]
+HEX0[6] <= conversorhex7seg:DISPLAYhex0.saida7seg[6]
+HEX1[0] <= conversorhex7seg:DISPLAYhex1.saida7seg[0]
+HEX1[1] <= conversorhex7seg:DISPLAYhex1.saida7seg[1]
+HEX1[2] <= conversorhex7seg:DISPLAYhex1.saida7seg[2]
+HEX1[3] <= conversorhex7seg:DISPLAYhex1.saida7seg[3]
+HEX1[4] <= conversorhex7seg:DISPLAYhex1.saida7seg[4]
+HEX1[5] <= conversorhex7seg:DISPLAYhex1.saida7seg[5]
+HEX1[6] <= conversorhex7seg:DISPLAYhex1.saida7seg[6]
+HEX2[0] <= conversorhex7seg:DISPLAYhex2.saida7seg[0]
+HEX2[1] <= conversorhex7seg:DISPLAYhex2.saida7seg[1]
+HEX2[2] <= conversorhex7seg:DISPLAYhex2.saida7seg[2]
+HEX2[3] <= conversorhex7seg:DISPLAYhex2.saida7seg[3]
+HEX2[4] <= conversorhex7seg:DISPLAYhex2.saida7seg[4]
+HEX2[5] <= conversorhex7seg:DISPLAYhex2.saida7seg[5]
+HEX2[6] <= conversorhex7seg:DISPLAYhex2.saida7seg[6]
+HEX3[0] <= conversorhex7seg:DISPLAYhex3.saida7seg[0]
+HEX3[1] <= conversorhex7seg:DISPLAYhex3.saida7seg[1]
+HEX3[2] <= conversorhex7seg:DISPLAYhex3.saida7seg[2]
+HEX3[3] <= conversorhex7seg:DISPLAYhex3.saida7seg[3]
+HEX3[4] <= conversorhex7seg:DISPLAYhex3.saida7seg[4]
+HEX3[5] <= conversorhex7seg:DISPLAYhex3.saida7seg[5]
+HEX3[6] <= conversorhex7seg:DISPLAYhex3.saida7seg[6]
+HEX4[0] <= conversorhex7seg:DISPLAYhex4.saida7seg[0]
+HEX4[1] <= conversorhex7seg:DISPLAYhex4.saida7seg[1]
+HEX4[2] <= conversorhex7seg:DISPLAYhex4.saida7seg[2]
+HEX4[3] <= conversorhex7seg:DISPLAYhex4.saida7seg[3]
+HEX4[4] <= conversorhex7seg:DISPLAYhex4.saida7seg[4]
+HEX4[5] <= conversorhex7seg:DISPLAYhex4.saida7seg[5]
+HEX4[6] <= conversorhex7seg:DISPLAYhex4.saida7seg[6]
+HEX5[0] <= conversorhex7seg:DISPLAYhex5.saida7seg[0]
+HEX5[1] <= conversorhex7seg:DISPLAYhex5.saida7seg[1]
+HEX5[2] <= conversorhex7seg:DISPLAYhex5.saida7seg[2]
+HEX5[3] <= conversorhex7seg:DISPLAYhex5.saida7seg[3]
+HEX5[4] <= conversorhex7seg:DISPLAYhex5.saida7seg[4]
+HEX5[5] <= conversorhex7seg:DISPLAYhex5.saida7seg[5]
+HEX5[6] <= conversorhex7seg:DISPLAYhex5.saida7seg[6]
+HEX6[0] <= conversorhex7seg:DISPLAYhex6.saida7seg[0]
+HEX6[1] <= conversorhex7seg:DISPLAYhex6.saida7seg[1]
+HEX6[2] <= conversorhex7seg:DISPLAYhex6.saida7seg[2]
+HEX6[3] <= conversorhex7seg:DISPLAYhex6.saida7seg[3]
+HEX6[4] <= conversorhex7seg:DISPLAYhex6.saida7seg[4]
+HEX6[5] <= conversorhex7seg:DISPLAYhex6.saida7seg[5]
+HEX6[6] <= conversorhex7seg:DISPLAYhex6.saida7seg[6]
+HEX7[0] <= conversorhex7seg:DISPLAYhex7.saida7seg[0]
+HEX7[1] <= conversorhex7seg:DISPLAYhex7.saida7seg[1]
+HEX7[2] <= conversorhex7seg:DISPLAYhex7.saida7seg[2]
+HEX7[3] <= conversorhex7seg:DISPLAYhex7.saida7seg[3]
+HEX7[4] <= conversorhex7seg:DISPLAYhex7.saida7seg[4]
+HEX7[5] <= conversorhex7seg:DISPLAYhex7.saida7seg[5]
+HEX7[6] <= conversorhex7seg:DISPLAYhex7.saida7seg[6]
 
 
 |mips|conversorHex7Seg:DISPLAYhex0
@@ -673,10 +673,10 @@ saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 clk => bancoregistradores:BR.clk
 clk => registrador:PC.clk
 clk => single_port_ram:RAM.clk
-clk => registrador:REG1.clk
-clk => registrador:REG2.clk
-clk => registrador:REG3.clk
-clk => registrador:REG4.clk
+clk => registrador:REG_IF_ID.clk
+clk => registrador:REG_ID_EX.clk
+clk => registrador:REG_EX_MEM.clk
+clk => registrador:REG_MEM_WB.clk
 saida_hex[0] <= registrador:PC.data_out[0]
 saida_hex[1] <= registrador:PC.data_out[1]
 saida_hex[2] <= registrador:PC.data_out[2]
@@ -685,14 +685,14 @@ saida_hex[4] <= registrador:PC.data_out[4]
 saida_hex[5] <= registrador:PC.data_out[5]
 saida_hex[6] <= registrador:PC.data_out[6]
 saida_hex[7] <= registrador:PC.data_out[7]
-saida_hex[8] <= registrador:REG2.data_out[43]
-saida_hex[9] <= registrador:REG2.data_out[44]
-saida_hex[10] <= registrador:REG2.data_out[45]
-saida_hex[11] <= registrador:REG2.data_out[46]
-saida_hex[12] <= registrador:REG2.data_out[47]
-saida_hex[13] <= registrador:REG2.data_out[48]
-saida_hex[14] <= registrador:REG2.data_out[49]
-saida_hex[15] <= registrador:REG2.data_out[50]
+saida_hex[8] <= registrador:REG_ID_EX.data_out[43]
+saida_hex[9] <= registrador:REG_ID_EX.data_out[44]
+saida_hex[10] <= registrador:REG_ID_EX.data_out[45]
+saida_hex[11] <= registrador:REG_ID_EX.data_out[46]
+saida_hex[12] <= registrador:REG_ID_EX.data_out[47]
+saida_hex[13] <= registrador:REG_ID_EX.data_out[48]
+saida_hex[14] <= registrador:REG_ID_EX.data_out[49]
+saida_hex[15] <= registrador:REG_ID_EX.data_out[50]
 saida_hex[16] <= muxgenerico2:mux_Banco_Ula.saida[0]
 saida_hex[17] <= muxgenerico2:mux_Banco_Ula.saida[1]
 saida_hex[18] <= muxgenerico2:mux_Banco_Ula.saida[2]
@@ -2727,7 +2727,7 @@ pontosDeControle[9] <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
 pontosDeControle[10] <= <GND>
 
 
-|mips|fluxo_dados:FD|Registrador:REG1
+|mips|fluxo_dados:FD|Registrador:REG_IF_ID
 clk => data_s[0].CLK
 clk => data_s[1].CLK
 clk => data_s[2].CLK
@@ -3050,7 +3050,7 @@ data_out[62] <= data_s[62].DB_MAX_OUTPUT_PORT_TYPE
 data_out[63] <= data_s[63].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mips|fluxo_dados:FD|Registrador:REG2
+|mips|fluxo_dados:FD|Registrador:REG_ID_EX
 clk => data_s[0].CLK
 clk => data_s[1].CLK
 clk => data_s[2].CLK
@@ -3798,7 +3798,7 @@ data_out[147] <= data_s[147].DB_MAX_OUTPUT_PORT_TYPE
 data_out[148] <= data_s[148].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mips|fluxo_dados:FD|Registrador:REG3
+|mips|fluxo_dados:FD|Registrador:REG_EX_MEM
 clk => data_s[0].CLK
 clk => data_s[1].CLK
 clk => data_s[2].CLK
@@ -4341,7 +4341,7 @@ data_out[106] <= data_s[106].DB_MAX_OUTPUT_PORT_TYPE
 data_out[107] <= data_s[107].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mips|fluxo_dados:FD|Registrador:REG4
+|mips|fluxo_dados:FD|Registrador:REG_MEM_WB
 clk => data_s[0].CLK
 clk => data_s[1].CLK
 clk => data_s[2].CLK

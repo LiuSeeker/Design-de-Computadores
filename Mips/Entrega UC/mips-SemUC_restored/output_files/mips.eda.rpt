@@ -1,5 +1,5 @@
 EDA Netlist Writer report for mips
-Fri Nov 29 15:32:56 2019
+Tue Dec 03 09:04:20 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Nov 29 15:32:55 2019 ;
+; EDA Netlist Writer Status ; Successful - Tue Dec 03 09:04:20 2019 ;
 ; Revision Name             ; mips                                  ;
 ; Top-level Entity Name     ; mips                                  ;
 ; Family                    ; Cyclone IV E                          ;
@@ -88,7 +88,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Nov 29 15:32:51 2019
+    Info: Processing started: Tue Dec 03 09:04:15 2019
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off mips -c mips
 Info (204019): Generated file mips_8_1200mv_85c_slow.vho in folder "D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file mips_8_1200mv_0c_slow.vho in folder "D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/modelsim/" for EDA simulation tool
@@ -99,8 +99,8 @@ Info (204019): Generated file mips_8_1200mv_0c_vhd_slow.sdo in folder "D:/Insper
 Info (204019): Generated file mips_min_1200mv_0c_vhd_fast.sdo in folder "D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file mips_vhd.sdo in folder "D:/Insper/Design de Computadores/descomp/Mips/Entrega UC/mips-SemUC_restored/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4682 megabytes
-    Info: Processing ended: Fri Nov 29 15:32:56 2019
+    Info: Peak virtual memory: 4681 megabytes
+    Info: Processing ended: Tue Dec 03 09:04:20 2019
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:03
 

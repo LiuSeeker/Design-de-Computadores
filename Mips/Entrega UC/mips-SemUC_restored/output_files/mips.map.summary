@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Nov 29 15:32:25 2019
+Analysis & Synthesis Status : Successful - Tue Dec 03 09:03:48 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : mips
 Top-level Entity Name : mips
 Family : Cyclone IV E
-Total logic elements : 2,842
+Total logic elements : 2,843
     Total combinational functions : 1,765
-    Dedicated logic registers : 1,250
-Total registers : 1250
+    Dedicated logic registers : 1,257
+Total registers : 1257
 Total pins : 69
 Total virtual pins : 0
 Total memory bits : 4,096
