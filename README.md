@@ -4,8 +4,6 @@
 
 ## Projeto 2 - [Processador compatível com MIPS DLX](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Mips)
 
-=======
-
 ### Contribuidores:
 
 - [IagoMendes](https://github.com/IagoMendes)
