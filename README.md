@@ -1,3 +1,4 @@
+# Repositório de Design de Computadores / Computer Design Repository
 
 ### Contribuidores / Contributors:
 
@@ -12,7 +13,6 @@
 
 (PT-BR)
 
-# Repositório de Design de Computadores
 
 ### Projetos:
 - [Relógio Digital Microprocessado](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Relogio)
@@ -21,8 +21,6 @@
 ---
 
 (EN-US)
-
-# Computer Design Repository
 
 ### Projects:
 - [Microprocessed Digital Watch](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Relogio)
