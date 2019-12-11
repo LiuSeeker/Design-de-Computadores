@@ -1,4 +1,4 @@
-# Repositório de Design de Computadores / Computer Design Repository
+# Repositório de Design de Computadores <br/> Computer Design Repository
 
 ### Contribuidores / Contributors:
 
