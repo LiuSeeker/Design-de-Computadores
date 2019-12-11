@@ -8,7 +8,7 @@
 - [ehrhardt98](https://github.com/ehrhardt98)
 - [LiuSeeker](https://github.com/LiuSeeker)
 
-#### *2019.02*
+#### *2019 2º semestre / 2019 2nd semester*
 ----
 
 (PT-BR)
