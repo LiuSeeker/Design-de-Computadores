@@ -14,17 +14,17 @@
 
 # Repositório de Design de Computadores
 
+### Projetos:
+- [Relógio Digital Microprocessado](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Relogio)
 
-## Projeto 1 - [Relógio Digital Microprocessado](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Relogio)
-
-
-## Projeto 2 - [Processador compatível com MIPS DLX](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Mips)
+- [Processador compatível com MIPS DLX](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Mips)
 ---
 
 (EN-US)
 
 # Computer Design Repository
 
-## Project 1 - [Microprocessed Digital Watch](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Relogio)
+### Projects:
+- [Microprocessed Digital Watch](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Relogio)
 
-## Project 2 - [Processor compatible with MIPS DLX](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Mips)
+- [Processor compatible with MIPS DLX](https://github.com/LiuSeeker/Projetos-de-Design-de-Computadores/tree/master/Mips)
